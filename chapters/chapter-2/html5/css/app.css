@@ -5,7 +5,12 @@ body {
   margin: 0 auto;
   padding: 0;
 }
+.highlights{
+    background:yellow;
+    padding:5px;
+    border-radius: 5px;
 
+}
 body > header {
   margin: 0;
   background: #333;

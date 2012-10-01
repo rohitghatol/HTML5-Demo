@@ -3,9 +3,49 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/app.css" media="screen">
+
 	<title>Tech Next Blog</title>
+    <script src="../../../js/jquery-1.7.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(".highlight").click(function(){
+
+                var thisCheck = $(this);
+                var type = $(thisCheck).val();
+                console.log(type);
+                if (thisCheck.is (':checked'))
+                {
+                    $(type).css('border','1px solid red');
+                }
+                else {
+                    $(type).css('border','0px solid black');
+                }
+
+
+            });
+
+        });
+    </script>
 </head>
 <body>
+<div class="highlights">
+    <input class="highlight" type="checkbox" name="highlight" value="article">Article</input>
+    <input class="highlight" type="checkbox" name="highlight" value="header">Header</input>
+    <input class="highlight" type="checkbox" name="highlight" value="footer">Footer</input>
+    <input class="highlight" type="checkbox" name="highlight" value="section">Section</input>
+    <input class="highlight" type="checkbox" name="highlight" value="aside">Aside</input>
+    <input class="highlight" type="checkbox" name="highlight" value="nav">Nav</input>
+
+
+    <input class="highlight" type="checkbox" name="highlight" value="div">Div</input>
+    <input class="highlight" type="checkbox" name="highlight" value="h1">H1</input>
+    <input class="highlight" type="checkbox" name="highlight" value="h2">H2</input>
+    <input class="highlight" type="checkbox" name="highlight" value="ul">UL</input>
+    <input class="highlight" type="checkbox" name="highlight" value="li">LI</input>
+    <input class="highlight" type="checkbox" name="highlight" value="a">Anchor</input>
+
+</div>
   <header>
     <hgroup>
       <h1>TechNext</h1>

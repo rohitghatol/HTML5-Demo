@@ -21,21 +21,94 @@
     transition: all 1s ease-in-out;
 }
 
+.slide-container .slide-strip h1{
+    font-size:20pt
+}
+
+.slide-container .slide-strip h2{
+    font-size:18pt
+}
+
+.slide-container .slide-strip h3{
+    font-size:16pt
+}
+
 .slide-container .slide-strip article{
     width:800px;
     float:left;
 }
 
-.slide-container .slide-strip header{
+
+.slide-container .slide-strip article.title header{
+    padding-top: 200px;
     text-align: center;
-    font-size: 20pt;
+    font-size: 24pt;
 }
 
-.slide-container .slide-strip section{
+.slide-container .slide-strip article.title section{
+    padding-top: 50px;
+    text-align: center;
+    font-size: 18pt;
+}
+
+.slide-container .slide-strip article.tx header{
+    padding-top: 20px;
     margin:10px;
     text-align: left;
-    font-size: 12pt;
+    font-size: 24pt;
 }
+
+.slide-container .slide-strip article.tx section{
+    margin:10px;
+    text-align: left;
+    font-size: 16pt;
+}
+
+.slide-container .slide-strip article.twoTxCol header{
+    padding-top: 20px;
+    margin:10px;
+    text-align: left;
+    font-size: 24pt;
+}
+
+.slide-container .slide-strip article.twoTxCol section{
+    margin:10px;
+    text-align: left;
+    font-size: 16pt;
+    float:left;
+    width:45%;
+}
+
+.slide-container .slide-strip article.titleOnly header{
+    padding-top: 20px;
+    margin:10px;
+    text-align: left;
+    font-size: 24pt;
+}
+
+.slide-container .slide-strip article.titleOnly section{
+    display:none;
+}
+
+.slide-container .slide-strip article.CAPTION_ONLY header{
+    padding-top: 500px;
+    margin:10px;
+    text-align: left;
+    font-size: 24pt;
+}
+
+.slide-container .slide-strip article.CAPTION_ONLY section{
+    display:none;
+}
+
+.slide-container .slide-strip article.blank header{
+    display:none;
+}
+
+.slide-container .slide-strip article.blank section{
+    display:none;
+}
+
 
 
 .slide-controller{

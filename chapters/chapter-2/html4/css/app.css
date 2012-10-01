@@ -6,6 +6,13 @@ body {
   padding: 0;
 }
 
+.highlights{
+    background:yellow;
+    padding:5px;
+    border-radius: 5px;
+
+}
+
 #header {
   margin: 0;
   background: #333;
