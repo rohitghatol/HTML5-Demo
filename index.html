@@ -13,191 +13,370 @@
     </ul>
 </section>
 <section class="slide-container">
-    <div class="slide-strip">
-        <article class="title">
-            <header>HTML 5</header>
-            <section>
-                <h2>By Rohit Ghatol</h2>
+<div class="slide-strip">
+<article class="title">
+    <header>HTML 5</header>
+    <section>
+        <h2>By Rohit Ghatol</h2>
 
-                <h3>Director of Engineering - Synerzip</h3>
-            </section>
-        </article>
-        <article class="tx">
-            <header>Topic</header>
-            <section>
+        <h3>Director of Engineering - Synerzip</h3>
+    </section>
+</article>
+<article class="tx">
+    <header>Topic</header>
+    <section>
+        <ul>
+            <li><h1>What's new in HTML 5?</h1>
                 <ul>
-                    <li><h1>What's new in HTML 5?</h1>
-                        <ul>
-                            <li><h2>What's new in HTML?</h2></li>
-                            <li><h2>What's new in CSS 3?</h2></li>
-                            <li><h2>What's new in APIs?</h2></li>
-                        </ul>
-                    </li>
-                    <li><h1>Issues with HTML 5</h1></li>
-                    <li><h1>How to decide which feature to go with?</h1></li>
+                    <li><h2>What's new in HTML?</h2></li>
+                    <li><h2>What's new in CSS 3?</h2></li>
+                    <li><h2>What's new in APIs?</h2></li>
                 </ul>
-            </section>
-        </article>
-        <article class="tx">
-            <header>What's new in HTML5?</header>
-            <section>
-                <h3>We will cover</h3>
+            </li>
+            <li><h1>Issues with HTML 5</h1></li>
+            <li><h1>How to decide which feature to go with?</h1></li>
+        </ul>
+    </section>
+</article>
+<article class="tx">
+    <header>What's new in HTML5?</header>
+    <section>
+        <h3>We will cover</h3>
+        <ul>
+            <li><h3>HTML Tags</h3></li>
+            <li><h3>CSS3 </h3></li>
+            <li><h3>APIs </h3></li>
+        </ul>
+    </section>
+</article>
+<article class="tx">
+    <header>New Features in HTML</header>
+    <section>
+        <h3>We will cover</h3>
+        <ul>
+            <li><h3>New DocType & Syntax</h3></li>
+            <li><h3>New Tags: Article, Section, Nav, etc. </h3></li>
+            <li><h3>Audio/Video Tag </h3></li>
+            <li><h3>Canvas & SVG </h3></li>
+            <li><h3>New Form Elements </h3></li>
+        </ul>
+    </section>
+</article>
+<article class="tx">
+    <header>New DocType & Syntax</header>
+    <section>
+        <style>
+            .container {
+                padding-left: 50px;
+                width: 600px;
+                height: 500px;
+                position: relative;
+
+                border: 1px solid #CCC;
+                -webkit-perspective: 800px;
+                -moz-perspective: 800px;
+                -o-perspective: 800px;
+                perspective: 800px;
+            }
+
+            #card {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                -webkit-transition: -webkit-transform 1s;
+                -moz-transition: -moz-transform 1s;
+                -o-transition: -o-transform 1s;
+                transition: transform 1s;
+                -webkit-transform-style: preserve-3d;
+                -moz-transform-style: preserve-3d;
+                -o-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+            }
+
+            #card.flipped {
+                -webkit-transform: rotateY(180deg);
+                -moz-transform: rotateY(180deg);
+                -o-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+            }
+
+            #card figure {
+                display: block;
+                height: 100%;
+                width: 100%;
+                text-align: left;
+                color: black;
+                font-size: 14pt;
+                position: absolute;
+                -webkit-backface-visibility: hidden;
+                -moz-backface-visibility: hidden;
+                -o-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
+
+            #card .front {
+                background: white;
+            }
+
+            #card .back {
+                background: yellow;
+                -webkit-transform: rotateY(180deg);
+                -moz-transform: rotateY(180deg);
+                -o-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+                padding-left: 10px;
+            }
+
+            .container:hover #card {
+                -webkit-transform: rotateY(180deg);
+                -moz-transform: rotateY(180deg);
+                -o-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+
+            }
+        </style>
+        <section class="container">
+            <div id="card">
+                <figure class="front"><br/>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot;<br/> &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;<br/>&lt;html
+                    lang=&quot;en&quot;&gt;<br/>&lt;head&gt;<br/> &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;<br/>
+                    &lt;script type=&quot;text/javascript&quot; src=&quot;js/app.js&quot;&gt;&lt;/script&gt;<br/> &lt;script
+                    type=&quot;text/javascript&quot;&gt;<br/> var data = &quot;abc&quot;<br/> &lt;/script&gt;<br/> &lt;link
+                    type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;css/app.css&quot; media=&quot;screen&quot;&gt;<br/>
+                    &lt;title&gt;HTML4&lt;/title&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/> &lt;h1&gt;HTML 4&lt;/h1&gt;<br/>
+                    &lt;p&gt;View Source&lt;/p&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/><br/></figure>
+                <figure class="back">&lt;!DOCTYPE HTML&gt;<br/>&lt;html lang=&quot;en&quot;&gt;<br/>&lt;head&gt;<br/>
+                    &lt;meta content=&quot;text/html;charset=utf-8&quot;&gt;<br/> &lt;script src=&quot;js/app.js&quot;&gt;&lt;/script&gt;<br/>
+                    &lt;script&gt; <br/> var data = &quot;abc&quot;<br/> &lt;/script&gt;<br/> &lt;link rel=&quot;stylesheet&quot;
+                    href=&quot;css/app.css&quot; media=&quot;screen&quot;&gt;<br/> &lt;title&gt;HTML5&lt;/title&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/>
+                    &lt;h1&gt;HTML 5&lt;/h1&gt;<br/> &lt;p&gt;View
+                    Source&lt;/p&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/><br/></figure>
+            </div>
+        </section>
+
+
+    </section>
+</article>
+<article class="title">
+    <header>New Tags: Article, Section, Nav, etc</header>
+    <section>
+
+    </section>
+</article>
+<article class="tx">
+    <header>Div Hell</header>
+    <section>
+        <h3>Traditional Approach</h3>
+        Everything in the page is a DIV - <a target="_blank" href="chapters/chapter-2/html4/index.html">See Example</a>
+    </section>
+</article>
+<article class="tx">
+    <header>Article, Section, Nav, Aside tags</header>
+    <section>
+        <h3>New Tags Approach</h3>
+        Specific Tags for Specific Purpose - <a target="_blank" href="chapters/chapter-2/html5/index.html">See
+        Example</a>
+    </section>
+</article>
+<article class="title">
+    <header>Audio & Video Tags</header>
+    <section>
+    </section>
+</article>
+<article class="tx">
+    <header>Video Tag Demo</header>
+    <section>
+        <video width="640" height="368" id="myVideo" controls>
+            <source src="http://www.html5videoplayer.net/videos/madagascar3.ogv"
+                    type='video/ogg; codecs="theora, vorbis"'>
+            <source src="http://www.html5videoplayer.net/videos/madagascar3.mp4"
+                    type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+            <source src="http://www.html5videoplayer.net/videos/madagascar3.webm"
+                    type='video/webm; codecs="vp8.0, vorbis"'>
+        </video>
+        <div class="controls">
+            <input type="button" name="skipBack" value="&lt;&lt;" id="rewind">
+            <input type="button" name="play" value="&gt;" id="play">
+            <input type="button" name="pause" value="||" id="pause">
+            <input type="button" name="stop" value="[]" id="stop">
+            <input type="button" name="skipBack" value="&gt;&gt;" id="forward">
+            <input type="range" name="range" id="range">
+        </div>
+
+
+
+        <script>
+            var videoElem = document.getElementById("myVideo");
+            var playButton = document.getElementById("play");
+            var pauseButton = document.getElementById("pause");
+            var stopButton = document.getElementById("stop");
+            var rewindButton = document.getElementById("rewind");
+            var forwardButton = document.getElementById("forward");
+            var range = document.getElementById("range");
+
+            videoElem.addEventListener("loadedmetadata", function () {
+                range.min = 0;
+                range.step = 1;
+                range.max = videoElem.duration;
+            }, false);
+
+            videoElem.addEventListener("timeupdate", function () {
+                range.value = videoElem.currentTime;
+            });
+
+            range.addEventListener("mousedown", function () {
+                videoElem.pause();
+
+            });
+            range.addEventListener("mouseup", function () {
+                videoElem.currentTime = range.value;
+                videoElem.play();
+
+            });
+
+            rewindButton.addEventListener("click", function () {
+                videoElem.currentTime -= 2;
+            });
+
+            playButton.addEventListener("click", function () {
+                videoElem.play();
+            });
+            pauseButton.addEventListener("click", function () {
+                videoElem.pause();
+            });
+            stopButton.addEventListener("click", function () {
+                videoElem.currentTime = 0;
+                videoElem.pause();
+            });
+
+            forwardButton.addEventListener("click", function () {
+                videoElem.currentTime += 2;
+            });
+        </script>
+    </section>
+</article>
+<article class="tx">
+    <header>Source Code</header>
+    <section>
+        &lt;video width=&quot;640&quot; height=&quot;368&quot; id=&quot;myVideo&quot; controls&gt;<br/>  &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.ogv&quot; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/ogg; codecs=&quot;theora, vorbis&quot;'&gt;<br/>  &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.mp4&quot; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;'&gt;  <br/>  &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.webm&quot; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/webm; codecs=&quot;vp8.0, vorbis&quot;'&gt;<br/>&lt;/video&gt;
+    </section>
+</article>
+<article class="title">
+    <header>Canvas & SVG</header>
+    <section>
+
+    </section>
+</article>
+<article class="twoTxCol">
+    <header>Canvas Demo</header>
+    <section>
+        <h3>Demo</h3>
+        <canvas id="canvas1" width="300px" height="300px"></canvas>
+        <script>
+            var canvasElem = document.getElementById("canvas1");
+            var ctx = canvasElem.getContext('2d');
+            ctx.fillStyle = "#00A308";
+            ctx.beginPath();
+            ctx.arc(220, 220, 50, 0, Math.PI*2, true);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.fillStyle = "#FF1C0A";
+            ctx.beginPath();
+            ctx.arc(100, 100, 100, 0, Math.PI*2, true);
+            ctx.closePath();
+            ctx.fill();
+
+            //the rectangle is half transparent
+            ctx.fillStyle = "rgba(255, 255, 0, .5)"
+            ctx.beginPath();
+            ctx.rect(15, 150, 120, 120);
+            ctx.closePath();
+            ctx.fill();
+
+        </script>
+    </section>
+    <section>
+
+        var canvasElem = <br/>document.getElementById("canvas1");<br/>
+
+        var ctx = canvasElem.getContext('2d');<br/>
+        ctx.fillStyle = "#00A308";<br/>
+        ctx.beginPath();<br/>
+        ctx.arc(220, 220, 50, 0, Math.PI*2, true);<br/>
+        ctx.closePath();<br/>
+        ctx.fill();<br/><br/>
+
+        ctx.fillStyle = "#FF1C0A";<br/>
+        ctx.beginPath();<br/>
+        ctx.arc(100, 100, 100, 0, Math.PI*2, true);<br/>
+        ctx.closePath();<br/>
+        ctx.fill();<br/><br/>
+
+        //the rectangle is half transparent<br/>
+        ctx.fillStyle = "rgba(255, 255, 0, .5)"<br/>
+        ctx.beginPath();<br/>
+        ctx.rect(15, 150, 120, 120);<br/>
+        ctx.closePath();<br/>
+        ctx.fill();<br/>
+    <section>
+</article>
+<article class="tx">
+    <header>Drawing Capabilities</header>
+    <section>
+        <ul>
+            <li>
+                Drawing APIs
                 <ul>
-                    <li><h3>HTML Tags</h3></li>
-                    <li><h3>CSS3 </h3></li>
-                    <li><h3>APIs </h3></li>
+                    <li>lineTo(),moveTo(),arcTo()</li>
                 </ul>
-            </section>
-        </article>
-        <article class="tx">
-            <header>New Features in HTML</header>
-            <section>
-                <h3>We will cover</h3>
+            </li>
+            <li>
+                Transformation APIs
                 <ul>
-                    <li><h3>New DocType & Syntax</h3></li>
-                    <li><h3>New Tags: Article, Section, Nav, etc. </h3></li>
-                    <li><h3>Audio/Video Tag </h3></li>
-                    <li><h3>Canvas & SVG </h3></li>
-                    <li><h3>New Form Elements </h3></li>
+                    <li>scale(), translate(), transform()</li>
                 </ul>
-            </section>
-        </article>
-        <article class="tx">
-            <header>New DocType & Syntax</header>
-            <section>
-                <style>
-                    .container {
-                        padding-left: 50px;
-                        width: 600px;
-                        height: 500px;
-                        position: relative;
+            </li>
+            <li>
+                Context APIs
+                <ul>
+                    <li>save()</li>
+                    <li>restore()</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</article>
 
-                        border: 1px solid #CCC;
-                        -webkit-perspective: 800px;
-                        -moz-perspective: 800px;
-                        -o-perspective: 800px;
-                        perspective: 800px;
-                    }
+<article class="twoTxCol">
+    <header>header 3</header>
+    <section>
+        abc
+    </section>
+    <section>
+        abc
+    </section>
 
-                    #card {
-                        width: 100%;
-                        height: 100%;
-                        position: absolute;
-                        -webkit-transition: -webkit-transform 1s;
-                        -moz-transition: -moz-transform 1s;
-                        -o-transition: -o-transform 1s;
-                        transition: transform 1s;
-                        -webkit-transform-style: preserve-3d;
-                        -moz-transform-style: preserve-3d;
-                        -o-transform-style: preserve-3d;
-                        transform-style: preserve-3d;
-                    }
+</article>
+<article class="titleOnly">
+    <header>header 4</header>
+    <section>
 
-                    #card.flipped {
-                        -webkit-transform: rotateY( 180deg );
-                        -moz-transform: rotateY( 180deg );
-                        -o-transform: rotateY( 180deg );
-                        transform: rotateY( 180deg );
-                    }
+    </section>
+</article>
+<article class="CAPTION_ONLY">
+    <header>header 4</header>
+    <section>
 
-                    #card figure {
-                        display: block;
-                        height: 100%;
-                        width: 100%;
-                        text-align: left;
-                        color: black;
-                        font-size: 14pt;
-                        position: absolute;
-                        -webkit-backface-visibility: hidden;
-                        -moz-backface-visibility: hidden;
-                        -o-backface-visibility: hidden;
-                        backface-visibility: hidden;
-                    }
+    </section>
+</article>
+<article class="blank">
+    <header>header 4</header>
+    <section>
 
-                    #card .front {
-                        background: white;
-                    }
+    </section>
+</article>
 
-                    #card .back {
-                        background: yellow;
-                        -webkit-transform: rotateY( 180deg );
-                        -moz-transform: rotateY( 180deg );
-                        -o-transform: rotateY( 180deg );
-                        transform: rotateY( 180deg );
-                        padding-left:10px;
-                    }
-
-                    .container:hover #card {
-                        -webkit-transform: rotateY( 180deg );
-                        -moz-transform: rotateY( 180deg );
-                        -o-transform: rotateY( 180deg );
-                        transform: rotateY( 180deg );
-
-                    }
-                </style>
-                <section class="container">
-                    <div id="card">
-                        <figure class="front"><br/>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot;<br/>  &quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;<br/>&lt;html lang=&quot;en&quot;&gt;<br/>&lt;head&gt;<br/>	&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;<br/>	&lt;script type=&quot;text/javascript&quot; src=&quot;js/app.js&quot;&gt;&lt;/script&gt;<br/>	&lt;script type=&quot;text/javascript&quot;&gt;<br/>	  var data = &quot;abc&quot;<br/>	&lt;/script&gt;<br/>	&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;css/app.css&quot; media=&quot;screen&quot;&gt;<br/>	&lt;title&gt;HTML4&lt;/title&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/>    &lt;h1&gt;HTML 4&lt;/h1&gt;<br/>    &lt;p&gt;View Source&lt;/p&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/><br/></figure>
-                        <figure class="back">&lt;!DOCTYPE HTML&gt;<br/>&lt;html lang=&quot;en&quot;&gt;<br/>&lt;head&gt;<br/>	&lt;meta content=&quot;text/html;charset=utf-8&quot;&gt;<br/>	&lt;script src=&quot;js/app.js&quot;&gt;&lt;/script&gt;<br/>	&lt;script&gt; <br/>	  var data = &quot;abc&quot;<br/>	&lt;/script&gt;<br/>	&lt;link rel=&quot;stylesheet&quot; href=&quot;css/app.css&quot; media=&quot;screen&quot;&gt;<br/>	&lt;title&gt;HTML5&lt;/title&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/>    &lt;h1&gt;HTML 5&lt;/h1&gt;<br/>    &lt;p&gt;View Source&lt;/p&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/><br/></figure>
-                    </div>
-                </section>
-
-
-
-
-            </section>
-        </article>
-        <article class="title">
-            <header>New Tags: Article, Section, Nav, etc</header>
-            <section>
-
-            </section>
-        </article>
-        <article class="tx">
-            <header>Div Hell</header>
-            <section>
-                <h3>Traditional Approach</h3>
-                Everything in the page is a DIV - <a target="_blank" href="chapters/chapter-2/html4/index.html">See Example</a>
-            </section>
-        </article>
-        <article class="tx">
-            <header>Article, Section, Nav, Aside tags</header>
-            <section>
-                <h3>New Tags Approach</h3>
-                Specific Tags for Specific Purpose - <a target="_blank" href="chapters/chapter-2/html5/index.html">See Example</a>
-            </section>
-        </article>
-
-        <article class="twoTxCol">
-            <header>header 3</header>
-            <section>
-                abc
-            </section>
-            <section>
-                abc
-            </section>
-
-        </article>
-        <article class="titleOnly">
-            <header>header 4</header>
-            <section>
-
-            </section>
-        </article>
-        <article class="CAPTION_ONLY">
-            <header>header 4</header>
-            <section>
-
-            </section>
-        </article>
-        <article class="blank">
-            <header>header 4</header>
-            <section>
-
-            </section>
-        </article>
-
-    </div>
+</div>
 </section>
 <nav class="slide-controller">
     <div class="prev-slide"></div>
