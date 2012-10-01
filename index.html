@@ -203,7 +203,6 @@
         </div>
 
 
-
         <script>
             var videoElem = document.getElementById("myVideo");
             var playButton = document.getElementById("play");
@@ -257,7 +256,12 @@
 <article class="tx">
     <header>Source Code</header>
     <section>
-        &lt;video width=&quot;640&quot; height=&quot;368&quot; id=&quot;myVideo&quot; controls&gt;<br/>  &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.ogv&quot; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/ogg; codecs=&quot;theora, vorbis&quot;'&gt;<br/>  &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.mp4&quot; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;'&gt;  <br/>  &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.webm&quot; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/webm; codecs=&quot;vp8.0, vorbis&quot;'&gt;<br/>&lt;/video&gt;
+        &lt;video width=&quot;640&quot; height=&quot;368&quot; id=&quot;myVideo&quot; controls&gt;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&lt;source
+        src=&quot;http://www.html5videoplayer.net/videos/madagascar3.ogv&quot; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/ogg;
+        codecs=&quot;theora, vorbis&quot;'&gt;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.mp4&quot;
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;'&gt;
+        <br/> &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.webm&quot;
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/webm; codecs=&quot;vp8.0, vorbis&quot;'&gt;<br/>&lt;/video&gt;
     </section>
 </article>
 <article class="title">
@@ -276,13 +280,13 @@
             var ctx = canvasElem.getContext('2d');
             ctx.fillStyle = "#00A308";
             ctx.beginPath();
-            ctx.arc(220, 220, 50, 0, Math.PI*2, true);
+            ctx.arc(220, 220, 50, 0, Math.PI * 2, true);
             ctx.closePath();
             ctx.fill();
 
             ctx.fillStyle = "#FF1C0A";
             ctx.beginPath();
-            ctx.arc(100, 100, 100, 0, Math.PI*2, true);
+            ctx.arc(100, 100, 100, 0, Math.PI * 2, true);
             ctx.closePath();
             ctx.fill();
 
@@ -318,7 +322,7 @@
         ctx.rect(15, 150, 120, 120);<br/>
         ctx.closePath();<br/>
         ctx.fill();<br/>
-    <section>
+    </section>
 </article>
 <article class="tx">
     <header>Drawing Capabilities</header>
@@ -346,6 +350,931 @@
         </ul>
     </section>
 </article>
+<article class="twoTxCol">
+    <header>Drawing Concept</header>
+    <section>
+        <ul>
+            Answer following Questions
+            <li>At 115 Degree rotation what is x,y?</li>
+            <li>At 115 Degree rotation & 1/s scale what is x,y?</li>
+        </ul>
+
+    </section>
+    <section>
+        <h3>Canvas Drawing</h3>
+        <canvas id="canvas2" width="300px" height="300px"></canvas>
+        <script>
+            var canvasElem = document.getElementById("canvas2");
+            var ctx = canvasElem.getContext('2d');
+            ctx.fillStyle = "black";
+            ctx.strokeStyle = "red";
+
+            for (var i = 0; i < 20; i++) {
+                ctx.moveTo(i * 20, 0);
+                ctx.lineTo(i * 20, 400);
+                ctx.stroke();
+                for (var j = 0; j < 10; j++) {
+                    ctx.moveTo(0, i * 20);
+                    ctx.lineTo(400, i * 20);
+                    ctx.stroke();
+                }
+            }
+            ctx.save();
+            ctx.rect(0, 20, 80, 40);
+            ctx.fill();
+            ctx.fillText("0,20", 0, 10);
+            ctx.restore();
+
+            ctx.save();
+            ctx.translate(40, 60);
+            ctx.rect(0, 20, 80, 40);
+            ctx.fill();
+            ctx.fillText("40,80", 0, 10);
+            ctx.restore();
+
+            ctx.save();
+            ctx.translate(140, 100);
+            ctx.rotate(170);
+            ctx.rect(0, 20, 80, 40);
+            ctx.fill();
+            ctx.fillText("@ 115 Degree what is x,y", 0, 10);
+            ctx.restore();
+
+            ctx.save();
+            ctx.translate(40, 200);
+            ctx.rotate(170);
+            ctx.save();
+            ctx.scale(0.5, 0.5)
+            ctx.rect(0, 20, 80, 40);
+            ctx.fill();
+            ctx.restore();
+            ctx.fillText("@ 115 Deg & 1/2 scale what is x,y", 0, 0);
+            ctx.restore();
+
+        </script>
+    </section>
+</article>
+<article class="twoTxCol">
+    <header>Code Snippet - 1</header>
+    <section>
+        ctx.save();<br/>
+        ctx.rect(0,20,80,40);<br/>
+        ctx.fill();<br/>
+        ctx.fillText("0,20",0,10);<br/>
+        ctx.restore();<br/><br/>
+
+        ctx.save();<br/>
+        ctx.translate(40,60);<br/>
+        ctx.rect(0,20,80,40);<br/>
+        ctx.fill();<br/>
+        ctx.fillText("40,80",0,10);<br/>
+        ctx.restore();<br/><br/>
+
+
+    </section>
+    <section>
+        <h3>Canvas Drawing</h3>
+        <canvas id="canvas3" width="300px" height="300px"></canvas>
+        <script>
+            var canvasElem = document.getElementById("canvas3");
+            var ctx = canvasElem.getContext('2d');
+            ctx.fillStyle = "black";
+            ctx.strokeStyle = "red";
+
+            for (var i = 0; i < 20; i++) {
+                ctx.moveTo(i * 20, 0);
+                ctx.lineTo(i * 20, 400);
+                ctx.stroke();
+                for (var j = 0; j < 10; j++) {
+                    ctx.moveTo(0, i * 20);
+                    ctx.lineTo(400, i * 20);
+                    ctx.stroke();
+                }
+            }
+            ctx.save();
+            ctx.rect(0, 20, 80, 40);
+            ctx.fill();
+            ctx.fillText("0,20", 0, 10);
+            ctx.restore();
+
+            ctx.save();
+            ctx.translate(40, 60);
+            ctx.rect(0, 20, 80, 40);
+            ctx.fill();
+            ctx.fillText("40,80", 0, 10);
+            ctx.restore();
+
+            ctx.save();
+            ctx.translate(140, 100);
+            ctx.rotate(170);
+            ctx.rect(0, 20, 80, 40);
+            ctx.fill();
+            ctx.fillText("@ 115 Degree what is x,y", 0, 10);
+            ctx.restore();
+
+            ctx.save();
+            ctx.translate(40, 200);
+            ctx.rotate(170);
+            ctx.save();
+            ctx.scale(0.5, 0.5)
+            ctx.rect(0, 20, 80, 40);
+            ctx.fill();
+            ctx.restore();
+            ctx.fillText("@ 115 Deg & 1/2 scale what is x,y", 0, 0);
+            ctx.restore();
+
+        </script>
+    </section>
+</article>
+<article class="twoTxCol">
+    <header>Code Snippet - 2</header>
+    <section>
+        ctx.save();<br/>
+        ctx.translate(140,100);<br/>
+        ctx.rotate(170);<br/>
+        ctx.rect(0,20,80,40);<br/>
+        ctx.fill();<br/>
+        ctx.fillText("@ 115 Degree what is x,y",0,10);<br/>
+        ctx.restore();<br/><br/>
+
+        ctx.save();<br/>
+        ctx.translate(40,200);<br/>
+        ctx.rotate(170);<br/>
+        ctx.save();<br/>
+        ctx.scale(0.5,0.5)<br/>
+        ctx.rect(0,20,80,40);<br/>
+        ctx.fill();<br/>
+        ctx.restore();<br/>
+        ctx.fillText("@ 115 Deg & 1/2 scale what is x,y",0,0);<br/>
+        ctx.restore();<br/>
+
+    </section>
+    <section>
+        <h3>Canvas Drawing</h3>
+        <canvas id="canvas4" width="300px" height="300px"></canvas>
+        <script>
+            var canvasElem = document.getElementById("canvas4");
+            var ctx = canvasElem.getContext('2d');
+            ctx.fillStyle = "black";
+            ctx.strokeStyle = "red";
+
+            for (var i = 0; i < 20; i++) {
+                ctx.moveTo(i * 20, 0);
+                ctx.lineTo(i * 20, 400);
+                ctx.stroke();
+                for (var j = 0; j < 10; j++) {
+                    ctx.moveTo(0, i * 20);
+                    ctx.lineTo(400, i * 20);
+                    ctx.stroke();
+                }
+            }
+            ctx.save();
+            ctx.rect(0, 20, 80, 40);
+            ctx.fill();
+            ctx.fillText("0,20", 0, 10);
+            ctx.restore();
+
+            ctx.save();
+            ctx.translate(40, 60);
+            ctx.rect(0, 20, 80, 40);
+            ctx.fill();
+            ctx.fillText("40,80", 0, 10);
+            ctx.restore();
+
+            ctx.save();
+            ctx.translate(140, 100);
+            ctx.rotate(170);
+            ctx.rect(0, 20, 80, 40);
+            ctx.fill();
+            ctx.fillText("@ 115 Degree what is x,y", 0, 10);
+            ctx.restore();
+
+            ctx.save();
+            ctx.translate(40, 200);
+            ctx.rotate(170);
+            ctx.save();
+            ctx.scale(0.5, 0.5)
+            ctx.rect(0, 20, 80, 40);
+            ctx.fill();
+            ctx.restore();
+            ctx.fillText("@ 115 Deg & 1/2 scale what is x,y", 0, 0);
+            ctx.restore();
+
+        </script>
+    </section>
+</article>
+<article class="twoTxCol">
+    <header>Canvas Game</header>
+    <section>
+        <h3>Game Concept</h3>
+
+        &lt;script&gt;<br/>
+        setInterval(gameLoop,100);<br/><br/>
+
+        function gameLoop(){<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;manipulateModel();<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;clearCanvas();<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;drawModel();<br/>
+        }<br/><br/>
+
+        &lt;script/&gt;
+
+
+    </section>
+    <section>
+        <h3>Canvas Drawing</h3>
+        <canvas id="canvas5" width="300px" height="300px" style="border: 1px solid red;"></canvas>
+        <script>
+            var canvas = document.getElementById("canvas5");
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = "#000000";
+            var ballX = 100, ballY = 200;
+            var radius = 20;
+            var xInc = 10;
+            var yInc = 10;
+            setInterval(gameLoop, 10);
+
+            function gameLoop() {
+                advanceBall();
+                clearCanvas();
+                drawBall();
+            }
+
+            function advanceBall() {
+                ballX += xInc;
+                ballY += yInc;
+                if ((ballX + radius) > canvas.width) {
+                    xInc = (-1) * xInc;
+                }
+                if ((ballX - radius) < 0) {
+                    xInc = (-1) * xInc;
+                }
+                if ((ballY + radius) > canvas.height) {
+                    yInc = (-1) * yInc;
+                }
+                if ((ballY - radius) < 0) {
+                    yInc = (-1) * yInc;
+                }
+            }
+            function clearCanvas() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+            function drawBall() {
+                ctx.beginPath();
+                ctx.arc(ballX, ballY, radius, 0, Math.PI * 2, true);
+                ctx.closePath();
+                ctx.fill();
+            }
+        </script>
+    </section>
+</article>
+
+<article class="tx">
+    <header>SVG Demo</header>
+    <section>
+        <style>
+            circle.myGreen {
+                stroke: #006600;
+                fill: #00cc00;
+            }
+
+            circle.myRed {
+                stroke: #660000;
+                fill: #cc0000;
+            }
+        </style>
+        <svg xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink">
+            <rect x="10" y="10" height="100" width="100"
+                  style="stroke:#ff0000; fill: #0000ff"/>
+            </rect>
+
+            <rect x="50" y="50" height="110" width="110"
+                  style="stroke:#ff0000; fill: #ccccff"
+                  transform="translate(30) rotate(45 50 50)"
+                    >
+            </rect>
+            <text x="70" y="100"
+                  transform="translate(30) rotate(45 50 50)">Hello World
+            </text>
+
+            <circle class="myGreen" cx="140" cy="40" r="24"/>
+            <circle class="myRed" cx="140" cy="100" r="24"/>
+
+            <g>
+                <line x1="310" y1="10" x2="385" y2="10"
+                      style="stroke: #006600;"/>
+
+                <rect x="310" y="20" height="50" width="75"
+                      style="stroke: #006600; fill: #006600"/>
+
+                <text x="310" y="90" style="stroke: #660000; fill: #660000">
+                    Text grouped with shapes
+                </text>
+            </g>
+
+
+            <g transform="rotate(300 300 50)">
+                <line x1="310" y1="310" x2="385" y2="310"
+                      style="stroke: #006600;"/>
+
+                <rect x="310" y="320" height="50" width="75"
+                      style="stroke: #006600; fill: #006600"/>
+
+                <text x="310" y="390" style="stroke: #660000; fill: #660000">
+                    Text grouped with shapes
+                </text>
+            </g>
+
+
+        </svg>
+
+
+    </section>
+</article>
+
+
+<article class="tx">
+    <header>New Form Element</header>
+
+
+    <section>
+        <style>
+            .form-inputs {
+                font-size: 80%;
+            }
+
+            .form-inputs input {
+                float: right;
+                border: 1px solid #CCC;
+                -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset;
+                -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset;
+                -o-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset;
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset;
+                padding: 3px 5px;
+            }
+
+            input[required] {
+                border-color: #88a;
+                -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, rgba(0, 0, 255, 0.5) 0px 0px 3px;
+                -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, rgba(0, 0, 255, 0.5) 0px 0px 3px;
+                -o-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, rgba(0, 0, 255, 0.5) 0px 0px 3px;
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, rgba(0, 0, 255, 0.5) 0px 0px 3px;
+            }
+
+            input:invalid {
+                border-color: #e88;
+                -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, 0 0 5px rgba(255, 0, 0, .8);
+                -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, 0 0 5px rgba(255, 0, 0, .8);
+                -o-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, 0 0 5px rgba(255, 0, 0, .8);
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 3px inset, 0 0 5px rgba(255, 0, 0, .8);
+            }
+        </style>
+
+        <pre class="form-inputs prettyprint"><input type="text" required=""><span class="tag">&lt;input</span><span
+                class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span
+                class="atv">"text"</span><span class="pln"> </span><b><span class="atn">required</span></b><span
+                class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="email"
+                                                                                                          value="some@email.com"><span
+                class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span
+                class="pun">=</span><span class="atv">"</span><b><span class="atv">email</span></b><span
+                class="atv">"</span><span class="pln"> </span><span class="atn">value</span><span
+                class="pun">=</span><span class="atv">"some@email.com"</span><span class="pln"> </span><span
+                class="tag">/&gt;</span><span class="pln"><br><br></span><input type="date" min="2010-08-14"
+                                                                                max="2011-08-14"
+                                                                                value="2010-08-14"><span class="tag">&lt;input</span><span
+                class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span
+                class="atv">date</span></b><span class="atv">"</span><span class="pln"> </span><b><span
+                class="atn">min</span></b><span class="pun">=</span><span class="atv">"2010-08-14"</span><span
+                class="pln"> </span><b><span class="atn">max</span></b><span class="pun">=</span><span class="atv">"2011-08-14"</span><span
+                class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"2010-08-14"</span><span
+                class="tag">/&gt;</span><span class="pln"><br><br></span><input type="range" min="0" max="50"
+                                                                                value="10"><span
+                class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span
+                class="pun">=</span><span class="atv">"</span><b><span class="atv">range</span></b><span
+                class="atv">"</span><span class="pln"> </span><b><span class="atn">min</span></b><span
+                class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><b><span
+                class="atn">max</span></b><span class="pun">=</span><span class="atv">"50"</span><span
+                class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span
+                class="atv">"10"</span><span class="pln"> </span><span class="tag">/&gt;</span><span
+                class="pln"><br><br></span><input results="10" type="search" placeholder="Search..."><span class="tag">&lt;input</span><span
+                class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span
+                class="atv">search</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">results</span></b><span
+                class="pun">=</span><span class="atv">"10"</span><span class="pln"> </span><b><span class="atn">placeholder</span></b><span
+                class="pun">=</span><span class="atv">"Search..."</span><span class="pln"> </span><span class="tag">/&gt;</span><span
+                class="pln"><br><br></span><input type="tel" placeholder="(555) 555-5555"
+                                                  pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"><span class="tag">&lt;input</span><span
+                class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span
+                class="atv">tel</span></b><span class="atv">"</span><span class="pln"> &nbsp;</span><b><span
+                class="atn">placeholder</span></b><span class="pun">=</span><span
+                class="atv">"(555) 555-5555"</span><span
+                class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><b><span class="atn">pattern</span></b><span
+                class="pun">=</span><span class="atv">"^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"</span><span
+                class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="color"
+                                                                                                          placeholder="e.g. #bbbbbb"><span
+                class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span
+                class="pun">=</span><span class="atv">"</span><b><span class="atv">color</span></b><span
+                class="atv">"</span><span class="pln"> </span><b><span class="atn">placeholder</span></b><span
+                class="pun">=</span><span class="atv">"e.g. #bbbbbb"</span><span class="pln"> </span><span class="tag">/&gt;</span><span
+                class="pln"><br><br></span><input type="number" step="1" min="-5" max="10" value="0"><span class="tag">&lt;input</span><span
+                class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span
+                class="atv">number</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">step</span></b><span
+                class="pun">=</span><span class="atv">"1"</span><span class="pln"> </span><b><span
+                class="atn">min</span></b><span class="pun">=</span><span class="atv">"-5"</span><span
+                class="pln"> </span><b><span class="atn">max</span></b><span class="pun">=</span><span
+                class="atv">"10"</span><span class="pln"> </span><span class="atn">value</span><span
+                class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="tag">/&gt;</span><span
+                class="pln"><br></span><div style="height:0px; clear:both;"><span class="pln"><br></span></div></pre>
+    </section>
+</article>
+<article class="tx">
+    <header>CSS3</header>
+    <section>
+        <ul>
+            <li><h1>What's new in CSS3 ?</h1>
+                <ul>
+                    <li><h2>New Properties</h2></li>
+                    <li><h2>Transforms</h2></li>
+                    <li><h2>Transitions</h2></li>
+                    <li><h2>Animation</h2></li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</article>
+<article class="tx">
+    <header>Border Properties</header>
+    <section>
+        <style>
+            .border-props div {
+                background: red;
+                color: white;
+                padding: 10px;
+            }
+
+            .border-props textarea {
+                width: 400px;
+                height: 80px;
+            }
+
+            .simpleround {
+                -webkit-border-radius: 50px;
+                -moz-border-radius: 50px;
+            }
+
+            .alternateround {
+                -webkit-border-top-left-radius: 50px;
+                -webkit-border-bottom-right-radius: 50px;
+                -moz-border-radius-topleft: 50px;
+                -moz-border-radius-bottomright: 50px;
+            }
+
+            .differentround {
+                -webkit-border-radius: 5px 200px 30px 50px;
+                -moz-border-radius: 5px 200px 30px 50px;
+            }
+
+            .ecliptical {
+                -webkit-border-radius: 100px / 30px;
+                -moz-border-radius: 100px / 30px;
+            }
+
+            .circle {
+                -webkit-border-radius: 300px;
+                -moz-border-radius: 300px;
+                width: 50px;
+                height: 50px;
+
+            }
+        </style>
+        <div>
+            <table class="border-props" width="100%">
+                <tr>
+                    <td><h3>Example</h3></td>
+                    <td><h3>CSS Code</h3></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="simpleround">Simple Round</div>
+                    </td>
+                    <td>
+                        <textarea>.simpleround{
+                            -webkit-border-radius: 50px;
+                            -moz-border-radius: 50px;
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="alternateround">Alternate Round</div>
+                    </td>
+                    <td>
+                        <textarea>.alternateround{
+                            -webkit-border-radius: 50px;
+                            -moz-border-radius: 50px;
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="differentround">Different Round</div>
+                    </td>
+                    <td>
+                        <textarea>.differentround{
+                            -webkit-border-radius: 5px 200px 30px 50px;
+                            -moz-border-radius: 5px 200px 30px 50px;
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="ecliptical">Ecliptical Round</div>
+                    </td>
+                    <td>
+                        <textarea>.ecliptical{
+                            -webkit-border-radius: 100px / 30px;
+                            -moz-border-radius: 100px / 30px;
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="circle">Circle</div>
+                    </td>
+                    <td>
+                        <textarea>.circle{
+                            -webkit-border-radius: 300px;
+                            -moz-border-radius: 300px;
+                            width:50px;
+                            height:50px;
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+</article>
+<article class="tx">
+    <header>Shadow Properties</header>
+    <section>
+        <style>
+
+            .shadow-props div {
+                background:red;
+                color:white;
+                padding:10px;
+            }
+            .shadow-props textarea{
+                width:600px;
+                height:80px;
+            }
+            .solidshadow{
+                -webkit-box-shadow: 10px 10px #000;
+                -moz-box-shadow: 10px 10px #000;
+            }
+            .blurshadow{
+                -webkit-box-shadow: 10px 10px 20px #000;
+                -moz-box-shadow: 10px 10px 20px #000;
+            }
+            .blurrrgbashadow{
+                -webkit-box-shadow: 10px 10px 20px rgba(200,0,0,0.8);
+                -moz-box-shadow: 10px 10px 20px rgba(200,0,0,0.8);
+            }
+            .twoshadow{
+                -webkit-box-shadow:
+                    10px 10px 20px rgba(200,0,0,0.5),
+                    -10px -10px 20px rgba(0,0,200,0.5);
+
+                -moz-box-shadow:
+                    10px 10px 20px rgba(200,0,0,0.5),
+                    -10px -10px 20px rgba(0,0,2000,0.5);
+            }
+            .innershadow{
+                -webkit-box-shadow: inset 0px 2px 4px rgba(0,0,0,0.4);
+                -moz-box-shadow: inset 0px 2px 4px rgba(0,0,0,0.4);
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+            }
+        </style>
+        <div style="overflow:auto">
+            <table class="shadow-props" width="100%" cellspacing="10px">
+                <tr>
+                    <td><h3>Example</h3></td>
+                    <td><h3>CSS Code</h3></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="solidshadow">Solid Shadow</div>
+                    </td>
+                    <td>
+                        <textarea>
+                            .solidshadow{
+                            -webkit-box-shadow: 10px 10px #000;
+                            -moz-box-shadow: 10px 10px #000;
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="blurshadow">Blurr Shadow</div>
+                    </td>
+                    <td>
+                        <textarea>
+                            .blurshadow{
+                            -webkit-box-shadow: 10px 10px 20px #000;
+                            -moz-box-shadow: 10px 10px 20px #000;
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="blurrrgbashadow">Blurr Shadow using rgba</div>
+                    </td>
+                    <td>
+                        <textarea>
+                            .blurrrgbashadow{
+                            -webkit-box-shadow: 10px 10px 20px rgba(200,0,0,0.8);
+                            -moz-box-shadow: 10px 10px 20px rgba(200,0,0,0.8);
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="twoshadow">Two Shadows</div>
+                    </td>
+                    <td>
+                        <textarea>
+                            .twoshadow{
+                            -webkit-box-shadow: 10px 10px 20px rgba(200,0,0,0.5),
+                            -10px -10px 20px rgba(0,0,200,0.5);
+                            -moz-box-shadow: 10px 10px 20px rgba(200,0,0,0.5),
+                            -10px -10px 20px rgba(0,0,2000,0.5);
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="innershadow">Inner Shadow</div>
+                    </td>
+                    <td>
+                        <textarea>
+                            .innershadow{
+                            -webkit-box-shadow: inset 0px 2px 4px rgba(0,0,0,0.4);
+                            -moz-box-shadow: inset 0px 2px 4px rgba(0,0,0,0.4);
+                            -webkit-border-radius: 5px;
+                            -moz-border-radius: 5px;
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+</article>
+
+<article class="tx">
+    <header>Gradient Properties</header>
+    <section>
+        <style>
+            .gradient-props div {
+                color: white;
+                padding: 10px;
+                height: 100px;
+            }
+
+            .gradient-props textarea {
+                width: 400px;
+                height: 100px;
+            }
+
+            .lineargradienthorz {
+                background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, from(#0099ff), to(#000));
+                background-image: -moz-linear-gradient(0% 100% 0deg, #0099ff, #000);
+            }
+
+            .lineargradientangle {
+                background-image: -webkit-gradient(linear, left top, right bottom, from(#0099ff), to(#000));
+                background-image: -moz-linear-gradient(left top 315deg, #0099ff, #000);
+            }
+
+            .radialgradient1 {
+                background-image: -webkit-gradient(radial, center center, 0, center center, 200, from(#0099FF), to(#000));
+                background-image: -moz-radial-gradient(center, circle closest-corner, #0099FF 0%, #000 100%);
+            }
+
+            .radialgradient2 {
+                background-image: -webkit-gradient(radial, center center, 0, 150 150, 200, from(#0099FF), to(#000));
+
+            }
+        </style>
+        <div>
+            <table class="gradient-props" width="100%">
+                <tr>
+                    <td><h3>Example</h3></td>
+                    <td><h3>CSS Code</h3></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lineargradienthorz">Linear Gradient</div>
+                    </td>
+                    <td>
+                        <textarea>.lineargradienthorz{
+                            background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, from(#0099ff), to(#000));
+                            background-image: -moz-linear-gradient(0% 100% 0deg, #0099ff, #000);
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lineargradientangle">Linear Gradient at angle</div>
+                    </td>
+                    <td>
+                        <textarea>.lineargradientangle{
+                            background-image: -webkit-gradient(linear, left top, right bottom, from(#0099ff), to(#000));
+                            background-image: -moz-linear-gradient(left top 315deg, #0099ff, #000);
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="radialgradient1">Radial Gradient</div>
+                    </td>
+                    <td>
+                        <textarea>.radialgradient1{
+                            background-image: -webkit-gradient(radial, center center, 0, center center, 200,
+                            from(#0099FF), to(#000));
+                            background-image: -moz-radial-gradient(center, circle closest-corner, #0099FF 0%, #000
+                            100%);
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="radialgradient2">Radial Gradient center</div>
+                    </td>
+                    <td>
+                        <textarea>.radialgradient2{
+                            background-image: -webkit-gradient(radial, center center, 0, 150 150, 200, from(#0099FF),
+                            to(#000));
+
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </section>
+</article>
+
+
+<article class="tx">
+    <header>Text Properties</header>
+    <section>
+        <style>
+            @font-face {
+                font-family: 'Junction';
+                src: url(Junction.otf);
+            }
+
+            .text-props div {
+                background:red;
+                color:white;
+                padding:10px;
+            }
+            .text-props textarea{
+                width:400px;
+                height:80px;
+            }
+            .textShadow{
+                text-shadow: 15px 15px 5px black;
+            }
+            .textInShadow {
+                color: #CCC;
+                text-shadow: 0px -1px 1px #000;
+            }
+            .textStroke {
+                color: #FFF;
+                text-shadow:
+                    -1px -1px 0 #CCC,
+                    1px -1px 0 #CCC,
+                    -2px  2px 0 #555,
+                    2px  2px 0 #555;
+            }
+            .textreflection{
+                -webkit-box-reflect: below -10px -webkit-gradient(
+                    linear,
+                    left top, left bottom,
+                    from(transparent),
+                    color-stop(0.2, transparent),
+                    to(rgba(255,255,255,0.5))
+                );
+            }
+            .webfont {
+                font-family: 'Junction';
+            }
+
+        </style>
+        <div>
+            <table class="text-props" width="100%">
+                <tr>
+                    <td><h3>Example</h3></td>
+                    <td><h3>CSS Code</h3></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1 class="textShadow">Text Shadow </h1>
+                    </td>
+                    <td>
+                        <textarea>
+                            .textShadow{
+                            text-shadow: 15px 15px 5px black;
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1 class="textInShadow">Text Inline Shadow </h1>
+                    </td>
+                    <td>
+                        <textarea>
+                            .textInShadow {
+                            color: #CCC;
+                            text-shadow: 0px -1px 1px #000;
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1 class="textStroke">Text Stroke</h1>
+                    </td>
+                    <td>
+                        <textarea>
+                            .textStroke {
+                            color: #FFF;
+                            text-shadow:
+                            -1px -1px 0 #CCC,
+                            1px -1px 0 #CCC,
+                            -2px  2px 0 #555,
+                            2px  2px 0 #555;
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1 class="textreflection">Text Reflection</h1>
+                    </td>
+                    <td>
+                        <textarea>
+                            .textreflection{
+                            -webkit-box-reflect: below -10px -webkit-gradient(
+                            linear,
+                            left top, left bottom,
+                            from(transparent),
+                            color-stop(0.2, transparent),
+                            to(rgba(255,255,255,0.5))
+                            );
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1 class="webfont">Web Fonts</h1>
+                    </td>
+                    <td>
+                        <textarea>
+                            @font-face {
+                            font-family: 'Junction';
+                            src: url(Junction.otf);
+                            }
+
+                            .webfont {
+                            font-family: 'Junction';
+                            }
+                        </textarea>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+</article>
+
 
 <article class="twoTxCol">
     <header>header 3</header>
