@@ -69,6 +69,7 @@
     margin:10px;
     text-align: left;
     font-size: 24pt;
+    word-wrap: break-word;
 }
 
 .slide-container .slide-strip article.twoTxCol section{

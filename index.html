@@ -925,38 +925,40 @@
         <style>
 
             .shadow-props div {
-                background:red;
-                color:white;
-                padding:10px;
+                background: red;
+                color: white;
+                padding: 10px;
             }
-            .shadow-props textarea{
-                width:600px;
-                height:80px;
+
+            .shadow-props textarea {
+                width: 600px;
+                height: 80px;
             }
-            .solidshadow{
+
+            .solidshadow {
                 -webkit-box-shadow: 10px 10px #000;
                 -moz-box-shadow: 10px 10px #000;
             }
-            .blurshadow{
+
+            .blurshadow {
                 -webkit-box-shadow: 10px 10px 20px #000;
                 -moz-box-shadow: 10px 10px 20px #000;
             }
-            .blurrrgbashadow{
-                -webkit-box-shadow: 10px 10px 20px rgba(200,0,0,0.8);
-                -moz-box-shadow: 10px 10px 20px rgba(200,0,0,0.8);
-            }
-            .twoshadow{
-                -webkit-box-shadow:
-                    10px 10px 20px rgba(200,0,0,0.5),
-                    -10px -10px 20px rgba(0,0,200,0.5);
 
-                -moz-box-shadow:
-                    10px 10px 20px rgba(200,0,0,0.5),
-                    -10px -10px 20px rgba(0,0,2000,0.5);
+            .blurrrgbashadow {
+                -webkit-box-shadow: 10px 10px 20px rgba(200, 0, 0, 0.8);
+                -moz-box-shadow: 10px 10px 20px rgba(200, 0, 0, 0.8);
             }
-            .innershadow{
-                -webkit-box-shadow: inset 0px 2px 4px rgba(0,0,0,0.4);
-                -moz-box-shadow: inset 0px 2px 4px rgba(0,0,0,0.4);
+
+            .twoshadow {
+                -webkit-box-shadow: 10px 10px 20px rgba(200, 0, 0, 0.5), -10px -10px 20px rgba(0, 0, 200, 0.5);
+
+                -moz-box-shadow: 10px 10px 20px rgba(200, 0, 0, 0.5), -10px -10px 20px rgba(0, 0, 2000, 0.5);
+            }
+
+            .innershadow {
+                -webkit-box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.4);
+                -moz-box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.4);
                 -webkit-border-radius: 5px;
                 -moz-border-radius: 5px;
             }
@@ -1150,38 +1152,34 @@
             }
 
             .text-props div {
-                background:red;
-                color:white;
-                padding:10px;
+                background: red;
+                color: white;
+                padding: 10px;
             }
-            .text-props textarea{
-                width:400px;
-                height:80px;
+
+            .text-props textarea {
+                width: 400px;
+                height: 80px;
             }
-            .textShadow{
+
+            .textShadow {
                 text-shadow: 15px 15px 5px black;
             }
+
             .textInShadow {
                 color: #CCC;
                 text-shadow: 0px -1px 1px #000;
             }
+
             .textStroke {
                 color: #FFF;
-                text-shadow:
-                    -1px -1px 0 #CCC,
-                    1px -1px 0 #CCC,
-                    -2px  2px 0 #555,
-                    2px  2px 0 #555;
+                text-shadow: -1px -1px 0 #CCC, 1px -1px 0 #CCC, -2px 2px 0 #555, 2px 2px 0 #555;
             }
-            .textreflection{
-                -webkit-box-reflect: below -10px -webkit-gradient(
-                    linear,
-                    left top, left bottom,
-                    from(transparent),
-                    color-stop(0.2, transparent),
-                    to(rgba(255,255,255,0.5))
-                );
+
+            .textreflection {
+                -webkit-box-reflect: below -10px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.2, transparent), to(rgba(255, 255, 255, 0.5)));
             }
+
             .webfont {
                 font-family: 'Junction';
             }
@@ -1229,8 +1227,8 @@
                             text-shadow:
                             -1px -1px 0 #CCC,
                             1px -1px 0 #CCC,
-                            -2px  2px 0 #555,
-                            2px  2px 0 #555;
+                            -2px 2px 0 #555,
+                            2px 2px 0 #555;
                             }
                         </textarea>
                     </td>
@@ -1274,7 +1272,77 @@
         </div>
     </section>
 </article>
+<article class="tx">
+    <header>Cors</header>
+    <section>
+        <h3>We will cover</h3>
+        <ul>
+            <li><h3>Single Origin Policy</h3></li>
+            <li><h3>Proxy Work around </h3></li>
+            <li><h3>JSONP Work around </h3></li>
+            <li><h3>CORS to rescue </h3></li>
+        </ul>
+    </section>
+</article>
+<article class="tx">
+    <header>Traditional Ajax Demo</header>
+    <section>
+        <h3>Traditional Ajax Request</h3>
+        <textarea id="traditional-url" rows="1" cols="80">http://html5-rohitghatol.rhcloud.com/traditional/capitalByCountry/India</textarea>
+        <button id="send-traditional">Ajax GET</button>
+        <div id="traditional-response"></div>
 
+        <script>
+            $(document).ready(function () {
+                $("#send-traditional").click(function () {
+                    $("#traditional-response").html("");
+                    var url = $("#traditional-url").val();
+                    var jqxhr = $.get(url, function (data) {
+                        $("#traditional-response").append("Got Response " + data.capital + "<br/>");
+                    })
+                    .error(function () {
+                        $("#traditional-response").append("Got Error for GET. This Origin is not allowed by Access-Control-Allow-Origin <br/>");
+                    })
+
+
+                })
+            });
+
+        </script>
+
+    </section>
+
+</article>
+<article class="tx">
+    <header>Cors Ajax Demo</header>
+    <section>
+        <h3>Cors Ajax Request</h3>
+        <textarea id="cors-url" rows="1"
+                  cols="80">http://html5-rohitghatol.rhcloud.com/cors/capitalByCountry/India</textarea>
+        <button id="send-cors">Ajax GET</button>
+        <div id="cors-response"></div>
+
+        <script>
+            $(document).ready(function () {
+                $("#send-cors").click(function () {
+                    $("#cors-response").html("");
+                    var url = $("#cors-url").val();
+                    var jqxhr = $.get(url, function (data) {
+                        $("#cors-response").append("Got Response " + data.capital + "<br/>");
+                    })
+                    .error(function () {
+                        $("#cors-response").append("Got Error for GET. This Origin is not allowed by Access-Control-Allow-Origin <br/>");
+                    })
+
+
+                })
+            });
+
+        </script>
+
+    </section>
+
+</article>
 
 <article class="twoTxCol">
     <header>header 3</header>
