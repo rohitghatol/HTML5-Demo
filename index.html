@@ -6,12 +6,26 @@
     <link rel="stylesheet" href="css/slide.css"/>
 </head>
 <body>
-<section class="toc">
+<section id="toc" class="toc">
     Table of Contents
-    <ul>
+    <ol>
 
-    </ul>
+    </ol>
 </section>
+
+<section id="help" class="help">
+    Help
+</section>
+
+<nav class="slide-controller">
+    <div class="prev-slide"></div>
+    <div id="toc-toggle" class="text">Table of Contents</div>
+    <div id="help-toggle" class="text">Help (?)</div>
+    <div class="next-slide"></div>
+</nav>
+
+
+
 <section class="slide-container">
 <div class="slide-strip">
 <article class="title">
@@ -1148,7 +1162,7 @@
         <style>
             @font-face {
                 font-family: 'Junction';
-                src: url(Junction.otf);
+                src: url(fonts/Junction.otf);
             }
 
             .text-props div {
@@ -1272,6 +1286,31 @@
         </div>
     </section>
 </article>
+<article class="tx">
+    <header>CSS Transforms</header>
+    <section>
+           TBD
+    </section>
+</article>
+<article class="tx">
+    <header>CSS Transitions</header>
+    <section>
+        TBD
+    </section>
+</article>
+<article class="tx">
+    <header>CSS Animations</header>
+        <section>
+            TBD
+        </section>
+</article>
+<article class="tx">
+    <header>CSS Advanced Demos</header>
+    <section>
+        TBD
+    </section>
+</article>
+
 <article class="tx">
     <header>APIs</header>
     <section>
@@ -1422,9 +1461,6 @@
 
 </div>
 </section>
-<nav class="slide-controller">
-    <div class="prev-slide"></div>
-    <div class="next-slide"></div>
-</nav>
+
 </body>
 </html>

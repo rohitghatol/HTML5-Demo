@@ -2,13 +2,23 @@ $(document).ready(function() {
 
     $(".slide-strip>article").each(function(num,elem){
         var title = $(elem).find('header').html();
-        $(".toc>ul").append("<li><a href='#"+title+"'>"+title+"</a></li>");
+        $(".toc>ol").append("<li><a href='#"+title+"'>"+title+"</a></li>");
     });
 
     localStorage.slideNo = parseInt(1);
     localStorage.totalSlides = parseInt($(".slide-strip>article").length);
 
-    $(".slide-strip").css("width",localStorage.totalSlides*800 + "px");
+    $(".slide-strip").css("width",parseInt(localStorage.totalSlides*window.innerWidth) + "px");
+
+    $(".slide-strip>article").css("width",window.innerWidth+"px");
+
+    $("#toc-toggle").click(function(){
+        $("#toc").toggleClass("toc-shown");
+    });
+
+    $("#help-toggle").click(function(){
+        $("#help").toggleClass("help-shown");
+    });
 
     $(".prev-slide").click(function(){
         goLeft();
