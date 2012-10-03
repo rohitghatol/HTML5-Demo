@@ -1328,8 +1328,16 @@
                 <td><input id="scaleY" type="range" min="0" max="100" value="100"/></td>
             </tr>
             <tr>
-                <td>Rotate</td>
-                <td><input id="rotate" type="range" min="0" max="360" value="0"/></td>
+                <td>Rotate X</td>
+                <td><input id="rotateX" type="range" min="0" max="360" value="0"/></td>
+            </tr>
+            <tr>
+                <td>Rotate Y</td>
+                <td><input id="rotateY" type="range" min="0" max="360" value="0"/></td>
+            </tr>
+            <tr>
+                <td>Rotate Z</td>
+                <td><input id="rotateZ" type="range" min="0" max="360" value="0"/></td>
             </tr>
             <tr>
                 <td>Translate X</td>
@@ -1351,7 +1359,9 @@
         var skew = 0;
         var scaleX=1;
         var scaleY=1;
-        var rotate=0;
+        var rotateX=0;
+        var rotateY=0;
+        var rotateZ=0;
         var translateX=0;
         var translateY=0;
 
@@ -1372,9 +1382,19 @@
                 console.log("Y Scaled to "+scaleY);
                 applyTransform();
             });
-            $("#rotate").change(function (event) {
-                console.log("Rotated to "+rotate);
-                rotate = $(event.target).val();
+            $("#rotateX").change(function (event) {
+                console.log("Rotated X to "+rotateX);
+                rotateX = $(event.target).val();
+                applyTransform();
+            });
+            $("#rotateY").change(function (event) {
+                console.log("Rotated Y to "+rotateY);
+                rotateY = $(event.target).val();
+                applyTransform();
+            });
+            $("#rotateZ").change(function (event) {
+                console.log("Rotated Z to "+rotateZ);
+                rotateZ = $(event.target).val();
                 applyTransform();
             });
             $("#translateX").change(function (event) {
@@ -1392,12 +1412,14 @@
 
         });
         function applyTransform(){
-            $("#test-div").css("-webkit-transform","skew("+skew+"deg) scale("+scaleX+","+scaleY+") rotate("+rotate+"deg) translate("+translateX+"px,"+translateY+"px)");
+            $("#test-div").css("-webkit-transform","skew("+skew+"deg) scale("+scaleX+","+scaleY+") rotateX("+rotateX+"deg) rotateY("+rotateY+"deg) rotateZ("+rotateZ+"deg) translate("+translateX+"px,"+translateY+"px)");
 
             $("#css-transform-text").html("");
             $("#css-transform-text").append("-webkit-transform : skew("+skew+"deg)<br/>")
             $("#css-transform-text").append("-webkit-transform : scale("+scaleX+","+scaleY+")<br/>")
-            $("#css-transform-text").append("-webkit-transform : rotate("+rotate+"deg)<br/>")
+            $("#css-transform-text").append("-webkit-transform : rotateX("+rotateX+"deg)<br/>")
+            $("#css-transform-text").append("-webkit-transform : rotateY("+rotateY+"deg)<br/>")
+            $("#css-transform-text").append("-webkit-transform : rotateZ("+rotateZ+"deg)<br/>")
             $("#css-transform-text").append("-webkit-transform : translate("+translateX+"px,"+translateY+"px)<br/>")
         }
     </script>
