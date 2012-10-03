@@ -69,6 +69,6 @@ function goRight(){
 
 function moveTo(index){
     localStorage.slideNo = index;
-    var newX =  - ( index * 800) ;
+    var newX =  - ( index * $(document).width()) ;
     $(".slide-strip").css("-webkit-transform","translate("+newX+"px,0px)");
 }
