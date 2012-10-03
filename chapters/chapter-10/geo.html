@@ -38,7 +38,7 @@
        });
     }
     function error(errorMsg){
-      map_canvas.innerHTML="<div style='color:red'>"+errorMsg+"</div>";
+      map_canvas.innerHTML="<div style='color:red'>"+errorMsg.message+"</div>";
     }
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(success, error);

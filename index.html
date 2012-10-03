@@ -1459,7 +1459,8 @@
 <pre id="main-js">
 var worker = new Worker('worker.js');
 
-fibocanniWorkerButton.addEventListener("click",function(){
+button.addEventListener("click",
+function(){
     outputElem.innerHTML = "Calculating....";
     var index = indexElem.value;
     worker.postMessage(index);
@@ -1670,7 +1671,76 @@ addEventListener('message', function(e){
         </script>
     </section>
 </article>
+<article class="twoTxCol">
+    <header>Geo & Device Sensor</header>
+    <section>
+        <h1>Map Demo using geo location</h1>
+        <div id="map_canvas"></div>
+        <script>
+            var map_canvas = document.getElementById("map_canvas");
+            function success(position){
 
+                var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+                var myOptions = {
+                    zoom: 15,
+                    center: latlng,
+                    mapTypeControl: false,
+                    navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(map_canvas, myOptions);
+
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    title:"You are here!"
+                });
+            }
+            function error(errorMsg){
+                map_canvas.innerHTML="<div style='color:red'>"+errorMsg.message+"</div>";
+            }
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(success, error);
+            } else {
+                error('not supported');
+            }
+        </script>
+    </section>
+    <section>
+        <style>
+            #iphone{
+                margin-left:250px;
+            }
+        </style>
+        <h1>Device Orientation Demo</h1>
+        <table border="1">
+            <tr>
+                <td>Alpha</td><td><div id="alpha">..</div></td>
+            </tr>
+            <tr>
+                <td>Beta</td><td><div id="beta"></div></td>
+            </tr>
+            <tr>
+                <td>Gamma</td><td><div id="gamma"></div></td>
+            </tr>
+
+        </table>
+        <img id="iphone" src="images/iphone.gif"></img>
+        <script>
+            var iphone = document.getElementById("iphone");
+            window.addEventListener("deviceorientation",function(event){
+                document.getElementById("alpha").innerHTML = event.alpha;
+                document.getElementById("beta").innerHTML  = event.beta;
+                document.getElementById("gamma").innerHTML = event.gamma;
+                var rotate = 'rotate(' + event.gamma*-1 + 'deg)';
+                var scale = 'scale(' + ((event.beta/180)*2 + 1) + ')';
+                iphone.style.webkitTransform = rotate + ' ' + scale;
+
+            });
+        </script>
+    </section>
+</article>
 <article class="twoTxCol">
     <header>header 3</header>
     <section>
