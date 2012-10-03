@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f33eceb-b3d0-4bdf-9334-fd5e0744b5af" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chapters/chapter-10/geo.html" afterPath="$PROJECT_DIR$/chapters/chapter-10/geo.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="HTML5-Demo.base.iws" />
@@ -26,7 +25,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1700" column="79" selection-start="59820" selection-end="59820" vertical-scroll-proportion="0.5488722">
+            <state line="10" column="75" selection-start="361" selection-end="361" vertical-scroll-proportion="0.45112783">
               <folding>
                 <element signature="n#style#0;n#canvas#0;n#section#1;n#article#17;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#rect#0;n#svg#0;n#section#0;n#article#18;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -40,7 +39,7 @@
                 <element signature="n#style#0;n#div#0;n#pre#0;n#section#0;n#article#19;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#section#0;n#article#22;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#canvas#0;n#section#0;n#article#35;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1349258382000" expanded="true" signature="59791:59800" placeholder="..." />
+                <marker date="1349258478000" expanded="true" signature="59867:59876" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -58,7 +57,7 @@
       <file leaf-file-name="geo.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chapters/chapter-10/geo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="69" selection-start="1098" selection-end="1105" vertical-scroll-proportion="-11.090909">
+            <state line="12" column="95" selection-start="208" selection-end="279" vertical-scroll-proportion="-8.727273">
               <folding>
                 <marker date="1349258277000" expanded="false" signature="1076:1085" placeholder="..." />
               </folding>
@@ -511,7 +510,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chapters/chapter-10/geo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="69" selection-start="1098" selection-end="1105" vertical-scroll-proportion="-11.090909">
+        <state line="12" column="95" selection-start="208" selection-end="279" vertical-scroll-proportion="-8.727273">
           <folding>
             <marker date="1349258277000" expanded="false" signature="1076:1085" placeholder="..." />
           </folding>
@@ -520,7 +519,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1700" column="79" selection-start="59820" selection-end="59820" vertical-scroll-proportion="0.5488722">
+        <state line="10" column="75" selection-start="361" selection-end="361" vertical-scroll-proportion="0.45112783">
           <folding>
             <element signature="n#style#0;n#canvas#0;n#section#1;n#article#17;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#rect#0;n#svg#0;n#section#0;n#article#18;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -534,7 +533,7 @@
             <element signature="n#style#0;n#div#0;n#pre#0;n#section#0;n#article#19;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#section#0;n#article#22;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#canvas#0;n#section#0;n#article#35;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1349258382000" expanded="true" signature="59791:59800" placeholder="..." />
+            <marker date="1349258478000" expanded="true" signature="59867:59876" placeholder="..." />
           </folding>
         </state>
       </provider>
