@@ -35,25 +35,29 @@ $(document).ready(function() {
 
     $(document).keydown(function(e){
         if (e.keyCode == 37) {
+            console.log("Left Arrow Key Press");
             goLeft();
             return false;
         }
         else if(e.keyCode == 39) {
+            console.log("Right Arrow Key Press");
             goRight();
             return false;
         }
         else if(e.keyCode == 38) {
+            console.log("Up Arrow Key Press");
             moveTo(0);
             return false;
         }
         else if(e.keyCode == 40) {
+            console.log("Down Arrow Key Press");
             moveTo(localStorage.totalSlides - 1)
             return false;
         }
 
     });
 
-
+    console.log("HTML5 Presentation JavaScript Loaded");
 
 });
 
@@ -69,6 +73,8 @@ function goRight(){
 
 function moveTo(index){
     localStorage.slideNo = index;
-    var newX =  - ( index * $(document).width()) ;
+    var newX =  - ( index * $(".slide-strip>article").width()) ;
     $(".slide-strip").css("-webkit-transform","translate("+newX+"px,0px)");
+    $(".slide-strip").css("-moz-transform","translate("+newX+"px,0px)");
+    $(".slide-strip").css("-o-transform","translate("+newX+"px,0px)");
 }
