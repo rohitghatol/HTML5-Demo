@@ -32,7 +32,6 @@
 </nav>
 
 
-
 <section class="slide-container">
 <div class="slide-strip">
 <article class="title">
@@ -1293,11 +1292,116 @@
         </div>
     </section>
 </article>
-<article class="tx">
+<article class="twoTxCol">
     <header>CSS Transforms</header>
+    <style>
+        #test-div {
+            border: 1px solid red;
+            background: yellow;
+            width:300px;
+            height:400px;
+            padding:20px;
+
+        }
+
+        #css-transform-text {
+            border: 1px solid blue;
+            background: white;
+            width:500px;
+            height:200px;
+        }
+    </style>
+
+
     <section>
-           TBD
+        <table>
+            <tr>
+                <td>Skew</td>
+                <td><input id="skew" type="range" min="0" max="360" value="0"/></td>
+            </tr>
+            <tr>
+                <td>Scale X</td>
+                <td><input id="scaleX" type="range" min="0" max="100" value="100"/></td>
+            </tr>
+            <tr>
+                <td>Scale Y</td>
+                <td><input id="scaleY" type="range" min="0" max="100" value="100"/></td>
+            </tr>
+            <tr>
+                <td>Rotate</td>
+                <td><input id="rotate" type="range" min="0" max="360" value="0"/></td>
+            </tr>
+            <tr>
+                <td>Translate X</td>
+                <td><input id="translateX" type="range" min="0" max="100" value="0"/></td>
+            </tr>
+            <tr>
+                <td>Translate Y</td>
+                <td><input id="translateY" type="range" min="0" max="100" value="0"/></td>
+            </tr>
+        </table>
+        <div id="css-transform-text"></div>
     </section>
+    <section>
+        <div id="test-div">
+            This is a div, which will be modified using CSS 3 Transforms (2D & 3D)
+        </div>
+    </section>
+    <script>
+        var skew = 0;
+        var scaleX=1;
+        var scaleY=1;
+        var rotate=0;
+        var translateX=0;
+        var translateY=0;
+
+        $(document).ready(function () {
+
+            $("#skew").change(function (event) {
+                skew = $(event.target).val() ;
+                console.log("Skewed to "+skew);
+                applyTransform();
+            });
+            $("#scaleX").change(function (event) {
+                scaleX = parseFloat($(event.target).val()/100);
+                console.log("X Scaled to "+scaleX);
+                applyTransform();
+            });
+            $("#scaleY").change(function (event) {
+                scaleY = parseFloat($(event.target).val()/100);
+                console.log("Y Scaled to "+scaleY);
+                applyTransform();
+            });
+            $("#rotate").change(function (event) {
+                console.log("Rotated to "+rotate);
+                rotate = $(event.target).val();
+                applyTransform();
+            });
+            $("#translateX").change(function (event) {
+                translateX = $(event.target).val();
+                console.log("X Translated to "+translateX);
+                applyTransform();
+            });
+            $("#translateY").change(function (event) {
+                translateY = $(event.target).val();
+                console.log("Y Translated to "+translateY);
+                applyTransform();
+            });
+
+
+
+        });
+        function applyTransform(){
+            $("#test-div").css("-webkit-transform","skew("+skew+"deg) scale("+scaleX+","+scaleY+") rotate("+rotate+"deg) translate("+translateX+"px,"+translateY+"px)");
+
+            $("#css-transform-text").html("");
+            $("#css-transform-text").append("-webkit-transform : skew("+skew+"deg)<br/>")
+            $("#css-transform-text").append("-webkit-transform : scale("+scaleX+","+scaleY+")<br/>")
+            $("#css-transform-text").append("-webkit-transform : rotate("+rotate+"deg)<br/>")
+            $("#css-transform-text").append("-webkit-transform : translate("+translateX+"px,"+translateY+"px)<br/>")
+        }
+    </script>
+
 </article>
 <article class="tx">
     <header>CSS Transitions</header>
@@ -1307,9 +1411,9 @@
 </article>
 <article class="tx">
     <header>CSS Animations</header>
-        <section>
-            TBD
-        </section>
+    <section>
+        TBD
+    </section>
 </article>
 <article class="tx">
     <header>CSS Advanced Demos</header>
@@ -1349,8 +1453,8 @@
     <header>Traditional Ajax Demo</header>
     <section>
         <style>
-            #traditional-response,#send-traditional,#traditional-url{
-                font-size:24pt;
+            #traditional-response, #send-traditional, #traditional-url {
+                font-size: 24pt;
             }
 
         </style>
@@ -1367,9 +1471,9 @@
                     var jqxhr = $.get(url, function (data) {
                         $("#traditional-response").append("Got Response " + data.capital + "<br/>");
                     })
-                    .error(function () {
-                        $("#traditional-response").append("Got Error for GET. This Origin is not allowed by Access-Control-Allow-Origin <br/>");
-                    })
+                            .error(function () {
+                                $("#traditional-response").append("Got Error for GET. This Origin is not allowed by Access-Control-Allow-Origin <br/>");
+                            })
 
 
                 })
@@ -1384,8 +1488,8 @@
     <header>Cors Ajax Demo</header>
     <section>
         <style>
-            #cors-response,#send-cors, #cors-url{
-                font-size:24pt;
+            #cors-response, #send-cors, #cors-url {
+                font-size: 24pt;
             }
 
         </style>
@@ -1404,9 +1508,9 @@
                     var jqxhr = $.get(url, function (data) {
                         $("#cors-response").append("Got Response " + data.capital + "<br/>");
                     })
-                    .error(function () {
-                        $("#cors-response").append("Got Error for GET. This Origin is not allowed by Access-Control-Allow-Origin <br/>");
-                    })
+                            .error(function () {
+                                $("#cors-response").append("Got Error for GET. This Origin is not allowed by Access-Control-Allow-Origin <br/>");
+                            })
 
 
                 })
@@ -1442,12 +1546,18 @@
                 <td><input type="text" id="index" value="40"></input></td>
             </tr>
             <tr>
-                <td>Fibocanni Number is </td>
-                <td><div id="output"></div></td>
+                <td>Fibocanni Number is</td>
+                <td>
+                    <div id="output"></div>
+                </td>
             </tr>
             <tr>
-                <td><button id="fibocanni">Fibonacci</button></td>
-                <td><button id="fibocanniWorker">Fibonacci Worker</button></td>
+                <td>
+                    <button id="fibocanni">Fibonacci</button>
+                </td>
+                <td>
+                    <button id="fibocanniWorker">Fibonacci Worker</button>
+                </td>
             </tr>
             <tr>
             </tr>
@@ -1483,7 +1593,7 @@ addEventListener('message', function(e){
   postMessage(result);
 })
 </pre>
-                </div>
+            </div>
 
 
         </div>
@@ -1492,40 +1602,40 @@ addEventListener('message', function(e){
         var canvas = document.getElementById("canvas8");
         var ctx = canvas.getContext("2d");
         ctx.fillStyle = "#000000";
-        var ballX=100, ballY=200;
-        var radius=20;
-        var xInc=10;
-        var yInc=10;
-        setInterval(gameLoop,10);
+        var ballX = 100, ballY = 200;
+        var radius = 20;
+        var xInc = 10;
+        var yInc = 10;
+        setInterval(gameLoop, 10);
 
-        function gameLoop(){
+        function gameLoop() {
             advanceBall();
             clearCanvas();
             drawBall();
         }
 
-        function advanceBall(){
-            ballX+=xInc;
-            ballY+=yInc;
-            if((ballX+radius)>canvas.width){
-                xInc = (-1)*xInc;
+        function advanceBall() {
+            ballX += xInc;
+            ballY += yInc;
+            if ((ballX + radius) > canvas.width) {
+                xInc = (-1) * xInc;
             }
-            if((ballX-radius)<0){
-                xInc = (-1)*xInc;
+            if ((ballX - radius) < 0) {
+                xInc = (-1) * xInc;
             }
-            if((ballY+radius)>canvas.height){
-                yInc = (-1)*yInc;
+            if ((ballY + radius) > canvas.height) {
+                yInc = (-1) * yInc;
             }
-            if((ballY-radius)<0){
-                yInc = (-1)*yInc;
+            if ((ballY - radius) < 0) {
+                yInc = (-1) * yInc;
             }
         }
-        function clearCanvas(){
-            ctx.clearRect(0,0,canvas.width,canvas.height);
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
-        function drawBall(){
+        function drawBall() {
             ctx.beginPath();
-            ctx.arc(ballX, ballY, radius, 0, Math.PI*2, true);
+            ctx.arc(ballX, ballY, radius, 0, Math.PI * 2, true);
             ctx.closePath();
             ctx.fill();
         }
@@ -1539,21 +1649,21 @@ addEventListener('message', function(e){
         var fibocanniWorkerButton = document.getElementById("fibocanniWorker");
 
 
-        fibocanniButton.addEventListener("click",function(){
+        fibocanniButton.addEventListener("click", function () {
             outputElem.innerHTML = "Calculating....";
             var index = indexElem.value;
             var output = fibonacci(index);
             outputElem.innerHTML = output;
         });
 
-        fibocanniWorkerButton.addEventListener("click",function(){
+        fibocanniWorkerButton.addEventListener("click", function () {
             outputElem.innerHTML = "Calculating....";
             var index = indexElem.value;
             worker.postMessage(index);
         });
         var worker = new Worker('js/worker.js');
-        worker.addEventListener('message', function(e){
-            outputElem.innerHTML=e.data;
+        worker.addEventListener('message', function (e) {
+            outputElem.innerHTML = e.data;
         });
 
 
@@ -1570,29 +1680,32 @@ addEventListener('message', function(e){
     <header>Offline Access</header>
     <section>
         <style>
-            .website{
-                margin-left:auto;
-                margin-right:auto;
-                left:0px;
-                right:0px;
-                border:1px solid black;
-                width:600px;
-                height:400px;
+            .website {
+                margin-left: auto;
+                margin-right: auto;
+                left: 0px;
+                right: 0px;
+                border: 1px solid black;
+                width: 600px;
+                height: 400px;
             }
-            .website .address-bar{
-                border:1px solid black;
-                width:600px;
-                height:30px;
-                background:#AAA;
+
+            .website .address-bar {
+                border: 1px solid black;
+                width: 600px;
+                height: 30px;
+                background: #AAA;
             }
-            .website .browser-body{
-                padding:20px;
-                border:1px solid black;
-                width:600px;
-                height:370px;
-                background:white;
+
+            .website .browser-body {
+                padding: 20px;
+                border: 1px solid black;
+                width: 600px;
+                height: 370px;
+                background: white;
 
             }
+
             @-webkit-keyframes laughout {
                 0% {
                     -webkit-transform: rotate(0deg)
@@ -1614,16 +1727,16 @@ addEventListener('message', function(e){
                 }
             }
 
-
-            .website .browser-body img{
-                margin:10px;
+            .website .browser-body img {
+                margin: 10px;
                 -webkit-animation-name: laughout;
                 -webkit-animation-duration: 2s;
                 -webkit-animation-iteration-count: infinite;
             }
         </style>
         <h1>Rajnikant Web Site</h1>
-        <div id="offline" >
+
+        <div id="offline">
             <div class="website">
                 <div class="address-bar">Address: http://rajnikanth.com</div>
                 <div class="browser-body">
@@ -1639,31 +1752,32 @@ addEventListener('message', function(e){
                 <div class="address-bar">Address: http://rajnikanth.com</div>
                 <div class="browser-body">
                     <h1>Yanna!! Rascala!! Trying to find me Online!!</h1>
+
                     <h1>Go Offline!! I tell you!! </h1>
                 </div>
             </div>
 
         </div>
         <script>
-            function goOffline(){
+            function goOffline() {
                 $("#offline").show();
                 $("#online").hide();
             }
-            function goOnline(){
+            function goOnline() {
                 $("#offline").hide();
                 $("#online").show();
             }
-            if(navigator.onLine){
-                 goOnline();
+            if (navigator.onLine) {
+                goOnline();
             }
-            else{
+            else {
                 goOffline();
             }
-            window.addEventListener("offline", function(e) {
+            window.addEventListener("offline", function (e) {
                 goOffline();
             }, false);
 
-            window.addEventListener("online", function(e) {
+            window.addEventListener("online", function (e) {
                 goOnline();
 
             }, false);
@@ -1675,38 +1789,39 @@ addEventListener('message', function(e){
     <header>Geo & Device Sensor</header>
     <section>
         <style>
-            #map_canvas{
-                width:300px;
-                height:200px;
-                border:1px solid blue;
-                padding:100px;
+            #map_canvas {
+                width: 300px;
+                height: 200px;
+                border: 1px solid blue;
+                padding: 100px;
             }
         </style>
         <h1>Map Demo using geo location</h1>
+
         <div id="map_canvas"></div>
         <script>
             var map_canvas = document.getElementById("map_canvas");
-            function success(position){
+            function success(position) {
 
                 var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
                 var myOptions = {
-                    zoom: 15,
-                    center: latlng,
-                    mapTypeControl: false,
-                    navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                    zoom:15,
+                    center:latlng,
+                    mapTypeControl:false,
+                    navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL},
+                    mapTypeId:google.maps.MapTypeId.ROADMAP
                 };
                 var map = new google.maps.Map(map_canvas, myOptions);
 
                 var marker = new google.maps.Marker({
-                    position: latlng,
-                    map: map,
+                    position:latlng,
+                    map:map,
                     title:"You are here!"
                 });
             }
-            function error(errorMsg){
-                map_canvas.innerHTML="<div style='color:red'>"+errorMsg.message+"</div>";
+            function error(errorMsg) {
+                map_canvas.innerHTML = "<div style='color:red'>" + errorMsg.message + "</div>";
             }
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(success, error);
@@ -1717,32 +1832,41 @@ addEventListener('message', function(e){
     </section>
     <section>
         <style>
-            #iphone{
-                margin-left:250px;
+            #iphone {
+                margin-left: 250px;
             }
         </style>
         <h1>Device Orientation Demo</h1>
         <table border="1">
             <tr>
-                <td>Alpha</td><td><div id="alpha">..</div></td>
+                <td>Alpha</td>
+                <td>
+                    <div id="alpha">..</div>
+                </td>
             </tr>
             <tr>
-                <td>Beta</td><td><div id="beta"></div></td>
+                <td>Beta</td>
+                <td>
+                    <div id="beta"></div>
+                </td>
             </tr>
             <tr>
-                <td>Gamma</td><td><div id="gamma"></div></td>
+                <td>Gamma</td>
+                <td>
+                    <div id="gamma"></div>
+                </td>
             </tr>
 
         </table>
         <img id="iphone" src="images/iphone.gif"></img>
         <script>
             var iphone = document.getElementById("iphone");
-            window.addEventListener("deviceorientation",function(event){
+            window.addEventListener("deviceorientation", function (event) {
                 document.getElementById("alpha").innerHTML = event.alpha;
-                document.getElementById("beta").innerHTML  = event.beta;
+                document.getElementById("beta").innerHTML = event.beta;
                 document.getElementById("gamma").innerHTML = event.gamma;
-                var rotate = 'rotate(' + event.gamma*-1 + 'deg)';
-                var scale = 'scale(' + ((event.beta/180)*2 + 1) + ')';
+                var rotate = 'rotate(' + event.gamma * -1 + 'deg)';
+                var scale = 'scale(' + ((event.beta / 180) * 2 + 1) + ')';
                 iphone.style.webkitTransform = rotate + ' ' + scale;
 
             });
@@ -1751,361 +1875,366 @@ addEventListener('message', function(e){
 </article>
 
 <article class="tx">
-    <header>FileSystem & Drag and Drop</header>
-    <section>
-        <style>
-            input {
-                width: 400px;
-            }
+<header>FileSystem & Drag and Drop</header>
+<section>
+<style>
+    input {
+        width: 400px;
+    }
 
-            #dropbox {
-                width: 300px;
-                height: 400px;
-                background: #77FFFF;
-                border: 1px solid blue;
-                font-size:20pt;
-            }
+    #dropbox {
+        width: 300px;
+        height: 400px;
+        background: #77FFFF;
+        border: 1px solid blue;
+        font-size: 20pt;
+    }
 
-            #commandHistory {
-                width: 500px;
-                height: 400px;
-                background: #FFFF77;
-                border: 1px dotted red;
-                font-size:20pt;
-            }
-            #command{
-                font-size:20pt;
-            }
-            #submit{
-                font-size:20pt;
-            }
-            #instructions{
-                background: white;
-                border-radius: 2px;
-            }
-        </style>
-        <h1>File System Shell with Drag and Drop</h1>
-        <p id="instructions">Run Chrome with argments:  --args  --unlimited-quota-for-files --allow-file-access-from-files</p>
-        <table>
-            <tr>
-                <td>
-                    <input type="text" id="command"></input>
-                    <button id="submit">Execute</button>
-                </td>
-                <td>
-                    Drag and Drop files below
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div id="commandHistory"></div>
-                </td>
-                <td>
-                    <div id="dropbox"></div>
-                </td>
-            </tr>
-        </table>
+    #commandHistory {
+        width: 500px;
+        height: 400px;
+        background: #FFFF77;
+        border: 1px dotted red;
+        font-size: 20pt;
+    }
 
-        <script>
-        try {
+    #command {
+        font-size: 20pt;
+    }
 
-            var commandPrompt = document.getElementById("command");
-            var submitButton = document.getElementById("submit");
-            var commandHistory = document.getElementById("commandHistory");
-            var dropbox = document.getElementById("dropbox");
+    #submit {
+        font-size: 20pt;
+    }
 
+    #instructions {
+        background: white;
+        border-radius: 2px;
+    }
+</style>
+<h1>File System Shell with Drag and Drop</h1>
 
+<p id="instructions">Run Chrome with argments: --args --unlimited-quota-for-files --allow-file-access-from-files</p>
+<table>
+    <tr>
+        <td>
+            <input type="text" id="command"></input>
+            <button id="submit">Execute</button>
+        </td>
+        <td>
+            Drag and Drop files below
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="commandHistory"></div>
+        </td>
+        <td>
+            <div id="dropbox"></div>
+        </td>
+    </tr>
+</table>
 
-            var currentDir = "/";
-            var fileSys = null;
+<script>
+try {
 
-            commandPrompt.addEventListener("change", onCommand, false);
-            submitButton.addEventListener("click", onCommand, false);
-            function log(message) {
-                commandHistory.innerHTML = commandHistory.innerHTML + "<br>" + message;
-            }
-
-            function logDnd(message) {
-                dropbox.innerHTML = dropbox.innerHTML + "<br>" + message;
-            }
-
-            function dragEnter(evt) {
-                evt.stopPropagation();
-                evt.preventDefault();
-            }
-
-            function dragExit(evt) {
-                evt.stopPropagation();
-                evt.preventDefault();
-            }
-
-            function dragOver(evt) {
-                evt.stopPropagation();
-                evt.preventDefault();
-            }
-
-            function drop(event) {
-                event.stopPropagation();
-                event.preventDefault();
+    var commandPrompt = document.getElementById("command");
+    var submitButton = document.getElementById("submit");
+    var commandHistory = document.getElementById("commandHistory");
+    var dropbox = document.getElementById("dropbox");
 
 
-                clearDnd();
-                if (event.dataTransfer.files) {
-                    var files = event.dataTransfer.files;
-                    for (var index = 0; index < files.length; index++) {
-                        var file = files[index];
-                        var fileName = "";
-                        if (currentDir == "/") {
-                            fileName = currentDir + file.name;
-                        }
-                        else {
-                            fileName = currentDir + "/" + file.name;
-                        }
+    var currentDir = "/";
+    var fileSys = null;
 
-                        var reader = new FileReader();
+    commandPrompt.addEventListener("change", onCommand, false);
+    submitButton.addEventListener("click", onCommand, false);
+    function log(message) {
+        commandHistory.innerHTML = commandHistory.innerHTML + "<br>" + message;
+    }
 
-                        // init the reader event handlers
-                        reader.onloadend = function (event) {
-                            console.log("1");
-                            console.dir(fileSys);
-                            fileSys.root.getFile(fileName, {create:true}, function (fileEntry) {
+    function logDnd(message) {
+        dropbox.innerHTML = dropbox.innerHTML + "<br>" + message;
+    }
 
-                                // Create a FileWriter object for our FileEntry (log.txt).
-                                fileEntry.createWriter(function (fileWriter) {
+    function dragEnter(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+    }
 
-                                    fileWriter.onwriteend = function (e) {
-                                        console.log('Write completed.');
-                                        logDnd(fileName);
-                                    };
+    function dragExit(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+    }
 
-                                    fileWriter.onerror = function (e) {
-                                        console.log('Write failed: ' + e.toString());
-                                    };
+    function dragOver(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+    }
 
-                                    // Create a new Blob and write it to log.txt.
-                                    var bb = new window.WebKitBlobBuilder();
-                                    bb.append(event.target.result);
-                                    fileWriter.write(bb.getBlob('text/plain'));
+    function drop(event) {
+        event.stopPropagation();
+        event.preventDefault();
 
-                                }, errorHandler);
-                            }, function(err){
-                                console.dir(err);
-                            });
-                        };
-                        // begin the read operation
-                        reader.readAsDataURL(files[index]);
-                    }
-                }
-            }
 
-            dropbox.addEventListener("dragenter", dragEnter, false);
-            dropbox.addEventListener("dragexit", dragExit, false);
-            dropbox.addEventListener("dragover", dragOver, false);
-
-            dropbox.addEventListener("drop", drop, true);
-
-            function clear() {
-                commandHistory.innerHTML = "";
-            }
-
-            function clearDnd() {
-                dropbox.innerHTML = "";
-            }
-
-            function listFiles(entries) {
-                for (var index = 0; index < entries.length; index++) {
-                    var isFile = entries[index].isFile;
-                    var fileName = entries[index].name;
-                    var htmlEntry = "<span style='color:" + (isFile ? 'red' : 'blue') + "'>" + fileName + "</span>";
-                    log(htmlEntry);
-                }
-            }
-
-            function onCommand() {
-                var txt = commandPrompt.value;
-                commandPrompt.value = "";
-                var txtArgs = txt.split(" ");
-                command = txtArgs[0];
-                if (txtArgs.length > 1) {
-                    txtArgs.shift();
-                    arguments = txtArgs;
-                }
-                else {
-                    arguments = null;
-                }
-                routeCommand(command, arguments);
-            }
-
-            function handlePwd() {
-                log("$>pwd");
-                log(currentDir);
-                log("$>");
-            }
-
-            function handleCd(arguments) {
-                var targetDir = "";
+        clearDnd();
+        if (event.dataTransfer.files) {
+            var files = event.dataTransfer.files;
+            for (var index = 0; index < files.length; index++) {
+                var file = files[index];
+                var fileName = "";
                 if (currentDir == "/") {
-                    targetDir = currentDir
+                    fileName = currentDir + file.name;
                 }
                 else {
-                    targetDir = currentDir + "/";
+                    fileName = currentDir + "/" + file.name;
                 }
 
-                if (arguments) {
-                    log("$>cd " + arguments[0]);
-                    if (arguments[0] == "/") {
-                        targetDir = "/";
-                    }
-                    else if (arguments[0] == "..") {
-                        var arr = currentDir.split("/");
-                        if (arr.length > 1) {
-                            arr.pop();
-                            targetDir = arr.join("/");
-                        }
-                        else {
-                            targetDir = targetDir + arguments[0];
-                        }
-                    }
-                    else {
-                        targetDir = targetDir + arguments[0];
-                    }
-                }
-                else {
-                    log("$>cd ");
-                    targetDir = "/";
-                }
+                var reader = new FileReader();
 
-                fileSys.root.getDirectory(targetDir, {},
-                        function (dirEntry) {
-                            currentDir = targetDir;
-                        },
-                        function (err) {
-                            log(targetDir + " No such file or directory");
-                        });
+                // init the reader event handlers
+                reader.onloadend = function (event) {
+                    console.log("1");
+                    console.dir(fileSys);
+                    fileSys.root.getFile(fileName, {create:true}, function (fileEntry) {
+
+                        // Create a FileWriter object for our FileEntry (log.txt).
+                        fileEntry.createWriter(function (fileWriter) {
+
+                            fileWriter.onwriteend = function (e) {
+                                console.log('Write completed.');
+                                logDnd(fileName);
+                            };
+
+                            fileWriter.onerror = function (e) {
+                                console.log('Write failed: ' + e.toString());
+                            };
+
+                            // Create a new Blob and write it to log.txt.
+                            var bb = new window.WebKitBlobBuilder();
+                            bb.append(event.target.result);
+                            fileWriter.write(bb.getBlob('text/plain'));
+
+                        }, errorHandler);
+                    }, function (err) {
+                        console.dir(err);
+                    });
+                };
+                // begin the read operation
+                reader.readAsDataURL(files[index]);
             }
+        }
+    }
 
-            function handleClear() {
-                clear();
-                log("$>");
+    dropbox.addEventListener("dragenter", dragEnter, false);
+    dropbox.addEventListener("dragexit", dragExit, false);
+    dropbox.addEventListener("dragover", dragOver, false);
+
+    dropbox.addEventListener("drop", drop, true);
+
+    function clear() {
+        commandHistory.innerHTML = "";
+    }
+
+    function clearDnd() {
+        dropbox.innerHTML = "";
+    }
+
+    function listFiles(entries) {
+        for (var index = 0; index < entries.length; index++) {
+            var isFile = entries[index].isFile;
+            var fileName = entries[index].name;
+            var htmlEntry = "<span style='color:" + (isFile ? 'red' : 'blue') + "'>" + fileName + "</span>";
+            log(htmlEntry);
+        }
+    }
+
+    function onCommand() {
+        var txt = commandPrompt.value;
+        commandPrompt.value = "";
+        var txtArgs = txt.split(" ");
+        command = txtArgs[0];
+        if (txtArgs.length > 1) {
+            txtArgs.shift();
+            arguments = txtArgs;
+        }
+        else {
+            arguments = null;
+        }
+        routeCommand(command, arguments);
+    }
+
+    function handlePwd() {
+        log("$>pwd");
+        log(currentDir);
+        log("$>");
+    }
+
+    function handleCd(arguments) {
+        var targetDir = "";
+        if (currentDir == "/") {
+            targetDir = currentDir
+        }
+        else {
+            targetDir = currentDir + "/";
+        }
+
+        if (arguments) {
+            log("$>cd " + arguments[0]);
+            if (arguments[0] == "/") {
+                targetDir = "/";
             }
-
-            function handleMkdir(arguments) {
-                var targetDir = "";
-                if (currentDir == "/") {
-                    targetDir = currentDir
+            else if (arguments[0] == "..") {
+                var arr = currentDir.split("/");
+                if (arr.length > 1) {
+                    arr.pop();
+                    targetDir = arr.join("/");
                 }
                 else {
-                    targetDir = currentDir + "/";
-                }
-                if (arguments) {
-                    log("$>cd " + arguments[0]);
                     targetDir = targetDir + arguments[0];
                 }
-                else {
-                    log("$>cd ");
-                    targetDir = "/";
-                }
-
-                fileSys.root.getDirectory(targetDir,
-                        {create:true},
-                        function (dirEntry) {
-                            alert("Directory created");
-                        },
-                        errorHandler);
-
             }
-
-
-            function handleLs(arguments) {
-                var targetDir = "";
-                if (currentDir == "/") {
-                    targetDir = currentDir
-                }
-                else {
-                    targetDir = currentDir + "/";
-                }
-                if (arguments) {
-                    log("$>cd " + arguments[0]);
-                    targetDir = targetDir + arguments[0];
-                }
-                else {
-                    log("$>cd ");
-                    targetDir = currentDir
-
-                }
-
-                fileSys.root.getDirectory(targetDir,
-                        {create:false},
-                        function (dirEntry) {
-                            dirReader = dirEntry.createReader();
-                            dirReader.readEntries(function (entries) {
-                                        listFiles(entries);
-                                    },
-                                    errorHandler);
-                        },
-                        errorHandler);
+            else {
+                targetDir = targetDir + arguments[0];
             }
+        }
+        else {
+            log("$>cd ");
+            targetDir = "/";
+        }
 
-            function handleCat(arguments) {
-                log("$>cat " + arguments[0]);
+        fileSys.root.getDirectory(targetDir, {},
+                function (dirEntry) {
+                    currentDir = targetDir;
+                },
+                function (err) {
+                    log(targetDir + " No such file or directory");
+                });
+    }
 
-            }
-            function handleHelp(arguments) {
-                log("$>help");
-                log("$>pwd: Print Working Directory");
-                log("$>cd: Change Directory");
-                log("$>clear: Clear Screen");
-                log("$>ls: List Files & Directories");
-                log("$>mkdir: Make Directory");
-                log("$>help");
+    function handleClear() {
+        clear();
+        log("$>");
+    }
 
-            }
+    function handleMkdir(arguments) {
+        var targetDir = "";
+        if (currentDir == "/") {
+            targetDir = currentDir
+        }
+        else {
+            targetDir = currentDir + "/";
+        }
+        if (arguments) {
+            log("$>cd " + arguments[0]);
+            targetDir = targetDir + arguments[0];
+        }
+        else {
+            log("$>cd ");
+            targetDir = "/";
+        }
 
-            function routeCommand(command, arguments) {
-                if (command == "pwd") {
-                    handlePwd();
-                }
-                else if (command == "cd") {
-                    handleCd(arguments);
-                }
-                else if (command == "clear") {
-                    handleClear();
-                }
-                else if (command == "ls") {
-                    handleLs(arguments);
-                }
-                else if (command == "mkdir") {
-                    handleMkdir(arguments);
-                }
-                else if (command == "cat") {
-                    handleCat(arguments);
-                }
-                else if (command == "help") {
-                    handleHelp(arguments);
-                }
-            }
+        fileSys.root.getDirectory(targetDir,
+                {create:true},
+                function (dirEntry) {
+                    alert("Directory created");
+                },
+                errorHandler);
 
-            function onInitFs(fs) {
-                console.log("File System initiated");
-                fileSys = fs;
-                console.dir(fileSys);
-                log("$>");
+    }
 
-            }
 
-            function errorHandler(err) {
-                alert("Unable to initiate fs, got error code " + err.code);
-            }
-            window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
-            window.requestFileSystem(window.TEMPORARY, 5242880, onInitFs, errorHandler);
+    function handleLs(arguments) {
+        var targetDir = "";
+        if (currentDir == "/") {
+            targetDir = currentDir
+        }
+        else {
+            targetDir = currentDir + "/";
+        }
+        if (arguments) {
+            log("$>cd " + arguments[0]);
+            targetDir = targetDir + arguments[0];
+        }
+        else {
+            log("$>cd ");
+            targetDir = currentDir
 
         }
-        catch (err) {
-            console.log("Got error when doing File Operations ") ;
-            console.dir(err);
+
+        fileSys.root.getDirectory(targetDir,
+                {create:false},
+                function (dirEntry) {
+                    dirReader = dirEntry.createReader();
+                    dirReader.readEntries(function (entries) {
+                                listFiles(entries);
+                            },
+                            errorHandler);
+                },
+                errorHandler);
+    }
+
+    function handleCat(arguments) {
+        log("$>cat " + arguments[0]);
+
+    }
+
+    function handleHelp(arguments) {
+        log("$>help");
+        log("$>pwd: Print Working Directory");
+        log("$>cd: Change Directory");
+        log("$>clear: Clear Screen");
+        log("$>ls: List Files & Directories");
+        log("$>mkdir: Make Directory");
+        log("$>help");
+
+    }
+
+    function routeCommand(command, arguments) {
+        if (command == "pwd") {
+            handlePwd();
         }
-        </script>
-    </section>
+        else if (command == "cd") {
+            handleCd(arguments);
+        }
+        else if (command == "clear") {
+            handleClear();
+        }
+        else if (command == "ls") {
+            handleLs(arguments);
+        }
+        else if (command == "mkdir") {
+            handleMkdir(arguments);
+        }
+        else if (command == "cat") {
+            handleCat(arguments);
+        }
+        else if (command == "help") {
+            handleHelp(arguments);
+        }
+    }
+
+    function onInitFs(fs) {
+        console.log("File System initiated");
+        fileSys = fs;
+        console.dir(fileSys);
+        log("$>");
+
+    }
+
+    function errorHandler(err) {
+        alert("Unable to initiate fs, got error code " + err.code);
+    }
+
+    window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
+    window.requestFileSystem(window.TEMPORARY, 5242880, onInitFs, errorHandler);
+
+}
+catch (err) {
+    console.log("Got error when doing File Operations ");
+    console.dir(err);
+}
+</script>
+</section>
 </article>
 <article class="twoTxCol">
     <header>header 3</header>
