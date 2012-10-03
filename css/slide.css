@@ -18,6 +18,9 @@ body{
 
 }
 
+.toc ol li{
+    cursor: hand; cursor: pointer;
+}
 
 .toc-shown{
     -webkit-transform:translate(200px,0px);
@@ -61,7 +64,7 @@ body{
 .slide-controller div{
     display:inline-block;
     vertical-align: middle;
-
+    cursor: hand; cursor: pointer;
 }
 .slide-controller .text{
     background: yellow;

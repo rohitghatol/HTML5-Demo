@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     $(".slide-strip>article").each(function(num,elem){
         var title = $(elem).find('header').html();
-        $(".toc>ol").append("<li><a href='#"+title+"'>"+title+"</a></li>");
+        $(".toc>ol").append("<li>"+title+"</li>");
     });
 
     localStorage.slideNo = parseInt(1);
@@ -27,7 +27,9 @@ $(document).ready(function() {
         goRight();
     });
 
-    $(".toc>ul>li").click(function(elem){
+    $(".toc>ol>li").click(function(event){
+
+        console.log("Clicked on Toc "+$(event.target).html());
         var slideNo = $(this).index();
 
         moveTo(slideNo);
