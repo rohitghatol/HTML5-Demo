@@ -59,6 +59,7 @@ body{
     margin-right:auto;
     left:0px;
     right:0px;
+    z-index:999;
 
 }
 .slide-controller div{
@@ -143,7 +144,8 @@ body{
     padding-top: 20px;
     margin:10px;
     text-align: left;
-    font-size: 24pt;
+    font-size: 48pt;
+    font-weight: bold;
 }
 
 .slide-container .slide-strip article.tx section{
@@ -156,7 +158,8 @@ body{
     padding-top: 20px;
     margin:10px;
     text-align: left;
-    font-size: 24pt;
+    font-size: 48pt;
+    font-weight: bold;
     word-wrap: break-word;
 }
 
@@ -172,7 +175,8 @@ body{
     padding-top: 20px;
     margin:10px;
     text-align: left;
-    font-size: 24pt;
+    font-size: 48pt;
+    font-weight: bold;
 }
 
 .slide-container .slide-strip article.titleOnly section{
@@ -183,7 +187,8 @@ body{
     padding-top: 500px;
     margin:10px;
     text-align: left;
-    font-size: 24pt;
+    font-size: 48pt;
+    font-weight: bold;
 }
 
 .slide-container .slide-strip article.CAPTION_ONLY section{
@@ -198,5 +203,32 @@ body{
     display:none;
 }
 
+
+.accordion{
+    height:30px;
+    width:100%;
+    overflow:hidden;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.accordion{
+    border:1px solid black;
+}
+.accordion h1{
+    margin-top:0px;
+    margin-bottom:0px;
+    border:1px solid black;
+}
+.accordion pre{
+    margin-top:0px;
+    border:1px solid black;
+    background:white;
+}
+.accordion:hover{
+    height:300px;
+    width:100%;
+}
 
 
