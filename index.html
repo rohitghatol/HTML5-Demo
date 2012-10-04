@@ -1798,11 +1798,99 @@ Access-Control-Allow-Origin:*
 
 </article>
 <article class="tx">
-    <header>Server Sent Events</header>
+    <header>SSE - Concept</header>
     <section>
-        <h3>Concept</h3>
+        <h1>Server Sent Events Concept</h1>
+        <ol>
+            <li>Polling the Server</li>
+            <li>Comet/Hanging GET/Reverse Ajax</li>
+            <li>Server Sent Events</li>
+        </ol>
     </section>
 </article>
+<article class="tx">
+    <header>SSE - Flow</header>
+    <section>
+        <h1>Flow</h1>
+        <ol>
+            <li>Client Send HTTP Request with MimeType - event-stream</li>
+            <li>Server Caches the Connection and write the header -'content-type': 'text/event-stream'</li>
+            <li>Server now keeps putting information on the Connection</li>
+            <li>If Connection breaks, Client reconnects</li>
+        </ol>
+        <hr/>
+        <p>Read the Blog for more details - <a target="_blank" href="http://html5doctor.com/server-sent-events/">http://html5doctor.com/server-sent-events/</a> </p>
+    </section>
+</article>
+
+<article class="tx">
+    <header>SSE Protocol</header>
+    <section>
+        <h1>Data sent by Server</h1>
+        <pre class="code">
+//Simple Message
+data: this is a simple message
+
+//Multi line JSON Message
+data: {
+data:    "name":"Rohit Ghatol",
+data:    "city":"Pune"
+data: }
+
+//Messages with ID
+id: 33
+data: this is line one
+data: this is line two
+
+//Messages with &lt;&lt;Custom Event&gt;&gt;
+id: 36
+event: price
+data: 103.34
+        </pre>
+    </section>
+</article>
+
+<article class="tx">
+    <header>SSE Code</header>
+    <section>
+        <h1>Code Snippets</h1>
+        <pre class="code">
+var source = new EventSource('http://xyz.com/events');
+//Callback called when connection is established
+source.onopen = function () {
+    connectionOpen(true);
+};
+
+//Callback called when connection issues occurs
+source.onerror = function () {
+    connectionOpen(false);
+};
+
+//Callback called when server sends a data
+source.onmessage = function (event) {
+    console.log("Server sent "+event.data);
+};
+
+source.addEventListener('&lt;&lt;custom event&gt;&gt;', function(event){
+    console.log("Got Data "+event.data+" for &lt;&lt;custom event&gt;&gt;");
+}, false);
+
+
+        </pre>
+    </section>
+</article>
+
+<article class="tx">
+    <header>SSE Demo</header>
+    <section>
+        <h1>Demo time</h1>
+        <ol>
+            <li>Code Snippet Taken from - <a target="_blank" href="https://github.com/cheeyeo/Server-Sent-Events-with-Node-JS">https://github.com/cheeyeo/Server-Sent-Events-with-Node-JS</a></li>
+            <li>Lets run the Demo locally and see the results</li>
+        </ol>
+    </section>
+</article>
+
 <article class="tx">
     <header>Web Sockets</header>
     <section>
