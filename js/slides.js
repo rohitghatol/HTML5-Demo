@@ -8,7 +8,7 @@ $(document).ready(function() {
         $(".toc>ol").append("<li>"+title+"</li>");
     });
 
-    localStorage.slideNo = parseInt(1);
+    localStorage.slideNo = parseInt(0);
     localStorage.totalSlides = parseInt($(".slide-strip>article").length);
 
     $(".slide-strip").css("width",parseInt(localStorage.totalSlides*window.innerWidth) + "px");

@@ -191,15 +191,58 @@
     <header>Div Hell</header>
     <section>
         <h3>Traditional Approach</h3>
-        Everything in the page is a DIV - <a target="_blank" href="chapters/chapter-2/html4/index.html">See Example</a>
+        <p>
+            Imagine everything element in your HTML Page to be div and then try to figure out which element ends where.
+            Also think from the point of view of a code which is looking at the DIVs, there would be no way to find out
+            if a given div indicates a header section, a actual content section, a navigation area etc.
+        </p>
+       <p>
+            Live Demo - <a target="_blank" href="chapters/chapter-2/html4/index.html">See Example</a>
+       </p>
+        <pre class="code">
+&lt;div&gt;
+    &lt;div&gt;
+        ...
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;div&gt;
+        ...
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
     </section>
 </article>
 <article class="tx">
     <header>Article, Section, Nav, Aside tags</header>
     <section>
-        <h3>New Tags Approach</h3>
+        <h3>HTML 5 Tags Approach</h3>
+
         Specific Tags for Specific Purpose - <a target="_blank" href="chapters/chapter-2/html5/index.html">See
         Example</a>
+
+        <p>
+            Now Imagine different tags available like Article, Section, Nav, Header, Footer. The best part of about all
+            these tags is that these are nothing but DIVs but with different name
+        </p>
+        <p>
+            Live Demo - <a target="_blank" href="chapters/chapter-2/html5/index.html">See Example</a>
+        </p>
+        <pre class="code">
+&lt;section&gt;
+    &lt;article&gt;
+        &lt;header&gt;
+            ....
+        &lt;header&gt;
+        ...
+    &lt;/article&gt;
+    &lt;aside&gt;
+        &lt;nav&gt;
+        ...
+        &lt;/div&gt;
+    &lt;/aside&gt;
+&lt;/section&gt;
+        </pre>
     </section>
 </article>
 <article class="title">
@@ -281,12 +324,8 @@
 <article class="tx">
     <header>Source Code</header>
     <section>
-        &lt;video width=&quot;640&quot; height=&quot;368&quot; id=&quot;myVideo&quot; controls&gt;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&lt;source
-        src=&quot;http://www.html5videoplayer.net/videos/madagascar3.ogv&quot; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/ogg;
-        codecs=&quot;theora, vorbis&quot;'&gt;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.mp4&quot;
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;'&gt;
-        <br/> &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.webm&quot;
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/webm; codecs=&quot;vp8.0, vorbis&quot;'&gt;<br/>&lt;/video&gt;
+        <pre class="code">&lt;video width=&quot;640&quot; height=&quot;368&quot; id=&quot;myVideo&quot; controls&gt;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.ogv&quot; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/ogg;codecs=&quot;theora, vorbis&quot;'&gt;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.mp4&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;'&gt;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.webm&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/webm; codecs=&quot;vp8.0, vorbis&quot;'&gt;<br/>&lt;/video&gt;</pre>
+
     </section>
 </article>
 <article class="title">
@@ -298,7 +337,7 @@
 <article class="twoTxCol">
     <header>Canvas Demo</header>
     <section>
-        <h3>Demo</h3>
+        <h1>Demo</h1>
         <canvas id="canvas1" width="300px" height="300px"></canvas>
         <script>
             var canvasElem = document.getElementById("canvas1");
@@ -325,28 +364,30 @@
         </script>
     </section>
     <section>
+        <h1>Source Code</h1>
+        <pre class="code">
+var canvasElem = document.getElementById("canvas1");
 
-        var canvasElem = <br/>document.getElementById("canvas1");<br/>
+var ctx = canvasElem.getContext('2d');
+ctx.fillStyle = "#00A308";
+ctx.beginPath();
+ctx.arc(220, 220, 50, 0, Math.PI*2, true);
+ctx.closePath();
+ctx.fill();
 
-        var ctx = canvasElem.getContext('2d');<br/>
-        ctx.fillStyle = "#00A308";<br/>
-        ctx.beginPath();<br/>
-        ctx.arc(220, 220, 50, 0, Math.PI*2, true);<br/>
-        ctx.closePath();<br/>
-        ctx.fill();<br/><br/>
+ctx.fillStyle = "#FF1C0A";
+ctx.beginPath();
+ctx.arc(100, 100, 100, 0, Math.PI*2, true);
+ctx.closePath();
+ctx.fill();
 
-        ctx.fillStyle = "#FF1C0A";<br/>
-        ctx.beginPath();<br/>
-        ctx.arc(100, 100, 100, 0, Math.PI*2, true);<br/>
-        ctx.closePath();<br/>
-        ctx.fill();<br/><br/>
-
-        //the rectangle is half transparent<br/>
-        ctx.fillStyle = "rgba(255, 255, 0, .5)"<br/>
-        ctx.beginPath();<br/>
-        ctx.rect(15, 150, 120, 120);<br/>
-        ctx.closePath();<br/>
-        ctx.fill();<br/>
+//the rectangle is half transparent
+ctx.fillStyle = "rgba(255, 255, 0, .5)";
+ctx.beginPath();
+ctx.rect(15, 150, 120, 120);
+ctx.closePath();
+ctx.fill();
+        </pre>
     </section>
 </article>
 <article class="tx">
@@ -378,8 +419,9 @@
 <article class="twoTxCol">
     <header>Drawing Concept</header>
     <section>
+        <h1>Answer following Questions</h1>
         <ul>
-            Answer following Questions
+
             <li>At 115 Degree rotation what is x,y?</li>
             <li>At 115 Degree rotation & 1/s scale what is x,y?</li>
         </ul>
@@ -442,20 +484,22 @@
 <article class="twoTxCol">
     <header>Code Snippet - 1</header>
     <section>
-        ctx.save();<br/>
-        ctx.rect(0,20,80,40);<br/>
-        ctx.fill();<br/>
-        ctx.fillText("0,20",0,10);<br/>
-        ctx.restore();<br/><br/>
+        <h3>Code</h3>
+        <pre class="code">
+ctx.save();
+ctx.rect(0,20,80,40);
+ctx.fill();
+ctx.fillText("0,20",0,10);
+ctx.restore();
 
-        ctx.save();<br/>
-        ctx.translate(40,60);<br/>
-        ctx.rect(0,20,80,40);<br/>
-        ctx.fill();<br/>
-        ctx.fillText("40,80",0,10);<br/>
-        ctx.restore();<br/><br/>
+ctx.save();
+ctx.translate(40,60);
+ctx.rect(0,20,80,40);
+ctx.fill();
+ctx.fillText("40,80",0,10);
+ctx.restore();
 
-
+        </pre>
     </section>
     <section>
         <h3>Canvas Drawing</h3>
@@ -514,24 +558,27 @@
 <article class="twoTxCol">
     <header>Code Snippet - 2</header>
     <section>
-        ctx.save();<br/>
-        ctx.translate(140,100);<br/>
-        ctx.rotate(170);<br/>
-        ctx.rect(0,20,80,40);<br/>
-        ctx.fill();<br/>
-        ctx.fillText("@ 115 Degree what is x,y",0,10);<br/>
-        ctx.restore();<br/><br/>
+        <h3>Code</h3>
+        <pre class="code">
+ctx.save();
+ctx.translate(140,100);
+ctx.rotate(170);
+ctx.rect(0,20,80,40);
+ctx.fill();
+ctx.fillText("@ 115 Degree what is x,y",0,10);
+ctx.restore();
 
-        ctx.save();<br/>
-        ctx.translate(40,200);<br/>
-        ctx.rotate(170);<br/>
-        ctx.save();<br/>
-        ctx.scale(0.5,0.5)<br/>
-        ctx.rect(0,20,80,40);<br/>
-        ctx.fill();<br/>
-        ctx.restore();<br/>
-        ctx.fillText("@ 115 Deg & 1/2 scale what is x,y",0,0);<br/>
-        ctx.restore();<br/>
+ctx.save();
+ctx.translate(40,200);
+ctx.rotate(170);
+ctx.save();
+ctx.scale(0.5,0.5);
+ctx.rect(0,20,80,40);
+ctx.fill();
+ctx.restore();
+ctx.fillText("@ 115 Deg & 1/2 scale what is x,y",0,0);
+ctx.restore();
+        </pre>
 
     </section>
     <section>
@@ -592,17 +639,18 @@
     <header>Canvas Game</header>
     <section>
         <h3>Game Concept</h3>
+        <pre class="code">
+&lt;script&gt;<br/>
+setInterval(gameLoop,100);
 
-        &lt;script&gt;<br/>
-        setInterval(gameLoop,100);<br/><br/>
+function gameLoop(){
+    manipulateModel();
+    clearCanvas();
+    drawModel();
+}
 
-        function gameLoop(){<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;manipulateModel();<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;clearCanvas();<br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;drawModel();<br/>
-        }<br/><br/>
-
-        &lt;script/&gt;
+&lt;script/&gt;
+        </pre>
 
 
     </section>
@@ -1521,28 +1569,28 @@
     </section>
     <section>
         <pre class="code">
-    @-webkit-keyframes resize {
-              0% {
-                padding: 0;
-              }
-              50% {
-                padding: 0 20px;
-                color:white;
-                -webkit-transform:translate(100px,0px)
-                                  rotateZ(180Deg);
-                background-color:rgba(255,0,0,0.2);
-              }
-              100% {
-                padding: 0 100px;
-                background-color:rgba(255,0,0,0.9);
-              }
-            }
+@-webkit-keyframes resize {
+          0% {
+            padding: 0;
+          }
+          50% {
+            padding: 0 20px;
+            color:white;
+            -webkit-transform:translate(100px,0px)
+                              rotateZ(180Deg);
+            background-color:rgba(255,0,0,0.2);
+          }
+          100% {
+            padding: 0 100px;
+            background-color:rgba(255,0,0,0.9);
+          }
+        }
 
-    #box {
-        -webkit-animation-name: resize;
-        -webkit-animation-duration: 2s;
-        -webkit-animation-iteration-count: infinite;
-    }
+#box {
+    -webkit-animation-name: resize;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+}
         </pre>
     </section>
 </article>
