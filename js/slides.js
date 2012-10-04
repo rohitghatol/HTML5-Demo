@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+    if (!$.browser.webkit) {
+        alert("Please use Chrome Browser for this site");
+    }
     $(".slide-strip>article").each(function(num,elem){
         var title = $(elem).find('header').html();
         $(".toc>ol").append("<li>"+title+"</li>");
