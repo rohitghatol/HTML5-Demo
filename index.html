@@ -45,6 +45,7 @@
         <h2>By Rohit Ghatol</h2>
 
         <h3>Director of Engineering - Synerzip</h3>
+
     </section>
 </article>
 <article class="tx">
@@ -128,7 +129,7 @@
             #card figure {
                 display: block;
                 height: 100%;
-                width: 100%;
+                width: 90%;
                 text-align: left;
                 color: black;
                 font-size: 14pt;
@@ -169,7 +170,7 @@
                     type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;css/app.css&quot; media=&quot;screen&quot;&gt;<br/>
                     &lt;title&gt;HTML4&lt;/title&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/> &lt;h1&gt;HTML 4&lt;/h1&gt;<br/>
                     &lt;p&gt;View Source&lt;/p&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/><br/></figure>
-                <figure class="back">&lt;!DOCTYPE HTML&gt;<br/>&lt;html lang=&quot;en&quot;&gt;<br/>&lt;head&gt;<br/>
+                <figure class="back"><br/>&lt;!DOCTYPE HTML&gt;<br/>&lt;html lang=&quot;en&quot;&gt;<br/>&lt;head&gt;<br/>
                     &lt;meta content=&quot;text/html;charset=utf-8&quot;&gt;<br/> &lt;script src=&quot;js/app.js&quot;&gt;&lt;/script&gt;<br/>
                     &lt;script&gt; <br/> var data = &quot;abc&quot;<br/> &lt;/script&gt;<br/> &lt;link rel=&quot;stylesheet&quot;
                     href=&quot;css/app.css&quot; media=&quot;screen&quot;&gt;<br/> &lt;title&gt;HTML5&lt;/title&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/>
@@ -671,6 +672,7 @@ function gameLoop(){
                 advanceBall();
                 clearCanvas();
                 drawBall();
+
             }
 
             function advanceBall() {
@@ -1868,45 +1870,45 @@ addEventListener('message', function(e){
         </div>
     </section>
     <script>
-        var canvas = document.getElementById("canvas8");
-        var ctx = canvas.getContext("2d");
-        ctx.fillStyle = "#000000";
-        var ballX = 100, ballY = 200;
-        var radius = 20;
-        var xInc = 10;
-        var yInc = 10;
-        setInterval(gameLoop, 10);
+        var canvas1 = document.getElementById("canvas8");
+        var ctx1 = canvas1.getContext("2d");
+        ctx1.fillStyle = "#000000";
+        var ballX1 = 100, ballY1 = 200;
+        var radius1 = 20;
+        var xInc1 = 10;
+        var yInc1 = 10;
+        setInterval(gameLoop1, 10);
 
-        function gameLoop() {
-            advanceBall();
-            clearCanvas();
-            drawBall();
+        function gameLoop1() {
+            advanceBall1();
+            clearCanvas1();
+            drawBall1();
         }
 
-        function advanceBall() {
-            ballX += xInc;
-            ballY += yInc;
-            if ((ballX + radius) > canvas.width) {
-                xInc = (-1) * xInc;
+        function advanceBall1() {
+            ballX1 += xInc1;
+            ballY1 += yInc1;
+            if ((ballX1 + radius1) > canvas1.width) {
+                xInc1 = (-1) * xInc1;
             }
-            if ((ballX - radius) < 0) {
-                xInc = (-1) * xInc;
+            if ((ballX1 - radius1) < 0) {
+                xInc1 = (-1) * xInc1;
             }
-            if ((ballY + radius) > canvas.height) {
-                yInc = (-1) * yInc;
+            if ((ballY1 + radius1) > canvas1.height) {
+                yInc1 = (-1) * yInc1;
             }
-            if ((ballY - radius) < 0) {
-                yInc = (-1) * yInc;
+            if ((ballY1 - radius1) < 0) {
+                yInc1 = (-1) * yInc1;
             }
         }
-        function clearCanvas() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        function clearCanvas1() {
+            ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
         }
-        function drawBall() {
-            ctx.beginPath();
-            ctx.arc(ballX, ballY, radius, 0, Math.PI * 2, true);
-            ctx.closePath();
-            ctx.fill();
+        function drawBall1() {
+            ctx1.beginPath();
+            ctx1.arc(ballX1, ballY1, radius1, 0, Math.PI * 2, true);
+            ctx1.closePath();
+            ctx1.fill();
         }
 
     </script>
