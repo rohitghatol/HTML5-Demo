@@ -30,7 +30,7 @@ body{
     padding:5px;
     width:90%;
     margin:5px;
-
+    word-wrap:break-word;
 }
 
 p{

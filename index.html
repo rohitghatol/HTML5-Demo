@@ -1944,9 +1944,324 @@ addEventListener('message', function(e){
 <article class="tx">
     <header>Storage</header>
     <section>
-        <h3>IndexDB, LocalStorage</h3>
+        <h3>Methods</h3>
+        <ol>
+            <li>Local Storage - Persistent Key Value Pair</li>
+            <li>Session Storage - Temporary Key Value Pair</li>
+            <li>Web SQL - SQL Based Storage (deprecated)</li>
+            <li>IndexDB - ...</li>
+        </ol>
     </section>
 </article>
+<article class="twoTxCol">
+    <header>Local Storage Vs Session Storage</header>
+    <section>
+        <h3>Local Storage</h3>
+        <ol>
+            <li>Key Value Store</li>
+            <li>Data is persisted even after browser is closed</li>
+            <li>Ideal for storing User Preferences</li>
+        </ol>
+        <pre class="code">
+localStorage.preferredCountry="India";
+localStorage["preferredCountry"]="India";
+console.log("Preferred Country for User is "+localStorage.preferredCountry);
+        </pre>
+    </section>
+    <section>
+        <h3>Session Storage</h3>
+        <ol>
+            <li>Key Value Store</li>
+            <li>Data is lost after browser is closed</li>
+            <li>Ideal for storing session data</li>
+        </ol>
+        <pre class="code">
+sessionStorage.lastPage=10;
+sessionStorage["lastPage"]=10;
+console.log("Last Page User was on is "+sessionStorage.lastPage);
+        </pre>
+
+    </section>
+
+</article>
+<article class="tx">
+<header>IndexDB</header>
+<section>
+<h3>Index DB Demo</h3>
+<style>
+.delete{
+    margin-left:10px;
+    font-family: arial;
+    color:red;
+}
+</style>
+<script>
+    var indexDBns = {};
+    window.indexedDB = window.indexedDB || window.webkitIndexedDB ||
+            window.mozIndexedDB;
+
+    if ('webkitIndexedDB' in window) {
+        window.IDBTransaction = window.webkitIDBTransaction;
+        window.IDBKeyRange = window.webkitIDBKeyRange;
+    }
+
+    indexDBns.indexedDB = {};
+    indexDBns.indexedDB.db = null;
+
+    indexDBns.indexedDB.onerror = function(e) {
+        console.log(e);
+    };
+
+    indexDBns.indexedDB.open = function() {
+        var request = indexedDB.open("todos");
+
+        request.onsuccess = function(e) {
+            var v = 1;
+            indexDBns.indexedDB.db = e.target.result;
+            var db = indexDBns.indexedDB.db;
+            // We can only create Object stores in a setVersion transaction;
+            if (v != db.version) {
+                var setVrequest = db.setVersion(v);
+
+                // onsuccess is the only place we can create Object Stores
+                setVrequest.onerror = indexDBns.indexedDB.onerror;
+                setVrequest.onsuccess = function(e) {
+                    if(db.objectStoreNames.contains("todo")) {
+                        db.deleteObjectStore("todo");
+                    }
+
+                    var store = db.createObjectStore("todo",
+                            {keyPath: "timeStamp"});
+                    e.target.transaction.oncomplete = function() {
+                        indexDBns.indexedDB.getAllTodoItems();
+                    };
+                };
+            } else {
+                request.transaction.oncomplete = function() {
+                    indexDBns.indexedDB.getAllTodoItems();
+                };
+            }
+        };
+        request.onerror = indexDBns.indexedDB.onerror;
+    };
+
+    indexDBns.indexedDB.addTodo = function(todoText) {
+        var db = indexDBns.indexedDB.db;
+        var trans = db.transaction(["todo"], "readwrite");
+        var store = trans.objectStore("todo");
+
+        var data = {
+            "text": todoText,
+            "timeStamp": new Date().getTime()
+        };
+
+        var request = store.put(data);
+
+        request.onsuccess = function(e) {
+            indexDBns.indexedDB.getAllTodoItems();
+        };
+
+        request.onerror = function(e) {
+            console.log("Error Adding: ", e);
+        };
+    };
+
+    indexDBns.indexedDB.deleteTodo = function(id) {
+        var db = indexDBns.indexedDB.db;
+        var trans = db.transaction(["todo"], "readwrite");
+        var store = trans.objectStore("todo");
+
+        var request = store.delete(id);
+
+        request.onsuccess = function(e) {
+            indexDBns.indexedDB.getAllTodoItems();
+        };
+
+        request.onerror = function(e) {
+            console.log("Error Adding: ", e);
+        };
+    };
+
+    indexDBns.indexedDB.getAllTodoItems = function() {
+        var todos = document.getElementById("todoItems");
+        todos.innerHTML = "";
+
+        var db = indexDBns.indexedDB.db;
+        var trans = db.transaction(["todo"], "readwrite");
+        var store = trans.objectStore("todo");
+
+        // Get everything in the store;
+        var cursorRequest = store.openCursor();
+        console.log("Cursor Opened");
+        cursorRequest.onsuccess = function(e) {
+            var result = e.target.result;
+            if(!!result == false)
+                return;
+
+            renderTodo(result.value);
+            console.dir("Read row value "+result.value.text);
+            result.continue();
+            // If more records are present onSuccess will get called again
+        };
+
+        cursorRequest.onerror = indexDBns.indexedDB.onerror;
+    };
+
+    function renderTodo(row) {
+        var todos = document.getElementById("todoItems");
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        var t = document.createTextNode(row.text);
+
+        a.addEventListener("click", function() {
+            indexDBns.indexedDB.deleteTodo(row.timeStamp);
+        }, false);
+
+        a.textContent = "x";
+        $(a).addClass('delete');
+        li.appendChild(t);
+        li.appendChild(a);
+        todos.appendChild(li);
+    }
+
+    function addTodo() {
+        var todo = document.getElementById("todo");
+        indexDBns.indexedDB.addTodo(todo.value);
+        todo.value = "";
+    }
+
+    $(document).ready(function(){
+        indexDBns.indexedDB.open();
+    })
+
+</script>
+    <ul id="todoItems"></ul>
+    <input type="text" id="todo" name="todo" placeholder="What do you need to do?" style="width: 200px;" />
+    <input type="submit" value="Add Todo Item" onclick="addTodo(); return false;"/>
+    </section>
+</article>
+<article class="tx">
+    <header>IndexDB - Open DB</header>
+    <section>
+        <h3>Opening IndexDB</h3>
+        <pre class="code">
+// Open an IndexDB Database
+var openDBRequest = indexedDB.open("dbname");
+
+openDBRequest.onsuccess = function(e) {
+    //Let's store the db in global window
+    window.mydb = e.result.target;
+}
+openDBRequest.onerror = function(e){
+    console.log("Unable to open IndexDB "+e);
+}
+        </pre>
+    </section>
+</article>
+<article class="tx">
+    <header>IndexDB - ObjectStore</header>
+    <section>
+        <h3>Creating an Object Store in IndexDB</h3>
+        <pre class="code">
+// Step 1 : Set a Version to the DB
+var setVersionRequest = indexedDB.db.setVersion(1);
+
+
+// onsuccess is the only place we can create Object Stores
+setVersionRequest.onsuccess = function(e) {
+    // Step 2 : Create Store if not already created
+    var store = db.createObjectStore("todo",{keyPath: "timeStamp"});
+};
+
+setVersionRequest.onerror = function(e){
+    console.log("Got Error while setting DB Version "+e);
+}
+
+</pre>
+    </section>
+</article>
+
+<article class="tx">
+    <header>IndexDB - Add Record</header>
+    <section>
+        <h3>Putting Record in Object Store in IndexDB</h3>
+        <pre class="code">
+//Access window.mydb
+var trans = mydb.transaction(["todo"], "readwrite");
+var store = trans.objectStore("todo");
+
+var data = {
+    "text": todoText,
+    "timeStamp": new Date().getTime()
+};
+
+var putRequest = store.put(data);
+
+putRequest.onsuccess = function(e) {
+    console.log("Record added successfully");
+};
+
+putRequest.onerror = function(e) {
+    console.log("Error Adding: ", e);
+};
+
+</pre>
+    </section>
+</article>
+
+<article class="tx">
+    <header>IndexDB - Delete Record</header>
+    <section>
+        <h3>Deleting Record from Object Store in IndexDB</h3>
+        <pre class="code">
+//Access window.mydb
+var trans = mydb.transaction(["todo"], "readwrite");
+var store = trans.objectStore("todo");
+
+
+var deletRequest = store.delete(id);
+
+deletRequest.onsuccess = function(e) {
+    console.log("Record deleted successfully");
+};
+
+deletRequest.onerror = function(e) {
+    console.log("Error Deleting: ", e);
+};
+
+</pre>
+    </section>
+</article>
+
+<article class="tx">
+    <header>IndexDB - Retreiving Records</header>
+    <section>
+        <h3>Retrieving Record from Object Store in IndexDB</h3>
+        <pre class="code">
+//Access mydb
+var trans = mydb.transaction(["todo"], "readwrite");
+var store = trans.objectStore("todo");
+
+// Get everything in the store;
+var cursorRequest = store.openCursor();
+
+cursorRequest.onsuccess = function(e) {
+    var result = e.target.result;
+    if(!!result == false){
+        return;
+    }
+
+    console.log("Retrieved Row data ="+result.value);
+    result.continue();
+};
+
+cursorRequest.onerror = function(e) {
+    console.log("Error Retrieving: ", e);
+};
+</pre>
+    </section>
+</article>
+
 <article class="tx">
     <header>Offline Access</header>
     <section>
@@ -2156,7 +2471,7 @@ addEventListener('message', function(e){
         height: 400px;
         background: #77FFFF;
         border: 1px solid blue;
-        font-size: 20pt;
+        font-size: 16pt;
     }
 
     #commandHistory {
@@ -2164,16 +2479,16 @@ addEventListener('message', function(e){
         height: 400px;
         background: #FFFF77;
         border: 1px dotted red;
-        font-size: 20pt;
+        font-size: 16pt;
     }
 
     #command {
-        font-size: 20pt;
+        font-size: 16pt;
         width: 400px;
     }
 
     #submit {
-        font-size: 20pt;
+        font-size: 16pt;
     }
 
     #instructions {
@@ -2181,8 +2496,6 @@ addEventListener('message', function(e){
         border-radius: 2px;
     }
 </style>
-<h1>File System Shell with Drag and Drop</h1>
-
 <p id="instructions">Run Chrome with argments: --args --unlimited-quota-for-files --allow-file-access-from-files</p>
 <table>
     <tr>
