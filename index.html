@@ -1806,7 +1806,41 @@ Access-Control-Allow-Origin:*
 <article class="tx">
     <header>Web Sockets</header>
     <section>
-        <h3>Concept</h3>
+        <h1>Concept</h1>
+        <ol>
+            <li>Full Duplex Communication protocol (like TCP/IP)</li>
+            <li>Both Client & Server have methods to send message</li>
+            <li>Both Client & Server have callbacks to receive message</li>
+        </ol>
+    </section>
+</article>
+<article class="tx">
+    <header>Web Sockets - Code</header>
+
+    <section>
+        <h3>Code Snippet</h3>
+        <pre class="code">
+//Open Web Socket Connection
+var socket = new WebSocket('ws://localhost:5000/echo');
+
+//Callback for successful Connection
+socket.onopen = function(event) {
+  console.log("WebSocket connected Successfully");
+};
+
+//Send Message to Server
+socket.send('Hello, WebSocket');
+
+//Callback for receiving message sent by the Server
+socket.onmessage = function(event) {
+    console.log("Got message from server "+event.data);
+}
+
+//Callback when WebSocket Connection is terminated
+socket.onclose = function(event) {
+    console.log("WebSocket connection is terminated");
+}
+        </pre>
     </section>
 </article>
 
