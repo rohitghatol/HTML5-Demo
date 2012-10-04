@@ -1443,8 +1443,8 @@
                 margin:5px;
             }
             .to{
-                -webkit-transform:translate(600px,0px) rotateZ(180Deg) scale(0.8,0.8);
-                -moz-transform:translate(600px,0px) rotateZ(180Deg) scale(0.8,0.8);
+                -webkit-transform:translate(600px,0px) rotateY(360Deg) rotateZ(300Deg) scale(0.8,0.8);
+                -moz-transform:translate(600px,0px) rotateY(360Deg) rotateZ(3000Deg) scale(0.8,0.8);
                 border-radius:10px;
                 background:red;
                 color:yellow;
@@ -1468,6 +1468,9 @@
             transition: all 1s ease-in-out;
             </p>
         </div>
+        <div>
+             Visit <a href="http://css3.bradshawenterprises.com/transitions/">http://css3.bradshawenterprises.com/transitions/</a> for more examples.
+        </div>
         <script>
             $(document).ready(function(){
                 $(".transition").click(function(){
@@ -1477,17 +1480,167 @@
         </script>
     </section>
 </article>
-<article class="tx">
+<article class="twoTxCol">
     <header>CSS Animations</header>
     <section>
-        TBD
+        <style>
+
+            @-webkit-keyframes resize {
+              0% {
+                padding: 0;
+              }
+              50% {
+                padding: 0 20px;
+                background-color:
+                rgba(255,0,0,0.2);
+                color:white;
+                -webkit-transform:translate(100px,0px) rotateZ(180Deg);
+              }
+              100% {
+                padding: 0 100px;
+                background-color:
+                rgba(255,0,0,0.9);
+                color:white;
+              }
+            }
+
+            #box {
+                height:200px;
+                width:200px;
+                background:white;
+                border:1px solid blue;
+                -webkit-animation-name: resize;
+                -webkit-animation-duration: 2s;
+                -webkit-animation-iteration-count: infinite;
+
+            }
+
+        </style>
+
+        <div id="box">Box with Animation Effect</div>
+    </section>
+    <section>
+        <pre class="code">
+    @-webkit-keyframes resize {
+              0% {
+                padding: 0;
+              }
+              50% {
+                padding: 0 20px;
+                color:white;
+                -webkit-transform:translate(100px,0px)
+                                  rotateZ(180Deg);
+                background-color:rgba(255,0,0,0.2);
+              }
+              100% {
+                padding: 0 100px;
+                background-color:rgba(255,0,0,0.9);
+              }
+            }
+
+    #box {
+        -webkit-animation-name: resize;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-iteration-count: infinite;
+    }
+        </pre>
     </section>
 </article>
 <article class="tx">
     <header>CSS Advanced Demos</header>
-    <section>
-        TBD
+    <style>
+        .one {
+            -webkit-transform: rotateY(0deg)  translateZ(100px);
+        }
+        .one:hover{
+            -webkit-transform: rotateY(0deg) translateY(-200px) translateZ(100px);
+        }
+
+        .two {
+            -webkit-transform: rotateY(90deg)  translateZ(100px);
+        }
+        .two:hover {
+            -webkit-transform: rotateY(90deg) translateY(-200px) translateZ(100px);
+        }
+
+        .three {
+            -webkit-transform: rotateY(180deg)  translateZ(100px);
+        }
+        .three:hover {
+            -webkit-transform: rotateY(180deg) translateY(-200px) translateZ(100px);
+        }
+        .four {
+            -webkit-transform: rotateY(270deg)  translateZ(100px);
+        }
+        .four:hover {
+            -webkit-transform: rotateY(270deg) translateY(-200px) translateZ(100px);
+
+        }
+            /* Common CSS Attributes to Panel, color, rounded corners etc */
+        .panel {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            text-align: center;
+            font-size: 10em;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            -webkit-transition: all 2s linear;
+            -webkit-border-radius:20px;
+            -webkit-box-shadow: 5px 5px 20px #000000;
+        }
+            /* Making the Shadow and background color to change on hover */
+        .panel:hover{
+            -webkit-box-shadow: 5px 5px 20px #FF0000;
+            background-image: -webkit-gradient(radial, center center, 0, center center, 200, from(#0099FF), to(#000));
+        }
+            /* CSS Animation to rotate shape around y axis */
+        @-webkit-keyframes spin {
+  		    from
+  		        {
+  		            -webkit-transform: rotateY(0);
+  		        }
+  		    to
+  		        {
+  		            -webkit-transform: rotateY(-360deg);
+  		        }
+	    }
+            /* Setting animation to rotate this around Y Axis */
+        .shape {
+            margin: 0 auto;
+            height: 200px;
+            width: 200px;
+            -webkit-transform-style: preserve-3d;
+            -webkit-animation: spin 8s infinite linear;
+        }
+            /* Setting Perspective */
+        .container {
+            -webkit-perspective: 800;
+            -webkit-perspective-origin: 50% 90px;
+            -webkit-transition: -webkit-perspective, 1s;
+            width: 600px;
+            margin: 0px;
+        }
+
+
+    </style>
+    <section >
+        <h1>Rotating Divs</h1>
+        <!-- For setting 3D perspective -->
+        <div class="container">
+            <!-- The Shape we plan to rotate -->
+            <div class="shape">
+                <!-- Divs which act as Panels and they transition on hover -->
+                <div class="panel one"><span>1</span></div>
+                <div class="panel two"><span>2</span></div>
+                <div class="panel three"><span>3</span></div>
+                <div class="panel four"><span>4</span></div>
+
+            </div>
+        </div>
+
     </section>
+
 </article>
 
 <article class="tx">
