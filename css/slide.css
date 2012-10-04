@@ -3,7 +3,7 @@ body{
 }
 .toc{
     position:absolute;
-    left:-200px;
+    left:-220px;
     top:0px;
     width:200px;
     height:100%;
@@ -15,18 +15,23 @@ body{
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     z-index:999;
+    padding:5px;
+    -webkit-box-shadow: 10px 10px 20px #000;
+    -moz-box-shadow: 10px 10px 20px #000;
+
 
 }
+
 
 .toc ol li{
     cursor: hand; cursor: pointer;
 }
 
 .toc-shown{
-    -webkit-transform:translate(200px,0px);
-    -moz-transform:translate(200px,0px);
-    -o-transform:translate(200px,0px);
-    transform:translate(200px,0px);
+    -webkit-transform:translate(220px,0px);
+    -moz-transform:translate(220px,0px);
+    -o-transform:translate(220px,0px);
+    transform:translate(220px,0px);
 }
 
 .help{
@@ -43,6 +48,9 @@ body{
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     z-index:999;
+    padding:5px;
+    -webkit-box-shadow: 10px 10px 20px #000;
+    -moz-box-shadow: 10px 10px 20px #000;
 }
 
 .help-shown{
@@ -230,5 +238,6 @@ body{
     height:350px;
     width:100%;
 }
+
 
 

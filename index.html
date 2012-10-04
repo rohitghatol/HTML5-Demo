@@ -13,14 +13,19 @@
 </head>
 <body>
 <section id="toc" class="toc">
-    Table of Contents
+    <h1>Table of Contents</h1>
     <ol>
 
     </ol>
 </section>
 
 <section id="help" class="help">
-    Help
+    <h1>Help</h1>
+    <p>Left Arrow - Previous Slide</p>
+    <p>Right Arrow - Next Slide</p>
+    <p>Up Arrow - First Slide</p>
+    <p>Down Arrow - Last Slide</p>
+
 </section>
 
 <nav class="slide-controller">
@@ -1428,7 +1433,48 @@
 <article class="tx">
     <header>CSS Transitions</header>
     <section>
-        TBD
+        <style>
+            .transition{
+                border: 1px solid red;
+                background: yellow;
+                width:200px;
+                height:100px;
+                padding:20px;
+                margin:5px;
+            }
+            .to{
+                -webkit-transform:translate(600px,0px) rotateZ(180Deg) scale(0.8,0.8);
+                -moz-transform:translate(600px,0px) rotateZ(180Deg) scale(0.8,0.8);
+                border-radius:10px;
+                background:red;
+                color:yellow;
+            }
+
+            #with-transition{
+                -webkit-transition: all 1s ease-in-out;
+                -moz-transition: all 1s ease-in-out;
+                -o-transition: all 1s ease-in-out;
+                transition: all 1s ease-in-out;
+            }
+        </style>
+        <p>Click on the DIVs below. Observe first div, has immediate effect and second one takes certain time. This is due to transition CSS Property</p>
+        <div id="without-transition" class="transition from">
+            This is Div without any CSS Transitions
+        </div>
+        <div id="with-transition" class="transition from">
+            This is Div with CSS Transition property
+            <p>
+
+            transition: all 1s ease-in-out;
+            </p>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $(".transition").click(function(){
+                    $(".transition").toggleClass('to');
+                });
+            });
+        </script>
     </section>
 </article>
 <article class="tx">
