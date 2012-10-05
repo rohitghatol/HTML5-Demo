@@ -44,7 +44,10 @@
     <section>
         <h2>By Rohit Ghatol</h2>
 
-        <h3>Director of Engineering - Synerzip</h3>
+        <h3>Director of Engineering - <a target="_blank" href="http://www.synerzip.com">Synerzip</a></h3>
+        <h3>Author - <a target="_blank" href="http://www.apress.com/9781430239031">Beginning PhoneGap</a></h3>
+        <h3>Founder - <a target="_blank" href="http://meetup.com/technext">TechNext</a></h3>
+        <h3>Co Manager - <a target="_blank" href="http://meetup.com/pune-gdg">Pune-GDG</a></h3>
 
     </section>
 </article>
@@ -909,6 +912,70 @@ function gameLoop(){
                 -moz-border-radius: 5px 200px 30px 50px;
             }
 
+        </style>
+        <div>
+            <table class="border-props" width="100%">
+                <tr>
+                    <td><h3>Example</h3></td>
+                    <td><h3>CSS Code</h3></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="simpleround">Simple Round</div>
+                    </td>
+                    <td>
+<pre class="code">
+.simpleround{
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="alternateround">Alternate Round</div>
+                    </td>
+                    <td>
+<pre class="code">
+.alternateround{
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="differentround">Different Round</div>
+                    </td>
+                    <td>
+<pre class="code">
+.differentround{
+    -webkit-border-radius: 5px 200px 30px 50px;
+    -moz-border-radius: 5px 200px 30px 50px;
+}</pre>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </section>
+</article>
+<article class="tx">
+    <header>Border Properties</header>
+    <section>
+        <style>
+            .border-props div {
+                background: red;
+                color: white;
+                padding: 10px;
+            }
+
+            .border-props textarea {
+                width: 400px;
+                height: 80px;
+            }
+
+
             .ecliptical {
                 -webkit-border-radius: 100px / 30px;
                 -moz-border-radius: 100px / 30px;
@@ -928,52 +995,17 @@ function gameLoop(){
                     <td><h3>Example</h3></td>
                     <td><h3>CSS Code</h3></td>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="simpleround">Simple Round</div>
-                    </td>
-                    <td>
-                        <textarea>.simpleround{
-                            -webkit-border-radius: 50px;
-                            -moz-border-radius: 50px;
-                            }
-                        </textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="alternateround">Alternate Round</div>
-                    </td>
-                    <td>
-                        <textarea>.alternateround{
-                            -webkit-border-radius: 50px;
-                            -moz-border-radius: 50px;
-                            }
-                        </textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="differentround">Different Round</div>
-                    </td>
-                    <td>
-                        <textarea>.differentround{
-                            -webkit-border-radius: 5px 200px 30px 50px;
-                            -moz-border-radius: 5px 200px 30px 50px;
-                            }
-                        </textarea>
-                    </td>
-                </tr>
+
                 <tr>
                     <td>
                         <div class="ecliptical">Ecliptical Round</div>
                     </td>
                     <td>
-                        <textarea>.ecliptical{
-                            -webkit-border-radius: 100px / 30px;
-                            -moz-border-radius: 100px / 30px;
-                            }
-                        </textarea>
+<pre class="code">
+.ecliptical{
+    -webkit-border-radius: 100px / 30px;
+    -moz-border-radius: 100px / 30px;
+}</pre>
                     </td>
                 </tr>
                 <tr>
@@ -981,13 +1013,14 @@ function gameLoop(){
                         <div class="circle">Circle</div>
                     </td>
                     <td>
-                        <textarea>.circle{
-                            -webkit-border-radius: 300px;
-                            -moz-border-radius: 300px;
-                            width:50px;
-                            height:50px;
-                            }
-                        </textarea>
+<pre class="code">
+.circle{
+    -webkit-border-radius: 300px;
+    -moz-border-radius: 300px;
+    width:50px;
+    height:50px;
+}
+</pre>
                     </td>
                 </tr>
             </table>
@@ -1025,6 +1058,71 @@ function gameLoop(){
                 -moz-box-shadow: 10px 10px 20px rgba(200, 0, 0, 0.8);
             }
 
+        </style>
+        <div style="overflow:auto">
+            <table class="shadow-props" width="100%" cellspacing="10px">
+                <tr>
+                    <td><h3>Example</h3></td>
+                    <td><h3>CSS Code</h3></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="solidshadow">Solid Shadow</div>
+                    </td>
+                    <td>
+<pre class="code">
+.solidshadow{
+    -webkit-box-shadow: 10px 10px #000;
+    -moz-box-shadow: 10px 10px #000;
+}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="blurshadow">Blurr Shadow</div>
+                    </td>
+                    <td>
+<pre class="code">
+.blurshadow{
+    -webkit-box-shadow: 10px 10px 20px #000;
+    -moz-box-shadow: 10px 10px 20px #000;
+}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="blurrrgbashadow">Blurr Shadow using rgba</div>
+                    </td>
+                    <td>
+<pre class="code">
+.blurrrgbashadow{
+    -webkit-box-shadow: 10px 10px 20px rgba(200,0,0,0.8);
+    -moz-box-shadow: 10px 10px 20px rgba(200,0,0,0.8);
+}
+</pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+</article>
+<article class="tx">
+    <header>Shadow Properties</header>
+    <section>
+        <style>
+
+            .shadow-props div {
+                background: red;
+                color: white;
+                padding: 10px;
+            }
+
+            .shadow-props textarea {
+                width: 600px;
+                height: 80px;
+            }
+
+
             .twoshadow {
                 -webkit-box-shadow: 10px 10px 20px rgba(200, 0, 0, 0.5), -10px -10px 20px rgba(0, 0, 200, 0.5);
 
@@ -1044,58 +1142,19 @@ function gameLoop(){
                     <td><h3>Example</h3></td>
                     <td><h3>CSS Code</h3></td>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="solidshadow">Solid Shadow</div>
-                    </td>
-                    <td>
-                        <textarea>
-                            .solidshadow{
-                            -webkit-box-shadow: 10px 10px #000;
-                            -moz-box-shadow: 10px 10px #000;
-                            }
-                        </textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="blurshadow">Blurr Shadow</div>
-                    </td>
-                    <td>
-                        <textarea>
-                            .blurshadow{
-                            -webkit-box-shadow: 10px 10px 20px #000;
-                            -moz-box-shadow: 10px 10px 20px #000;
-                            }
-                        </textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="blurrrgbashadow">Blurr Shadow using rgba</div>
-                    </td>
-                    <td>
-                        <textarea>
-                            .blurrrgbashadow{
-                            -webkit-box-shadow: 10px 10px 20px rgba(200,0,0,0.8);
-                            -moz-box-shadow: 10px 10px 20px rgba(200,0,0,0.8);
-                            }
-                        </textarea>
-                    </td>
-                </tr>
+
                 <tr>
                     <td>
                         <div class="twoshadow">Two Shadows</div>
                     </td>
                     <td>
-                        <textarea>
-                            .twoshadow{
-                            -webkit-box-shadow: 10px 10px 20px rgba(200,0,0,0.5),
-                            -10px -10px 20px rgba(0,0,200,0.5);
-                            -moz-box-shadow: 10px 10px 20px rgba(200,0,0,0.5),
-                            -10px -10px 20px rgba(0,0,2000,0.5);
-                            }
-                        </textarea>
+<pre class="code">
+.twoshadow{
+    -webkit-box-shadow: 10px 10px 20px rgba(200,0,0,0.5),
+    -10px -10px 20px rgba(0,0,200,0.5);
+    -moz-box-shadow: 10px 10px 20px rgba(200,0,0,0.5),
+    -10px -10px 20px rgba(0,0,2000,0.5);
+}</pre>
                     </td>
                 </tr>
                 <tr>
@@ -1103,14 +1162,13 @@ function gameLoop(){
                         <div class="innershadow">Inner Shadow</div>
                     </td>
                     <td>
-                        <textarea>
-                            .innershadow{
-                            -webkit-box-shadow: inset 0px 2px 4px rgba(0,0,0,0.4);
-                            -moz-box-shadow: inset 0px 2px 4px rgba(0,0,0,0.4);
-                            -webkit-border-radius: 5px;
-                            -moz-border-radius: 5px;
-                            }
-                        </textarea>
+<pre class="code">
+.innershadow{
+    -webkit-box-shadow: inset 0px 2px 4px rgba(0,0,0,0.4);
+    -moz-box-shadow: inset 0px 2px 4px rgba(0,0,0,0.4);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}</pre>
                     </td>
                 </tr>
             </table>
@@ -1125,7 +1183,7 @@ function gameLoop(){
             .gradient-props div {
                 color: white;
                 padding: 10px;
-                height: 100px;
+                height: 200px;
             }
 
             .gradient-props textarea {
@@ -1141,6 +1199,57 @@ function gameLoop(){
             .lineargradientangle {
                 background-image: -webkit-gradient(linear, left top, right bottom, from(#0099ff), to(#000));
                 background-image: -moz-linear-gradient(left top 315deg, #0099ff, #000);
+            }
+
+        </style>
+        <div>
+            <table class="gradient-props" width="100%">
+                <tr>
+                    <td><h3>Example</h3></td>
+                    <td><h3>CSS Code</h3></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lineargradienthorz">Linear Gradient</div>
+                    </td>
+                    <td>
+<pre class="code">
+.lineargradienthorz{
+    background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, from(#0099ff), to(#000));
+    background-image: -moz-linear-gradient(0% 100% 0deg, #0099ff, #000);
+}</pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="lineargradientangle">Linear Gradient at angle</div>
+                    </td>
+                    <td>
+<pre class="code">
+.lineargradientangle{
+    background-image: -webkit-gradient(linear, left top, right bottom, from(#0099ff), to(#000));
+    background-image: -moz-linear-gradient(left top 315deg, #0099ff, #000);
+}</pre>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </section>
+</article>
+<article class="tx">
+    <header>Gradient Properties</header>
+    <section>
+        <style>
+            .gradient-props div {
+                color: white;
+                padding: 10px;
+                height: 200px;
+            }
+
+            .gradient-props textarea {
+                width: 400px;
+                height: 100px;
             }
 
             .radialgradient1 {
@@ -1159,42 +1268,19 @@ function gameLoop(){
                     <td><h3>Example</h3></td>
                     <td><h3>CSS Code</h3></td>
                 </tr>
-                <tr>
-                    <td>
-                        <div class="lineargradienthorz">Linear Gradient</div>
-                    </td>
-                    <td>
-                        <textarea>.lineargradienthorz{
-                            background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, from(#0099ff), to(#000));
-                            background-image: -moz-linear-gradient(0% 100% 0deg, #0099ff, #000);
-                            }
-                        </textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="lineargradientangle">Linear Gradient at angle</div>
-                    </td>
-                    <td>
-                        <textarea>.lineargradientangle{
-                            background-image: -webkit-gradient(linear, left top, right bottom, from(#0099ff), to(#000));
-                            background-image: -moz-linear-gradient(left top 315deg, #0099ff, #000);
-                            }
-                        </textarea>
-                    </td>
-                </tr>
+
                 <tr>
                     <td>
                         <div class="radialgradient1">Radial Gradient</div>
                     </td>
                     <td>
-                        <textarea>.radialgradient1{
-                            background-image: -webkit-gradient(radial, center center, 0, center center, 200,
-                            from(#0099FF), to(#000));
-                            background-image: -moz-radial-gradient(center, circle closest-corner, #0099FF 0%, #000
-                            100%);
-                            }
-                        </textarea>
+<pre class="code">
+.radialgradient1{
+    background-image: -webkit-gradient(radial, center center, 0, center center, 200,
+    from(#0099FF), to(#000));
+    background-image: -moz-radial-gradient(center, circle closest-corner, #0099FF 0%, #000
+    100%);
+}</pre>
                     </td>
                 </tr>
                 <tr>
@@ -1202,12 +1288,12 @@ function gameLoop(){
                         <div class="radialgradient2">Radial Gradient center</div>
                     </td>
                     <td>
-                        <textarea>.radialgradient2{
-                            background-image: -webkit-gradient(radial, center center, 0, 150 150, 200, from(#0099FF),
-                            to(#000));
+<pre class="code">
+.radialgradient2{
+    background-image: -webkit-gradient(radial, center center, 0, 150 150, 200, from(#0099FF),
+    to(#000));
 
-                            }
-                        </textarea>
+}</pre>
                     </td>
                 </tr>
 
@@ -1251,14 +1337,6 @@ function gameLoop(){
                 text-shadow: -1px -1px 0 #CCC, 1px -1px 0 #CCC, -2px 2px 0 #555, 2px 2px 0 #555;
             }
 
-            .textreflection {
-                -webkit-box-reflect: below -10px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.2, transparent), to(rgba(255, 255, 255, 0.5)));
-            }
-
-            .webfont {
-                font-family: 'Junction';
-            }
-
         </style>
         <div>
             <table class="text-props" width="100%">
@@ -1271,11 +1349,10 @@ function gameLoop(){
                         <h1 class="textShadow">Text Shadow </h1>
                     </td>
                     <td>
-                        <textarea>
-                            .textShadow{
-                            text-shadow: 15px 15px 5px black;
-                            }
-                        </textarea>
+<pre class="code">
+.textShadow{
+    text-shadow: 15px 15px 5px black;
+}</pre>
                     </td>
                 </tr>
                 <tr>
@@ -1283,12 +1360,12 @@ function gameLoop(){
                         <h1 class="textInShadow">Text Inline Shadow </h1>
                     </td>
                     <td>
-                        <textarea>
-                            .textInShadow {
-                            color: #CCC;
-                            text-shadow: 0px -1px 1px #000;
-                            }
-                        </textarea>
+<pre class="code">
+.textInShadow {
+    color: #CCC;
+    text-shadow: 0px -1px 1px #000;
+}
+</pre>
                     </td>
                 </tr>
                 <tr>
@@ -1296,34 +1373,81 @@ function gameLoop(){
                         <h1 class="textStroke">Text Stroke</h1>
                     </td>
                     <td>
-                        <textarea>
-                            .textStroke {
-                            color: #FFF;
-                            text-shadow:
-                            -1px -1px 0 #CCC,
-                            1px -1px 0 #CCC,
-                            -2px 2px 0 #555,
-                            2px 2px 0 #555;
-                            }
-                        </textarea>
+<pre class="code">
+.textStroke {
+    color: #FFF;
+    text-shadow:-1px -1px 0 #CCC,  1px -1px 0 #CCC,
+                -2px 2px 0 #555,   2px 2px 0 #555;
+}</pre>
                     </td>
+                </tr>
+
+            </table>
+        </div>
+    </section>
+</article>
+
+<article class="tx">
+    <header>Text Properties</header>
+    <section>
+        <style>
+            @font-face {
+                font-family: 'Junction';
+                src: url(fonts/Junction.otf);
+            }
+
+            .text-props div {
+                background: red;
+                color: white;
+                padding: 10px;
+            }
+
+            .text-props textarea {
+                width: 400px;
+                height: 80px;
+            }
+
+            .textreflection{
+                -webkit-box-reflect: below -10px -webkit-gradient(
+                    linear,
+                    left top, left bottom,
+                    from(transparent),
+                    color-stop(0.2, transparent),
+                    to(rgba(255,255,255,0.5))
+                 );
+            }
+            @font-face {
+                font-family: 'Junction';
+                src: url(Junction.otf);
+            }
+
+            .webfont {
+                font-family: 'Junction';
+            }
+
+
+        </style>
+        <div>
+            <table class="text-props" width="100%">
+                <tr>
+                    <td><h3>Example</h3></td>
+                    <td><h3>CSS Code</h3></td>
                 </tr>
                 <tr>
                     <td>
                         <h1 class="textreflection">Text Reflection</h1>
                     </td>
                     <td>
-                        <textarea>
-                            .textreflection{
-                            -webkit-box-reflect: below -10px -webkit-gradient(
-                            linear,
-                            left top, left bottom,
-                            from(transparent),
-                            color-stop(0.2, transparent),
-                            to(rgba(255,255,255,0.5))
-                            );
-                            }
-                        </textarea>
+<pre class="code">
+.textreflection{
+    -webkit-box-reflect: below -10px -webkit-gradient(
+    linear,
+    left top, left bottom,
+    from(transparent),
+    color-stop(0.2, transparent),
+    to(rgba(255,255,255,0.5))
+    );
+}</pre>
                     </td>
                 </tr>
                 <tr>
@@ -1331,16 +1455,15 @@ function gameLoop(){
                         <h1 class="webfont">Web Fonts</h1>
                     </td>
                     <td>
-                        <textarea>
-                            @font-face {
-                            font-family: 'Junction';
-                            src: url(Junction.otf);
-                            }
+<pre class="code">
+@font-face {
+    font-family: 'Junction';
+    src: url(Junction.otf);
+}
 
-                            .webfont {
-                            font-family: 'Junction';
-                            }
-                        </textarea>
+.webfont {
+    font-family: 'Junction';
+}</pre>
                     </td>
                 </tr>
             </table>
@@ -1518,6 +1641,13 @@ function gameLoop(){
             transition: all 1s ease-in-out;
             </p>
         </div>
+<pre class="code">
+#with-transition{
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}</pre>
         <div>
              Visit <a href="http://css3.bradshawenterprises.com/transitions/">http://css3.bradshawenterprises.com/transitions/</a> for more examples.
         </div>
@@ -1965,40 +2095,7 @@ socket.onclose = function(event) {
             </tr>
         </table>
 
-        <div>
 
-            <div class="accordion">
-                <h1>Main-JS</h1>
-<pre id="main-js">
-var worker = new Worker('worker.js');
-button.addEventListener("click",
-function(){
-    outputElem.innerHTML = "Calculating....";
-    var index = indexElem.value;
-    worker.postMessage(index);
-});
-worker.addEventListener('message',
-function(e){
-    outputElem.innerHTML=e.data;
-});
-</pre>
-            </div>
-
-            <div class="accordion">
-                <h1>Worker-JS</h1>
-<pre id="worker-js">
-//Web Worker
-importScripts('fibonacci.js');
-addEventListener('message', function(e){
-  var index = parseInt(e.data);
-  var result = fibonacci(index);
-  postMessage(result);
-})
-</pre>
-            </div>
-
-
-        </div>
     </section>
     <script>
         var canvas1 = document.getElementById("canvas8");
@@ -2071,7 +2168,39 @@ addEventListener('message', function(e){
 
     </script>
 </article>
+<article class="twoTxCol">
+    <header>Web Workers - Code </header>
+    <section>
+        <h3>Main JS</h3>
+<pre class="code">
+var worker = new Worker('worker.js');
+button.addEventListener("click",
+function(){
+    outputElem.innerHTML = "Calculating....";
+    var index = indexElem.value;
+    worker.postMessage(index);
+});
+worker.addEventListener('message',
+function(e){
+    outputElem.innerHTML=e.data;
+});
+</pre>
+    </section>
 
+
+    <section>
+        <h3>Worker JS</h3>
+<pre class="code">
+//Web Worker
+importScripts('fibonacci.js');
+addEventListener('message', function(e){
+  var index = parseInt(e.data);
+  var result = fibonacci(index);
+  postMessage(result);
+})
+</pre>
+    </section>
+</article>
 <article class="tx">
     <header>Storage</header>
     <section>
@@ -2080,7 +2209,7 @@ addEventListener('message', function(e){
             <li>Local Storage - Persistent Key Value Pair</li>
             <li>Session Storage - Temporary Key Value Pair</li>
             <li>Web SQL - SQL Based Storage (deprecated)</li>
-            <li>IndexDB - ...</li>
+            <li>IndexDB - ObjectStore</li>
         </ol>
     </section>
 </article>
@@ -2502,6 +2631,18 @@ cursorRequest.onerror = function(e) {
         </script>
     </section>
 </article>
+<article class="tx">
+    <header>Offline/Online Events</header>
+    <section>
+    </section>
+</article>
+<article class="tx">
+    <header>Manifest Cache</header>
+    <section>
+
+    </section>
+</article>
+
 <article class="twoTxCol">
     <header>Geo & Device Sensor</header>
     <section>
@@ -2588,6 +2729,16 @@ cursorRequest.onerror = function(e) {
 
             });
         </script>
+    </section>
+</article>
+<article class="tx">
+    <header>Geo - Code </header>
+    <section>
+    </section>
+</article>
+<article class="tx">
+    <header>Sensors - Code </header>
+    <section>
     </section>
 </article>
 
@@ -2936,7 +3087,7 @@ try {
     }
 
     function errorHandler(err) {
-        alert("Unable to initiate fs, got error code " + err.code);
+        console.log("Unable to initiate fs, got error code " + err.code);
     }
 
     window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
@@ -2950,32 +3101,61 @@ catch (err) {
 </script>
 </section>
 </article>
-<article class="twoTxCol">
-    <header>header 3</header>
-    <section>
-        abc
-    </section>
-    <section>
-        abc
-    </section>
 
+<article class="tx">
+    <header>File D&D - Code </header>
+    <section>
+    </section>
+</article>
+
+<article class="tx">
+    <header>File API - Code </header>
+    <section>
+    </section>
+</article>
+
+<article class="tx">
+    <header>File API - Code </header>
+    <section>
+    </section>
+</article>
+
+<article class="tx">
+    <header>File API - Code </header>
+    <section>
+    </section>
+</article>
+
+<article class="tx">
+    <header>File API - Code </header>
+    <section>
+    </section>
+</article>
+
+<article class="tx">
+    <header>Problems with HTML 5 </header>
+    <section>
+    </section>
+</article>
+<article class="tx">
+    <header>How to solve them? </header>
+    <section>
+    </section>
 </article>
 <article class="titleOnly">
-    <header>header 4</header>
+    <header>Q & A </header>
     <section>
-
     </section>
 </article>
-<article class="CAPTION_ONLY">
-    <header>header 4</header>
+<article class="tx">
+    <header>Contact Me</header>
     <section>
-
-    </section>
-</article>
-<article class="blank">
-    <header>header 4</header>
-    <section>
-
+        <ol>
+            <li>Twitter - @rohitghatol</li>
+            <li>Linkedin - ...</li>
+            <li>Blog - ....</li>
+            <li>Youtube Channel - ...</li>
+        </ol>
     </section>
 </article>
 
