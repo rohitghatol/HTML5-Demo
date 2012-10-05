@@ -43,12 +43,10 @@
     <header>HTML 5</header>
     <section>
         <h2>By Rohit Ghatol</h2>
-
         <h3>Director of Engineering - <a target="_blank" href="http://www.synerzip.com">Synerzip</a></h3>
         <h3>Author - <a target="_blank" href="http://www.apress.com/9781430239031">Beginning PhoneGap</a></h3>
-        <h3>Founder - <a target="_blank" href="http://meetup.com/technext">TechNext</a></h3>
-        <h3>Co Manager - <a target="_blank" href="http://meetup.com/pune-gdg">Pune-GDG</a></h3>
-
+        <h3>Manages - <a target="_blank" href="http://meetup.com/technext">TechNext</a> & <a target="_blank" href="http://meetup.com/pune-gdg">Pune-GDG</a></h3>
+        <p style="color:red">(Use only Google Chrome Browser till further notice)</p>
     </section>
 </article>
 <article class="tx">
@@ -2934,8 +2932,6 @@ try {
 
                 // init the reader event handlers
                 reader.onloadend = function (event) {
-                    console.log("1");
-                    console.dir(fileSys);
                     fileSys.root.getFile(fileName, {create:true}, function (fileEntry) {
 
                         // Create a FileWriter object for our FileEntry (log.txt).
@@ -3181,41 +3177,126 @@ catch (err) {
 <article class="tx">
     <header>File D&D - Code </header>
     <section>
+        <pre class="code">
+&ltdiv id="dropbox"&gt;&lt;/div&gt;
+
+var dropbox = document.getElementById("dropbox");
+dropbox.addEventListener("dragenter", dragEnter, false);
+dropbox.addEventListener("dragexit", dragExit, false);
+dropbox.addEventListener("dragover", dragOver, false);
+dropbox.addEventListener("drop", drop, false);
+
+function dragEnter(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+}
+
+function drop(evt) {
+    event.stopPropagation();
+    event.preventDefault();
+    if (evt.dataTransfer.files) {
+        var files = event.dataTransfer.files;
+        for (var index = 0; index < files.length; index++) {
+            //Get the file Object
+            var file = files[index];
+            console.log("Dropped "+file.name);
+        }
+    }
+}</pre>
     </section>
 </article>
 
 <article class="tx">
     <header>File API - Code </header>
     <section>
+        <h3>Initialing File System</h3>
+        <pre class="code">
+function onInitFs(fs) {
+    console.log("File System initiated");
+    window.fileSys = fs;
+}
+
+function errorHandler(err) {
+    console.log("Unable to initiate fs, got error code " + err.code);
+}
+
+window.requestFileSystem = window.requestFileSystem || window.webkitRequestFileSystem;
+
+window.requestFileSystem(window.TEMPORARY, 5242880, onInitFs, errorHandler);
+        </pre>
     </section>
 </article>
 
 <article class="tx">
     <header>File API - Code </header>
     <section>
+        <h3>Listing File</h3>
+        <pre class="code">
+fileSys.root.getDirectory("/",{create:false},
+                    function (dirEntry) {
+                        dirReader = dirEntry.createReader();
+                        dirReader.readEntries(function (entries) {
+                            for (var index = 0; index < entries.length; index++) {
+                                var isFile = entries[index].isFile;
+                                var fileName = entries[index].name;
+                                var type = isFile?"File":"Dir";
+                                console.log(type+"  : "+fileName);
+                            }
+                        },
+                        errorHandler);
+                    },
+                    errorHandler);
+        </pre>
+    </section>
+</article>
+<article class="tx">
+    <header>File API - Code </header>
+    <section>
+        <h3>Create Directory</h3>
+        <pre class="code">
+fileSys.root.getDirectory(targetDir,
+                {create:true},
+                function (dirEntry) {
+                    console.log("Directory created");
+                },
+                errorHandler);
+        </pre>
     </section>
 </article>
 
 <article class="tx">
     <header>File API - Code </header>
     <section>
-    </section>
-</article>
-
-<article class="tx">
-    <header>File API - Code </header>
-    <section>
+        <p>For More Details visit <a target="_blank" href="http://www.html5rocks.com/en/tutorials/file/filesystem/">http://www.html5rocks.com/en/tutorials/file/filesystem/</a></p>
     </section>
 </article>
 
 <article class="tx">
     <header>Problems with HTML 5 </header>
     <section>
+        <ol>
+            <li>Fragmentation of browsers and features</li>
+            <li>Many Features not supported on many browsers</li>
+            <li>Where to find this information?</li>
+            <li>When informed, how to handle this?</li>
+            <li>How to detect which features and missing or present?</li>
+            <li>How to Simulate features?</li>
+        </ol>
     </section>
 </article>
 <article class="tx">
     <header>How to solve them? </header>
     <section>
+        <ol>
+            Decision time
+            <li>Visit <a target="_blank" href="http://html5please.com">http://html5please.com</a> to see which features are safe to be used</li>
+            <li>Alternatively also visit <a target="_blank" href="http://html5test.com">http://html5test.com</a> to see which features are safe to be used</li>
+        </ol>
+        <ol>
+            Development time
+            <li>Make use of Modernizer <a target="_blank" href="http://modernizr.com/" >http://modernizr.com/</a> Library</li>
+            <li>Make use of <a target="_blank" href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills">Polyfills</a>  (polyfill (n): a JavaScript shim that replicates the standard API for older browsers)</li>
+        </ol>
     </section>
 </article>
 <article class="titleOnly">
@@ -3228,9 +3309,8 @@ catch (err) {
     <section>
         <ol>
             <li>Twitter - @rohitghatol</li>
-            <li>Linkedin - ...</li>
-            <li>Blog - ....</li>
-            <li>Youtube Channel - ...</li>
+            <li>Linkedin - <a target="_blank" href="http://in.linkedin.com/in/rohitghatol">http://in.linkedin.com/in/rohitghatol</a></li>
+            <li>HomePage - <a target="_blank" href="http://www.rohitghatol.com/">http://www.rohitghatol.com/</a></li>
         </ol>
     </section>
 </article>
