@@ -326,10 +326,21 @@
     </section>
 </article>
 <article class="tx">
-    <header>Source Code</header>
+    <header>Video Tag - Source Code</header>
     <section>
         <pre class="code">&lt;video width=&quot;640&quot; height=&quot;368&quot; id=&quot;myVideo&quot; controls&gt;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.ogv&quot; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/ogg;codecs=&quot;theora, vorbis&quot;'&gt;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.mp4&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;'&gt;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&lt;source src=&quot;http://www.html5videoplayer.net/videos/madagascar3.webm&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type='video/webm; codecs=&quot;vp8.0, vorbis&quot;'&gt;<br/>&lt;/video&gt;</pre>
+<pre class="code">
+var videoElem = document.getElementById("myVideo");
 
+//Play Video
+videoElem.play();
+
+//Pause Video
+videoElem.pause();
+
+//Forward Rewind
+videoElem.currentTime = 100;
+</pre>
     </section>
 </article>
 <article class="title">
@@ -739,19 +750,6 @@ function gameLoop(){
             <circle class="myGreen" cx="140" cy="40" r="24"/>
             <circle class="myRed" cx="140" cy="100" r="24"/>
 
-            <g>
-                <line x1="310" y1="10" x2="385" y2="10"
-                      style="stroke: #006600;"/>
-
-                <rect x="310" y="20" height="50" width="75"
-                      style="stroke: #006600; fill: #006600"/>
-
-                <text x="310" y="90" style="stroke: #660000; fill: #660000">
-                    Text grouped with shapes
-                </text>
-            </g>
-
-
             <g transform="rotate(300 300 50)">
                 <line x1="310" y1="310" x2="385" y2="310"
                       style="stroke: #006600;"/>
@@ -768,6 +766,38 @@ function gameLoop(){
         </svg>
 
 
+    </section>
+</article>
+<article class="tx">
+    <header>SVG - Code</header>
+    <section>
+<pre class="code">
+&lt;style&gt;
+    circle.myGreen {
+        stroke: #006600;
+        fill: #00cc00;
+    }
+    circle.myRed {
+        stroke: #660000;
+        fill: #cc0000;
+    }
+&lt;/style&gt;
+&lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
+    &lt;rect x="10" y="10" height="100" width="100" style="stroke:#ff0000; fill: #0000ff"&lt;/rect&gt;
+    &lt;rect x="50" y="50" height="110" width="110" style="stroke:#ff0000; fill: #ccccff" transform="translate(30) rotate(45 50 50)"&gt;&lt;/rect&gt;
+    &lt;text x="70" y="100" transform="translate(30) rotate(45 50 50)">Hello World&lt;/text&gt;
+    &lt;circle class="myGreen" cx="140" cy="40" r="24"/&gt;
+    &lt;circle class="myRed" cx="140" cy="100" r="24"/&gt;
+
+    &lt;g transform="rotate(300 300 50)"&gt;
+        &lt;line x1="310" y1="310" x2="385" y2="310" style="stroke: #006600;"/&gt;
+        &lt;rect x="310" y="320" height="50" width="75" style="stroke: #006600; fill: #006600"/&gt;
+        &lt;text x="310" y="390" style="stroke: #660000; fill: #660000"&gt;
+            Text grouped with shapes
+        &lt;/text&gt;
+    &lt;/g&gt;
+&lt;/svg&gt;
+</pre>
     </section>
 </article>
 
@@ -809,60 +839,33 @@ function gameLoop(){
             }
         </style>
 
-        <pre class="form-inputs prettyprint"><input type="text" required=""><span class="tag">&lt;input</span><span
-                class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span
-                class="atv">"text"</span><span class="pln"> </span><b><span class="atn">required</span></b><span
-                class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="email"
-                                                                                                          value="some@email.com"><span
-                class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span
-                class="pun">=</span><span class="atv">"</span><b><span class="atv">email</span></b><span
-                class="atv">"</span><span class="pln"> </span><span class="atn">value</span><span
-                class="pun">=</span><span class="atv">"some@email.com"</span><span class="pln"> </span><span
-                class="tag">/&gt;</span><span class="pln"><br><br></span><input type="date" min="2010-08-14"
-                                                                                max="2011-08-14"
-                                                                                value="2010-08-14"><span class="tag">&lt;input</span><span
-                class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span
-                class="atv">date</span></b><span class="atv">"</span><span class="pln"> </span><b><span
-                class="atn">min</span></b><span class="pun">=</span><span class="atv">"2010-08-14"</span><span
-                class="pln"> </span><b><span class="atn">max</span></b><span class="pun">=</span><span class="atv">"2011-08-14"</span><span
-                class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span class="atv">"2010-08-14"</span><span
-                class="tag">/&gt;</span><span class="pln"><br><br></span><input type="range" min="0" max="50"
-                                                                                value="10"><span
-                class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span
-                class="pun">=</span><span class="atv">"</span><b><span class="atv">range</span></b><span
-                class="atv">"</span><span class="pln"> </span><b><span class="atn">min</span></b><span
-                class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><b><span
-                class="atn">max</span></b><span class="pun">=</span><span class="atv">"50"</span><span
-                class="pln"> </span><span class="atn">value</span><span class="pun">=</span><span
-                class="atv">"10"</span><span class="pln"> </span><span class="tag">/&gt;</span><span
-                class="pln"><br><br></span><input results="10" type="search" placeholder="Search..."><span class="tag">&lt;input</span><span
-                class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span
-                class="atv">search</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">results</span></b><span
-                class="pun">=</span><span class="atv">"10"</span><span class="pln"> </span><b><span class="atn">placeholder</span></b><span
-                class="pun">=</span><span class="atv">"Search..."</span><span class="pln"> </span><span class="tag">/&gt;</span><span
-                class="pln"><br><br></span><input type="tel" placeholder="(555) 555-5555"
-                                                  pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"><span class="tag">&lt;input</span><span
-                class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span
-                class="atv">tel</span></b><span class="atv">"</span><span class="pln"> &nbsp;</span><b><span
-                class="atn">placeholder</span></b><span class="pun">=</span><span
-                class="atv">"(555) 555-5555"</span><span
-                class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><b><span class="atn">pattern</span></b><span
-                class="pun">=</span><span class="atv">"^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"</span><span
-                class="pln"> </span><span class="tag">/&gt;</span><span class="pln"><br><br></span><input type="color"
-                                                                                                          placeholder="e.g. #bbbbbb"><span
-                class="tag">&lt;input</span><span class="pln"> </span><span class="atn">type</span><span
-                class="pun">=</span><span class="atv">"</span><b><span class="atv">color</span></b><span
-                class="atv">"</span><span class="pln"> </span><b><span class="atn">placeholder</span></b><span
-                class="pun">=</span><span class="atv">"e.g. #bbbbbb"</span><span class="pln"> </span><span class="tag">/&gt;</span><span
-                class="pln"><br><br></span><input type="number" step="1" min="-5" max="10" value="0"><span class="tag">&lt;input</span><span
-                class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"</span><b><span
-                class="atv">number</span></b><span class="atv">"</span><span class="pln"> </span><b><span class="atn">step</span></b><span
-                class="pun">=</span><span class="atv">"1"</span><span class="pln"> </span><b><span
-                class="atn">min</span></b><span class="pun">=</span><span class="atv">"-5"</span><span
-                class="pln"> </span><b><span class="atn">max</span></b><span class="pun">=</span><span
-                class="atv">"10"</span><span class="pln"> </span><span class="atn">value</span><span
-                class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="tag">/&gt;</span><span
-                class="pln"><br></span><div style="height:0px; clear:both;"><span class="pln"><br></span></div></pre>
+        <table>
+            <tr>
+                <td><pre class="code">&lt;input type="text" required=""/&gt;</pre></td><td><input type="text" required=""/&gt;</td>
+            </tr>
+            <tr>
+                <td><pre class="code">&lt;input type="email" value="some@email.com"/&gt;</pre></td><td><input type="email" value="some@email.com"/&gt;</td>
+            </tr>
+            <tr>
+                <td><pre class="code">&lt;input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14"/&gt;</pre></td><td><input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14"/></td>
+            </tr>
+            <tr>
+                <td><pre class="code">&lt;input type="range" min="0" max="50" value="10"/&gt;</pre></td><td><input type="range" min="0" max="50" value="10"/></td>
+            </tr>
+            <tr>
+                <td><pre class="code">&lt;input type="tel" placeholder="(555) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"/&gt;</pre></td><td><input type="tel" placeholder="(555) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$"/></td>
+            </tr>
+            <tr>
+                <td><pre class="code">&lt;input type="color" placeholder="e.g. #bbbbbb"/&gt;</pre></td><td><input type="color" placeholder="e.g. #bbbbbb"/></td>
+            </tr>
+            <tr>
+                <td><pre class="code">&lt;input type="number" step="1" min="-5" max="10" value="0"/&gt;</pre></td><td><input type="number" step="1" min="-5" max="10" value="0"/></td>
+            </tr>
+            <tr>
+                <td><pre class="code">&lt;input results="10" type="search" placeholder="Search..."/&gt;</pre></td><td><input results="10" type="search" placeholder="Search..."/></td>
+            </tr>
+        </table>
+
     </section>
 </article>
 <article class="tx">
@@ -1526,7 +1529,14 @@ function gameLoop(){
                 <td><input id="translateY" type="range" min="0" max="100" value="0"/></td>
             </tr>
         </table>
-        <div id="css-transform-text"></div>
+        <div id="css-transform-text">
+            -webkit-transform : skew(0deg)<br/>
+            scale(1,1)<br/>
+            rotateX(0deg)<br/>
+            rotateY(0deg)<br/>
+            rotateZ(0deg)<br/>
+            translate(0px,0px)<br/>
+        </div>
     </section>
     <section>
         <div id="test-div">
@@ -1594,11 +1604,11 @@ function gameLoop(){
 
             $("#css-transform-text").html("");
             $("#css-transform-text").append("-webkit-transform : skew("+skew+"deg)<br/>")
-            $("#css-transform-text").append("-webkit-transform : scale("+scaleX+","+scaleY+")<br/>")
-            $("#css-transform-text").append("-webkit-transform : rotateX("+rotateX+"deg)<br/>")
-            $("#css-transform-text").append("-webkit-transform : rotateY("+rotateY+"deg)<br/>")
-            $("#css-transform-text").append("-webkit-transform : rotateZ("+rotateZ+"deg)<br/>")
-            $("#css-transform-text").append("-webkit-transform : translate("+translateX+"px,"+translateY+"px)<br/>")
+            $("#css-transform-text").append("scale("+scaleX+","+scaleY+")<br/>")
+            $("#css-transform-text").append("rotateX("+rotateX+"deg)<br/>")
+            $("#css-transform-text").append("rotateY("+rotateY+"deg)<br/>")
+            $("#css-transform-text").append("rotateZ("+rotateZ+"deg)<br/>")
+            $("#css-transform-text").append("translate("+translateX+"px,"+translateY+"px)<br/>")
         }
     </script>
 
@@ -2398,6 +2408,10 @@ console.log("Last Page User was on is "+sessionStorage.lastPage);
     <ul id="todoItems"></ul>
     <input type="text" id="todo" name="todo" placeholder="What do you need to do?" style="width: 200px;" />
     <input type="submit" value="Add Todo Item" onclick="addTodo(); return false;"/>
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+    <p>
+        Code derived from <a target="_blank" href="http://slides.html5rocks.com">HTML5 Rocks</a>
+    </p>
     </section>
 </article>
 <article class="tx">
@@ -2634,12 +2648,49 @@ cursorRequest.onerror = function(e) {
 <article class="tx">
     <header>Offline/Online Events</header>
     <section>
+        <pre class="code">
+if (navigator.onLine) {
+   console.log("You are online
+}
+else {
+    console.log("You are offline");
+}
+
+window.addEventListener("offline", function (e) {
+   console.log("You are offline");
+}, false);
+
+window.addEventListener("online", function (e) {
+    console.log("You are online");
+
+}, false);
+        </pre>
     </section>
 </article>
 <article class="tx">
     <header>Manifest Cache</header>
     <section>
+        <p>This WebSite can work even when you go offline, due to a file <b>manifest.cache</b></p>
+<pre class="code">
+CACHE MANIFEST
+index.html
+/js/fibonacci.js
+/js/jquery-1.7.2.min.js
+/js/worker.js
+/js/html5shiv-printshiv.js
+/js/modernizr.js
+/js/html5shiv.js
+/js/slides.js
+css/slide.css
+fonts/junction.otf
+images/next-slide.svg
+images/prev-slide.svg
 
+NETWORK:
+
+FALLBACK:
+
+</pre>
     </section>
 </article>
 
@@ -2734,11 +2785,36 @@ cursorRequest.onerror = function(e) {
 <article class="tx">
     <header>Geo - Code </header>
     <section>
+        <pre class="code">
+//Succes callback
+function success(position) {
+    console.log("Position is "+ position.coords.latitude+" , "+position.coords.longitude);
+}
+
+//Failure callback
+function error(errorMsg) {
+    console.log("Got Error " + errorMsg.message );
+}
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+} else {
+    error('not supported');
+}
+
+        </pre>
     </section>
 </article>
 <article class="tx">
     <header>Sensors - Code </header>
     <section>
+        <pre class="code">
+window.addEventListener("deviceorientation", function (event) {
+    console.log("alpha :"+event.alpha);
+    console.log("beta :"+event.beta);
+    console.log("gamma :"+event.gamma);
+});
+        </pre>
     </section>
 </article>
 
