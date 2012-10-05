@@ -1,5 +1,6 @@
 body{
-    background:#778
+    background:#778;
+    font-family: sans-serif;
 }
 .toc{
     position:absolute;
