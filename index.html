@@ -241,7 +241,7 @@
     &lt;aside&gt;
         &lt;nav&gt;
         ...
-        &lt;/div&gt;
+        &lt;/nav&gt;
     &lt;/aside&gt;
 &lt;/section&gt;
         </pre>
@@ -483,11 +483,9 @@ ctx.fill();
             ctx.save();
             ctx.translate(40, 200);
             ctx.rotate(170);
-            ctx.save();
             ctx.scale(0.5, 0.5)
             ctx.rect(0, 20, 80, 40);
             ctx.fill();
-            ctx.restore();
             ctx.fillText("@ 115 Deg & 1/2 scale what is x,y", 0, 0);
             ctx.restore();
 

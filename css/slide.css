@@ -1,6 +1,7 @@
 body{
     background:#778;
     font-family: verdana;
+    color:black;
 }
 .toc{
     position:absolute;
@@ -83,6 +84,7 @@ p{
     right:0px;
     z-index:999;
 
+
 }
 .slide-controller div{
     display:inline-block;
@@ -94,6 +96,7 @@ p{
 
     padding:4px;
     border-radius: 4px;
+    border:1px solid red;
     font-size: 16pt;
 }
 .slide-controller .prev-slide {
@@ -118,8 +121,8 @@ p{
     overflow:hidden;
 
     border-radius: 10px;
-    background-image: -webkit-gradient(linear, left top, right bottom, from(#0099ff), to(#FFF));
-    background-image: -moz-linear-gradient(left top 315deg, #0099ff, #FFF);
+    background-image: -webkit-gradient(linear, left top, right bottom, from(yellow), to(#FFF));
+    background-image: -moz-linear-gradient(left top 315deg, yellow, #FFF);
 }
 
 .slide-container .slide-strip{
