@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CORS Demo</title>
+    <script src="jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<section>
+    <style>
+        #traditional-response, #send-traditional, #traditional-url {
+            font-size: 20pt;
+        }
+        #traditional-response{
+            color:red;
+        }
+
+    </style>
+    <h1>Traditional Ajax Request</h1>
+    <textarea id="traditional-url" rows="1" cols="60">http://html5-rohitghatol.rhcloud.com/traditional/capitalByCountry/India</textarea>
+    <button id="send-traditional">Ajax GET</button>
+    <div id="traditional-response"></div>
+
+    <script>
+        $(document).ready(function () {
+            $("#send-traditional").click(function () {
+                $("#traditional-response").html("");
+                var url = $("#traditional-url").val();
+                var jqxhr = $.get(url, function (data) {
+                    $("#traditional-response").append("Got Response " + data.capital + "<br/>");
+                })
+                        .error(function (jqXHR, textStatus, errorThrown) {
+                            console.log(textStatus);
+                            console.log(errorThrown);
+                            $("#traditional-response").append("Got Error for GET. This Origin is not allowed by Access-Control-Allow-Origin <br/>");
+                        })
+
+
+            })
+        });
+
+    </script>
+
+</section>
+</body>
+</html>

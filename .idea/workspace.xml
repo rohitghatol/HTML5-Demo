@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f33eceb-b3d0-4bdf-9334-fd5e0744b5af" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chapters/chapter-14/index.html" afterPath="$PROJECT_DIR$/chapters/chapter-14/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chapters/chapter-16/cors-ajax.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chapters/chapter-16/jquery-1.8.3.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chapters/chapter-16/traditional-ajax.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HTML5-Demo.base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,31 +73,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="svg-simple.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chapters/chapter-5/svg-simple.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="8" selection-start="131" selection-end="721" vertical-scroll-proportion="-13.818182">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chapters/chapter-14/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="186" column="71" selection-start="6936" selection-end="6936" vertical-scroll-proportion="0.5413534">
+            <state line="186" column="71" selection-start="6936" selection-end="6936" vertical-scroll-proportion="-1.2881356">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chapters/chapter-9/index.html">
+      <file leaf-file-name="traditional-ajax.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chapters/chapter-16/traditional-ajax.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="104.0">
-              <folding>
-                <marker date="1370802826000" expanded="false" signature="4453:4459" placeholder="..." />
-              </folding>
+            <state line="13" column="22" selection-start="305" selection-end="305" vertical-scroll-proportion="-9.454545">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cors-ajax.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/chapters/chapter-16/cors-ajax.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="0" selection-start="700" selection-end="776" vertical-scroll-proportion="0.7137177">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery-1.8.3.min.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chapters/chapter-16/jquery-1.8.3.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,15 +113,6 @@
         <entry file="file://$PROJECT_DIR$/chapters/chapter-12/indexDB.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="55" column="70" selection-start="2140" selection-end="2148" vertical-scroll-proportion="-4.220339">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chapters/chapter-3/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="99" selection-start="1417" selection-end="1504" vertical-scroll-proportion="-6.5454545">
               <folding />
             </state>
           </provider>
@@ -130,8 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/images/prev-slide.svg" />
-        <option value="$PROJECT_DIR$/chapters/star-wars-demo/index.html" />
         <option value="$PROJECT_DIR$/manifest.cache" />
         <option value="$PROJECT_DIR$/chapters/chapter-10/geo.html" />
         <option value="$PROJECT_DIR$/chapters/chapter-9/index.html" />
@@ -146,6 +145,8 @@
         <option value="$PROJECT_DIR$/chapters/chapter-15/manifest.cache" />
         <option value="$PROJECT_DIR$/chapters/chapter-15/index.html" />
         <option value="$PROJECT_DIR$/chapters/chapter-14/index.html" />
+        <option value="$PROJECT_DIR$/chapters/chapter-16/index.html" />
+        <option value="$PROJECT_DIR$/chapters/chapter-16/cors-ajax.html" />
       </list>
     </option>
   </component>
@@ -228,6 +229,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="star-wars-demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTML5-Demo.base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTML5-Demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chapters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chapter-16" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -515,11 +534,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/chapters/chapter-16" />
       <recent name="$PROJECT_DIR$/chapters/chapter-15" />
       <recent name="$PROJECT_DIR$/chapters/chapter-13" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/js" />
-      <recent name="$PROJECT_DIR$/images" />
     </key>
   </component>
   <component name="RunManager">
@@ -616,27 +635,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/chapters/star-wars-demo/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="20" selection-start="2018" selection-end="2018" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/slide.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="25" selection-start="1991" selection-end="1991" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chapters/chapter-4/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="67" selection-start="325" selection-end="327" vertical-scroll-proportion="-10.181818">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/video-demo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="6" selection-start="78" selection-end="78" vertical-scroll-proportion="25.454546">
@@ -728,7 +726,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chapters/chapter-14/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="186" column="71" selection-start="6936" selection-end="6936" vertical-scroll-proportion="0.5413534">
+        <state line="186" column="71" selection-start="6936" selection-end="6936" vertical-scroll-proportion="-1.2881356">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapters/chapter-16/jquery-1.8.3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapters/chapter-16/traditional-ajax.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="22" selection-start="305" selection-end="305" vertical-scroll-proportion="-9.454545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapters/chapter-16/cors-ajax.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="700" selection-end="776" vertical-scroll-proportion="0.7137177">
           <folding />
         </state>
       </provider>

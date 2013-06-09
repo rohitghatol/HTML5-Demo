@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CORS Demo</title>
+    <script src="jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<section>
+    <style>
+        #cors-response, #send-cors, #cors-url {
+            font-size: 20pt;
+        }
+        #cors-response{
+            color:green;
+        }
+
+    </style>
+    <h1>Cors Ajax Request</h1>
+    <textarea id="cors-url" rows="1" cols="60">http://html5-rohitghatol.rhcloud.com/cors/capitalByCountry/India</textarea>
+    <button id="send-cors">Ajax GET</button>
+    <div id="cors-response"></div>
+    <h3>How did Ajax Request work this time?</h3>
+    <p>Because this time server send special headers with HTTP Response, shown below</p>
+    <pre class="code">
+Access-Control-Allow-Headers:X-Requested-With
+Access-Control-Allow-Origin:*
+    </pre>
+    <script>
+        $(document).ready(function () {
+            $("#send-cors").click(function () {
+                $("#cors-response").html("");
+                var url = $("#cors-url").val();
+                var jqxhr = $.get(url, function (data) {
+                    $("#cors-response").append("Got Response " + data.capital + "<br/>");
+                })
+                        .error(function () {
+                            $("#cors-response").append("Got Error for GET. This Origin is not allowed by Access-Control-Allow-Origin <br/>");
+                        })
+
+
+            })
+        });
+
+    </script>
+
+</section>
+</body>
+</html>
