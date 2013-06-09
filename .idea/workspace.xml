@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f33eceb-b3d0-4bdf-9334-fd5e0744b5af" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chapters/chapter-3/index.html" afterPath="$PROJECT_DIR$/chapters/chapter-3/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/video-demo.html" afterPath="$PROJECT_DIR$/pages/video-demo.html" />
     </list>
     <ignored path="HTML5-Demo.base.iws" />
@@ -25,7 +27,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="323" column="18" selection-start="9014" selection-end="11805" vertical-scroll-proportion="-5.762712">
+            <state line="830" column="13" selection-start="26812" selection-end="27273" vertical-scroll-proportion="-5.440678">
               <folding>
                 <marker date="1370802826000" expanded="false" signature="83315:83324" placeholder="..." />
                 <marker date="1370802826000" expanded="false" signature="90362:90368" placeholder="..." />
@@ -37,7 +39,7 @@
       <file leaf-file-name="video-demo.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/video-demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="4" selection-start="64" selection-end="64" vertical-scroll-proportion="0.17204301">
+            <state line="5" column="6" selection-start="78" selection-end="78" vertical-scroll-proportion="-1.5053763">
               <folding />
             </state>
           </provider>
@@ -82,7 +84,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chapters/chapter-4/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="67" selection-start="325" selection-end="327" vertical-scroll-proportion="0.0">
+            <state line="14" column="67" selection-start="325" selection-end="327" vertical-scroll-proportion="-10.181818">
               <folding />
             </state>
           </provider>
@@ -91,7 +93,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chapters/chapter-3/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="13" column="27" selection-start="262" selection-end="262" vertical-scroll-proportion="-9.454545">
               <folding />
             </state>
           </provider>
@@ -128,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/chapters/chapter-2/html5/index.html" />
         <option value="$PROJECT_DIR$/chapters/chapter-2/html4/index.html" />
         <option value="$PROJECT_DIR$/chapters/chapter-4/index.html" />
         <option value="$PROJECT_DIR$/chapters/chapter-5/svg.css" />
@@ -144,6 +145,7 @@
         <option value="$PROJECT_DIR$/css/slide.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/pages/video-demo.html" />
+        <option value="$PROJECT_DIR$/chapters/chapter-3/index.html" />
       </list>
     </option>
   </component>
@@ -222,6 +224,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="chapters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTML5-Demo.base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTML5-Demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chapters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chapter-4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTML5-Demo.base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTML5-Demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chapters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chapter-3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTML5-Demo.base" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HTML5-Demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chapters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chapter-2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -377,20 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chapters/chapter-4/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="67" selection-start="325" selection-end="327" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chapters/chapter-3/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chapters/chapter-8/websockets.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="55" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0">
@@ -424,9 +466,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/chapters/chapter-4/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="67" selection-start="325" selection-end="327" vertical-scroll-proportion="-10.181818">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="323" column="18" selection-start="9014" selection-end="11805" vertical-scroll-proportion="-5.762712">
+        <state line="830" column="13" selection-start="26812" selection-end="27273" vertical-scroll-proportion="-5.440678">
           <folding>
             <marker date="1370802826000" expanded="false" signature="83315:83324" placeholder="..." />
             <marker date="1370802826000" expanded="false" signature="90362:90368" placeholder="..." />
@@ -434,9 +483,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/chapters/chapter-3/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="27" selection-start="262" selection-end="262" vertical-scroll-proportion="-9.454545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/video-demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="4" selection-start="64" selection-end="64" vertical-scroll-proportion="0.17204301">
+        <state line="5" column="6" selection-start="78" selection-end="78" vertical-scroll-proportion="-1.5053763">
           <folding />
         </state>
       </provider>
