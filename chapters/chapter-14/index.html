@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Reader,Drag and Drop and CSS3 Filter Demo</title>
+    <style>
+        #drop_zone{
+            width:400px;
+            height:400px;
+            border:1px dotted black;
+            text-align: center;
+        }
+        #canvas{
+            width:400px;
+            height:400px;
+            border:1px solid black;
+        }
+        #canvas {
+            -webkit-filter: sepia(50%);
+            -moz-filter: sepia(50%);
+            -ms-filter: sepia(50%);
+            -o-filter: sepia(50%);
+            filter: sepia(50%);
+
+        }
+    </style>
+    <script src="jquery-1.8.3.min.js"></script>
+    <script src="knockout-2.2.1.js"></script>
+    <script>
+        var init = function(){
+            var ctx = document.getElementById('canvas').getContext('2d');
+            function handleFileSelect(evt) {
+                evt.stopPropagation();
+                evt.preventDefault();
+
+                var imageFile = evt.dataTransfer.files[0]; // FileList object.
+
+                if ( imageFile.type.indexOf( 'image' ) === -1 ) {
+                    alert("Invalid file");
+                }
+                var reader = new FileReader();
+                reader.readAsDataURL(imageFile);
+                reader.onload = function ( ev ) {
+                    var img = new Image();
+                    img.src = ev.target.result;
+                    img.onload = function() {
+                        alert('loaded');
+                        ctx.drawImage(img, 0,0);
+                    };
+                };
+            }
+
+
+            // Setup the dnd listeners.
+            var dropZone = document.getElementById('drop_zone');
+            dropZone.addEventListener('dragover', function(evt){
+                    evt.stopPropagation();
+                    evt.preventDefault();
+                    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+                }, false);
+
+            dropZone.addEventListener('drop', function(evt){
+                evt.stopPropagation();
+                evt.preventDefault();
+
+                var imageFile = evt.dataTransfer.files[0]; // FileList object.
+
+                if ( imageFile.type.indexOf( 'image' ) === -1 ) {
+                    alert("Invalid file");
+                }
+                var reader = new FileReader();
+                reader.readAsDataURL(imageFile);
+                reader.onload = function ( ev ) {
+                    var img = new Image();
+                    img.src = ev.target.result;
+                    img.onload = function() {
+                        ctx.drawImage(img, 0,0);
+                    };
+                };
+            }, false);
+
+        };
+
+        $(function(){
+            init();
+            var CSSFilterViewModel = function(){
+                var self = this;
+                self.greyScale = ko.observable(0);
+                self.saturationScale = ko.observable(100);
+                self.sepiaScale = ko.observable(0);
+                self.invertScale = ko.observable(0);
+                self.opacityScale = ko.observable(100);
+                self.brightnessScale = ko.observable(100);
+                self.contrastScale = ko.observable(100);
+                self.blurScale = ko.observable(0);
+
+                self.cssFilter = ko.computed(function(){
+                    var styleValue = "grayscale("+self.greyScale()+"%) "
+                                    +"sepia("+self.sepiaScale()+"%) "
+                                    +"saturate("+self.saturationScale()+"%) "
+                                    +"invert("+self.invertScale()+"%) "
+                                    +"opacity("+self.opacityScale()+"%) "
+                                    +"brightness("+self.brightnessScale()+"%) "
+                                    +"contrast("+self.contrastScale()+"%) "
+                                    +"blur("+self.blurScale()+"px) ";
+
+                    var cssFilter = "-webkit-filter: "+styleValue+"; "+
+                                "-moz-filter: "+styleValue+"; "+
+                                "-ms-filter: "+styleValue+"; "+
+                                "-o-filter: "+styleValue+"; "+
+                                "filter: "+styleValue+"; ";
+                    console.log(cssFilter);
+                    return cssFilter;
+
+                })
+
+
+            }
+            ko.applyBindings(new CSSFilterViewModel());
+        })
+
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <div id="drop_zone">
+                Drop Pictures
+                <canvas id="canvas" data-bind="attr:{'style':cssFilter}"></canvas>
+            </div>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td>Grey Scale</td>
+                </tr>
+                <tr>
+                    <td><input type="range" name="range" min="1" max="100" step="1" data-bind="value:greyScale" required/></td>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <td>Saturation Scale</td>
+                </tr>
+                <tr>
+                    <td><input type="range" name="range" min="1" max="100" step="1" data-bind="value:saturationScale" required/></td>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <td>Sepia Scale</td>
+                </tr>
+                <tr>
+                    <td><input type="range" name="range" min="1" max="100" step="1" data-bind="value:sepiaScale" required/></td>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <td>Invert Scale</td>
+                </tr>
+                <tr>
+                    <td><input type="range" name="range" min="1" max="100" step="1" data-bind="value:invertScale" required/></td>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <td>Opacity Scale</td>
+                </tr>
+                <tr>
+                    <td><input type="range" name="range" min="1" max="100" step="1" data-bind="value:opacityScale" required/></td>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <td>Brightness Scale</td>
+                </tr>
+                <tr>
+                    <td><input type="range" name="range" min="1" max="100" step="1" data-bind="value:brightnessScale" required/></td>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <td>Contrast Scale</td>
+                </tr>
+                <tr>
+                    <td><input type="range" name="range" min="1" max="100" step="1" data-bind="value:contrastScale" required/></td>
+                </tr>
+                <tr><td></td></tr>
+                <tr>
+                    <td>Blur Scale</td>
+                </tr>
+                <tr>
+                    <td><input type="range" name="range" min="1" max="100" step="1" data-bind="value:blurScale" required/></td>
+                </tr>
+                <tr><td></td></tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+
+
+
+
+</body>
+</html>
