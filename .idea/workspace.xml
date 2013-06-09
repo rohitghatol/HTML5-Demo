@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f33eceb-b3d0-4bdf-9334-fd5e0744b5af" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/video-demo.html" afterPath="$PROJECT_DIR$/pages/video-demo.html" />
-    </list>
+    <list default="true" id="2f33eceb-b3d0-4bdf-9334-fd5e0744b5af" name="Default" comment="" />
     <ignored path="HTML5-Demo.base.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,7 +35,7 @@
       <file leaf-file-name="video-demo.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/video-demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="58" selection-start="515" selection-end="515" vertical-scroll-proportion="0.5591398">
+            <state line="19" column="58" selection-start="515" selection-end="515" vertical-scroll-proportion="0.34408602">
               <folding />
             </state>
           </provider>
@@ -436,7 +434,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/video-demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="58" selection-start="515" selection-end="515" vertical-scroll-proportion="0.5591398">
+        <state line="19" column="58" selection-start="515" selection-end="515" vertical-scroll-proportion="0.34408602">
           <folding />
         </state>
       </provider>
