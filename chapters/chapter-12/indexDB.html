@@ -48,9 +48,10 @@
 
             writeButton.addEventListener("click", function () {
                 try {
+                    console.dir(db);
                     var writeTransaction = db.transaction(
                             ["contacts"],
-                            IDBTransaction.READ_WRITE
+                            "readwrite"
                     );
                     var store = writeTransaction.objectStore("contacts");
 

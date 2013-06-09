@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Offline</title>
+    <script src="jquery-1.8.3.min.js"></script>
+</head>
+<body>
+
+<section>
+    <style>
+        .website {
+            margin-left: auto;
+            margin-right: auto;
+            left: 0px;
+            right: 0px;
+            border: 1px solid black;
+            width: 600px;
+            height: 400px;
+        }
+
+        .website .address-bar {
+            border: 1px solid black;
+            width: 600px;
+            height: 30px;
+            background: #AAA;
+        }
+
+        .website .browser-body {
+            padding: 20px;
+            border: 1px solid black;
+            width: 560px;
+            height: 370px;
+            background: white;
+
+        }
+
+    </style>
+
+
+    <div id="offline">
+        <div class="website">
+            <div class="address-bar">Address: http://chucknoris.com</div>
+            <div class="browser-body">
+                <h1>Chuck Norris Home Page</h1>
+                <img width="400px" height="200px" src="http://yooryoo.com/wp-content/uploads/2008/10/chuck_norris_need.jpg"></img>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="online">
+        <div class="website">
+            <div class="address-bar">Address: http://chucknoris.com</div>
+            <div class="browser-body">
+                <img src="http://images.hacktabs.com//2012/07/404-not-found.gif"></img>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function goOffline() {
+            $("#offline").show();
+            $("#online").hide();
+        }
+        function goOnline() {
+            $("#offline").hide();
+            $("#online").show();
+        }
+        if (navigator.onLine) {
+            goOnline();
+        }
+        else {
+            goOffline();
+        }
+        window.addEventListener("offline", function (e) {
+            goOffline();
+        }, false);
+
+        window.addEventListener("online", function (e) {
+            goOnline();
+
+        }, false);
+
+    </script>
+</body>
+</html>
+
