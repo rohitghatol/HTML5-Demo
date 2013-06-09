@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f33eceb-b3d0-4bdf-9334-fd5e0744b5af" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/video-demo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/video-demo.html" afterPath="$PROJECT_DIR$/pages/video-demo.html" />
     </list>
     <ignored path="HTML5-Demo.base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +37,7 @@
       <file leaf-file-name="video-demo.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/video-demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="25" selection-start="205" selection-end="205" vertical-scroll-proportion="0.38709676">
+            <state line="19" column="58" selection-start="515" selection-end="515" vertical-scroll-proportion="0.5591398">
               <folding />
             </state>
           </provider>
@@ -436,7 +436,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/video-demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="25" selection-start="205" selection-end="205" vertical-scroll-proportion="0.38709676">
+        <state line="19" column="58" selection-start="515" selection-end="515" vertical-scroll-proportion="0.5591398">
           <folding />
         </state>
       </provider>
