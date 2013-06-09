@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f33eceb-b3d0-4bdf-9334-fd5e0744b5af" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chapters/chapter-16/cors-ajax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chapters/chapter-16/jquery-1.8.3.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chapters/chapter-16/traditional-ajax.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chapters/chapter-16/cors-ajax.html" afterPath="$PROJECT_DIR$/chapters/chapter-16/cors-ajax.html" />
     </list>
     <ignored path="HTML5-Demo.base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,7 +91,7 @@
       <file leaf-file-name="cors-ajax.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chapters/chapter-16/cors-ajax.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="700" selection-end="776" vertical-scroll-proportion="0.7137177">
+            <state line="24" column="9" selection-start="554" selection-end="554" vertical-scroll-proportion="-0.24055666">
               <folding />
             </state>
           </provider>
@@ -747,7 +744,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chapters/chapter-16/cors-ajax.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="700" selection-end="776" vertical-scroll-proportion="0.7137177">
+        <state line="24" column="9" selection-start="554" selection-end="554" vertical-scroll-proportion="-0.24055666">
           <folding />
         </state>
       </provider>
