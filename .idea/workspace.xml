@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f33eceb-b3d0-4bdf-9334-fd5e0744b5af" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chapters/chapter-6/css-transform.html" afterPath="$PROJECT_DIR$/chapters/chapter-6/css-transform.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chapters/chapter-6/css-transitions.html" afterPath="$PROJECT_DIR$/chapters/chapter-6/css-transitions.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chapters/chapter-6/rotating-divs.html" afterPath="$PROJECT_DIR$/chapters/chapter-6/rotating-divs.html" />
     </list>
     <ignored path="HTML5-Demo.base.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,15 +42,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manifest.cache" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chapters/chapter-15/manifest.cache">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chapters/chapter-14/index.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -79,16 +72,25 @@
       <file leaf-file-name="css-transform.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chapters/chapter-6/css-transform.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="8" selection-start="448" selection-end="448" vertical-scroll-proportion="-16.0">
+            <state line="145" column="45" selection-start="4731" selection-end="4744" vertical-scroll-proportion="-4.5454545">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="css-transitions.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="css-transitions.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chapters/chapter-6/css-transitions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="38" selection-start="983" selection-end="983" vertical-scroll-proportion="-1.6236559">
+            <state line="52" column="22" selection-start="1513" selection-end="1523" vertical-scroll-proportion="-9.636364">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rotating-divs.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/chapters/chapter-6/rotating-divs.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="72" selection-start="2615" selection-end="2615" vertical-scroll-proportion="0.6989247">
               <folding />
             </state>
           </provider>
@@ -125,7 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/chapters/chapter-9/index.html" />
         <option value="$PROJECT_DIR$/js/slides.js" />
         <option value="$PROJECT_DIR$/chapters/chapter-8/websockets.html" />
         <option value="$PROJECT_DIR$/css/slide.css" />
@@ -141,6 +142,7 @@
         <option value="$PROJECT_DIR$/chapters/chapter-16/cors-ajax.html" />
         <option value="$PROJECT_DIR$/chapters/chapter-6/css-transform.html" />
         <option value="$PROJECT_DIR$/chapters/chapter-6/css-transitions.html" />
+        <option value="$PROJECT_DIR$/chapters/chapter-6/rotating-divs.html" />
       </list>
     </option>
   </component>
@@ -629,13 +631,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/chapters/chapter-5/svg-simple.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="8" selection-start="131" selection-end="721" vertical-scroll-proportion="-13.818182">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chapters/chapter-3/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="99" selection-start="1417" selection-end="1504" vertical-scroll-proportion="-6.5454545">
@@ -734,14 +729,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chapters/chapter-6/css-transform.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="8" selection-start="448" selection-end="448" vertical-scroll-proportion="-16.0">
+        <state line="145" column="45" selection-start="4731" selection-end="4744" vertical-scroll-proportion="-4.5454545">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chapters/chapter-6/css-transitions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="38" selection-start="983" selection-end="983" vertical-scroll-proportion="-1.6236559">
+        <state line="52" column="22" selection-start="1513" selection-end="1523" vertical-scroll-proportion="-9.636364">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chapters/chapter-6/rotating-divs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="72" selection-start="2615" selection-end="2615" vertical-scroll-proportion="0.6989247">
           <folding />
         </state>
       </provider>

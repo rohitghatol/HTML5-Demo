@@ -143,6 +143,9 @@
         });
         function applyTransform(){
             $("#test-div").css("-webkit-transform","skew("+skew+"deg) scale("+scaleX+","+scaleY+") rotateX("+rotateX+"deg) rotateY("+rotateY+"deg) rotateZ("+rotateZ+"deg) translate("+translateX+"px,"+translateY+"px)");
+            $("#test-div").css("-ms-transform","skew("+skew+"deg) scale("+scaleX+","+scaleY+") rotateX("+rotateX+"deg) rotateY("+rotateY+"deg) rotateZ("+rotateZ+"deg) translate("+translateX+"px,"+translateY+"px)");
+            $("#test-div").css("transform","skew("+skew+"deg) scale("+scaleX+","+scaleY+") rotateX("+rotateX+"deg) rotateY("+rotateY+"deg) rotateZ("+rotateZ+"deg) translate("+translateX+"px,"+translateY+"px)");
+
 
             $("#css-transform-text").html("");
             $("#css-transform-text").append("-webkit-transform : skew("+skew+"deg)<br/>")
